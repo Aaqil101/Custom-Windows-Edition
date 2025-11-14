@@ -1,0 +1,512 @@
+:root {
+    --heading-margin-bottom: 15px;
+
+    /* Enhanced color palette */
+    --primary-color: #0f172a;
+    --accent-color: #3b82f6;
+    --secondary-color: #1e293b;
+    --text-color: #f1f5f9;
+    --font-color: #fef3c7;
+    --highlight-color: #f59e0b;
+    --success-color: #10b981;
+}
+
+/* General body styling - preserved animation */
+body {
+    padding: 20px;
+    font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+    background: linear-gradient(
+        45deg,
+        var(--primary-color),
+        var(--secondary-color)
+    );
+    background-size: 400% 400%;
+    color: var(--text-color);
+    font-size: 16px;
+    line-height: 1.65;
+    margin: 0;
+}
+
+/* Header styling (h1) - modernized */
+h1 {
+    font-size: 2.75rem;
+    font-family: "Outfit", "Playfair Display", serif;
+    font-weight: 800;
+    text-align: center;
+    padding: 0.5rem 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: var(--heading-margin-bottom);
+    color: var(--text-color);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border-bottom: 4px solid #ff6600;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+    padding-left: 35px; /* Increased padding to accommodate arrow */
+}
+
+h1:hover {
+    transform: translateY(-2px);
+    color: var(--accent-color);
+}
+
+/* Modern header styling (h2) */
+h2 {
+    font-size: 2.25rem;
+    font-family: "Outfit", "Playfair Display", serif;
+    font-weight: 700;
+    text-align: center;
+    padding: 0.5rem 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: var(--heading-margin-bottom);
+    color: var(--text-color);
+    letter-spacing: 0.25px;
+    border-bottom: 3px solid var(--accent-color);
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    padding-left: 35px; /* Increased padding to accommodate arrow */
+}
+
+h2:hover {
+    transform: translateY(-2px);
+}
+
+/* Modern header styling (h3) */
+h3 {
+    font-size: 1.5rem;
+    font-family: "Outfit", "Montserrat", sans-serif;
+    font-weight: 600;
+    text-align: center;
+    color: var(--text-color);
+    padding: 0.25rem 1.25rem;
+    margin-top: 0.75rem;
+    margin-bottom: var(--heading-margin-bottom);
+    border-bottom: 2px solid var(--success-color);
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.2s ease;
+    padding-left: 35px; /* Increased padding to accommodate arrow */
+}
+
+h3:hover {
+    transform: translateY(-1px);
+    color: var(--accent-color);
+}
+
+/* Modern header styling (h4) */
+h4 {
+    font-size: 1.25rem;
+    font-family: "Outfit", "Montserrat", sans-serif;
+    font-weight: 500;
+    text-align: left;
+    color: var(--text-color);
+    padding: 0.25rem 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: var(--heading-margin-bottom);
+    border-bottom: 4px solid var(--highlight-color);
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    transition: color 0.2s ease, border-color 0.2s ease;
+    padding-left: 35px; /* Increased padding to accommodate arrow */
+}
+
+h4:hover {
+    transform: translateY(-1px);
+}
+
+/* Modern header styling (h5) */
+h5 {
+    font-size: 1.125rem;
+    font-family: "Outfit", "Montserrat", sans-serif;
+    font-weight: 500;
+    text-align: left;
+    color: var(--text-color);
+    padding: 0.2rem 0.75rem;
+    margin-top: 0.5rem;
+    margin-bottom: var(--heading-margin-bottom);
+    border-left: 3px solid var(--success-color);
+    display: block;
+    position: relative;
+    cursor: pointer;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+h5:hover {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+/* Modern header styling (h6) */
+h6 {
+    font-size: 1rem;
+    font-family: "Outfit", "Montserrat", sans-serif;
+    font-weight: 500;
+    text-align: left;
+    color: var(--text-color);
+    padding: 0.15rem 0.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: var(--heading-margin-bottom);
+    border-left: 2px solid var(--highlight-color);
+    display: block;
+    position: relative;
+    cursor: pointer;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+h6:hover {
+    color: var(--success-color);
+    border-color: var(--success-color);
+}
+
+/* Code styling - improved readability */
+code {
+    font-family: "JetBrains Mono", "Fira Code", "Courier New", monospace;
+    background-color: rgba(15, 23, 42, 0.6);
+    font-style: normal;
+    font-weight: 500;
+    color: var(--success-color);
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    border-left: 2px solid var(--accent-color);
+}
+
+/* Paragraph styling */
+p {
+    font-size: 1.05rem;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.7;
+}
+
+/* Modernized link styling */
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+a:visited {
+    color: #818cf8;
+}
+
+a:hover {
+    color: var(--highlight-color);
+}
+
+a:hover::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: var(--highlight-color);
+    bottom: -2px;
+    left: 0;
+    transform-origin: center;
+    transform: scaleX(1);
+    transition: transform 0.3s ease;
+}
+
+a:active {
+    color: #f97316;
+}
+
+/* Styled em tag */
+em {
+    font-style: italic;
+    color: var(--highlight-color);
+    background-color: rgba(245, 158, 11, 0.1);
+    padding: 0.1rem 0.3rem;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    display: inline-block;
+    border: 1px solid var(--highlight-color);
+}
+
+em:hover {
+    transform: translateX(2px);
+}
+
+/* Styled unordered lists */
+ul {
+    list-style: none;
+    padding-left: 5px;
+}
+
+ul li {
+    margin-bottom: 0.75rem;
+    position: relative;
+    padding-left: 25px;
+    transition: transform 0.2s ease;
+}
+
+ul li:hover {
+    transform: translateX(2px);
+}
+
+ul li::before {
+    content: "›";
+    color: var(--highlight-color);
+    position: absolute;
+    left: 0;
+    font-size: 1.5rem;
+    line-height: 1;
+    transition: transform 0.2s ease;
+}
+
+ul li:hover::before {
+    transform: translateX(2px);
+}
+
+/* Styled ordered lists */
+ol {
+    list-style: none;
+    counter-reset: step-counter;
+    padding-left: 5px;
+}
+
+ol li {
+    counter-increment: step-counter;
+    margin-bottom: 0.75rem;
+    position: relative;
+    padding-left: 30px;
+    transition: transform 0.2s ease;
+}
+
+ol li:hover {
+    transform: translateX(2px);
+}
+
+ol li::before {
+    content: counter(step-counter);
+    font-weight: bold;
+    color: var(--accent-color);
+    background-color: rgba(59, 130, 246, 0.1);
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    font-size: 0.75rem;
+}
+
+/* Modernized container */
+.container {
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(8px);
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    margin-top: 2.5rem;
+    max-width: 900px;
+    width: 90%;
+    margin: 2rem auto;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+}
+
+/* Enhanced button styling */
+.btn {
+    display: inline-block;
+    background-color: transparent;
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+    padding: 0.6rem 1.25rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    z-index: 10;
+    margin: 1rem 0;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+    z-index: -1;
+}
+
+.btn:hover {
+    color: var(--primary-color);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+}
+
+.btn:hover::before {
+    width: 100%;
+}
+
+.btn:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* Set button spacing */
+.btn {
+    position: relative;
+    z-index: 10;
+    display: inline-block !important;
+    margin-top: 1.25rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.5px;
+}
+
+/* Accessibility - preserved */
+@media (prefers-reduced-motion: reduce) {
+    body {
+        animation: none;
+    }
+
+    .btn,
+    h1,
+    h2,
+    h3,
+    ul li,
+    a,
+    .container {
+        transition: none;
+    }
+}
+
+/* FIXED: Foldable functionality - Arrow styling */
+.header-arrow {
+    position: absolute;
+    left: 10px; /* Keep consistent distance from left edge */
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--accent-color);
+    transition: transform 0.3s ease;
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2; /* Ensure arrow stays above any other elements */
+}
+
+.header-arrow.collapsed {
+    transform: translateY(-50%) rotate(-90deg);
+}
+
+/* Ensure headings with .header-arrow have proper spacing */
+h1 .header-arrow,
+h2 .header-arrow,
+h3 .header-arrow {
+    left: 10px;
+}
+
+/* Animation for content */
+.header-content {
+    transition: max-height 0.4s ease-out, opacity 0.3s ease-out;
+    overflow: hidden;
+    opacity: 1;
+    max-height: 2000px;
+}
+
+.header-content.collapsed {
+    max-height: 0;
+    opacity: 0;
+}
+
+/* New navigation menu */
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+    padding: 0.75rem;
+    background: rgba(15, 23, 42, 0.6);
+    border-radius: 12px;
+    backdrop-filter: blur(8px);
+}
+
+.nav-item {
+    position: relative;
+    padding: 0.5rem 1rem;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-item::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background: var(--accent-color);
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-item:hover {
+    color: var(--accent-color);
+}
+
+.nav-item:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Card layout for content sections */
+.card {
+    background: rgba(30, 41, 59, 0.7);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.card-header {
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-title {
+    font-size: 1.25rem;
+    color: var(--accent-color);
+    margin: 0;
+}
+
+/* Focus states for accessibility */
+:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}

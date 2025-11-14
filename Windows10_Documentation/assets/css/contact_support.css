@@ -1,0 +1,109 @@
+/* Contact Support Section Styling */
+#contact-support {
+    margin-bottom: 20px;
+}
+
+/* Style for the entire contact section */
+#contact-support ~ div.header-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Style for each line in the contact section */
+#contact-support ~ div.header-content p {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    color: #f0f0f0;
+}
+
+/* Add spacing between label and link */
+#contact-support
+    ~ div.header-content
+    p:nth-child(n + 3):not(:last-child)::after {
+    content: "";
+    display: inline-block;
+    width: 10px;
+}
+
+/* Button styling */
+#contact-support ~ div.header-content a {
+    display: inline-block;
+    background-color: #4a7aff;
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: normal;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    margin-left: 10px;
+}
+
+/* Create an Issue button - special green styling */
+#contact-support ~ div.header-content p:last-child a {
+    background-color: #4caf50;
+    margin-left: 0; /* Remove left margin for last button */
+}
+
+/* Cool animations */
+@keyframes pulse-glow {
+    0% {
+        box-shadow: 0 0 0 0 rgba(74, 122, 255, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(74, 122, 255, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(74, 122, 255, 0);
+    }
+}
+
+@keyframes background-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Hover effects */
+#contact-support ~ div.header-content a:hover {
+    transform: translateY(-3px);
+    background-color: #3d66d6;
+    background-image: linear-gradient(90deg, #4a7aff, #6a5acd, #4a7aff);
+    background-size: 200% 100%;
+    animation: background-shift 1.5s linear infinite, pulse-glow 2s infinite;
+}
+
+/* Green button hover effect */
+#contact-support ~ div.header-content p:last-child a:hover {
+    background-image: linear-gradient(90deg, #4caf50, #45a049, #4caf50);
+    background-size: 200% 100%;
+}
+
+/* Wave effect */
+#contact-support ~ div.header-content a::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    z-index: -1;
+    transition: top 0.4s cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+
+#contact-support ~ div.header-content a:hover::before {
+    top: 0;
+}
+
+/* Active state */
+#contact-support ~ div.header-content a:active {
+    transform: translateY(-1px) scale(0.98);
+}

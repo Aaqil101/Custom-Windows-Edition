@@ -1,0 +1,267 @@
+/* Main documentation app styling */
+:root {
+    --primary-bg: #1e293b; /* Dark blue-gray */
+    --secondary-bg: #334155; /* Slightly lighter blue-gray */
+    --text-color: #f1f5f9; /* Off-white */
+    --accent-color: #38bdf8; /* Sky blue */
+    --hover-color: #64748b; /* Medium gray for hover states */
+    --sidebar-width: 260px;
+    --header-height: 50px;
+    --transition-speed: 0.2s;
+    --border-radius: 8px;
+}
+
+/* Reset and defaults */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Main layout */
+.container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* Sidebar */
+#sidebar {
+    width: var(--sidebar-width);
+    height: 100%;
+    background-color: var(--primary-bg);
+    display: flex;
+    flex-direction: column;
+    transition: width var(--transition-speed);
+    overflow: hidden;
+    padding: 10px;
+    border-radius: var(--border-radius);
+}
+
+#sidebar.collapsed {
+    width: 0;
+    padding: 0;
+}
+
+/* Search box */
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    height: var(--header-height);
+    border-radius: var(--border-radius);
+    background-color: var(--secondary-bg);
+    padding: 0 10px;
+}
+
+#toggle-sidebar {
+    background-color: transparent;
+    color: var(--text-color);
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: color var(--transition-speed);
+}
+
+#toggle-sidebar svg {
+    fill: var(--text-color);
+    transition: fill var(--transition-speed);
+}
+
+#toggle-sidebar:hover {
+    color: var(--accent-color);
+}
+
+#toggle-sidebar:hover svg {
+    fill: var(--accent-color);
+}
+
+#search-bar {
+    flex: 1;
+    background-color: transparent;
+    color: var(--text-color);
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 4px 8px;
+    transition: background-color var(--transition-speed),
+        border-color var(--transition-speed);
+}
+
+#search-bar::placeholder {
+    color: var(--hover-color);
+}
+
+#search-bar:focus {
+    outline: none;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+/* For the search bar highlight */
+.search-highlight {
+    position: relative;
+}
+
+.search-highlight::after {
+    content: "search bar";
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #000;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+/* Topics list */
+#topic-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 8px;
+}
+
+#topic-list svg {
+    fill: var(--text-color);
+    transition: fill var(--transition-speed);
+}
+
+.topic-header {
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 14px;
+    padding: 8px 5px;
+    cursor: default;
+    user-select: none;
+}
+
+.topic-item {
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    transition: background-color var(--transition-speed);
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.topic-item:hover {
+    background-color: var(--hover-color);
+}
+
+.topic-item.selected {
+    background-color: var(--accent-color);
+    color: var(--primary-bg);
+    font-weight: 600;
+}
+
+.topic-item i {
+    margin-right: 8px;
+}
+
+/* Content area */
+#content-container {
+    flex: 1;
+    height: 100%;
+    transition: margin-left var(--transition-speed);
+    padding: 10px;
+}
+
+#content-container.full-width {
+    margin-left: 0;
+}
+
+#content-frame {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--primary-bg);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(30, 42, 56, 0.2);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, var(--accent-color), #50e3c2);
+    border-radius: 10px;
+    border: 2px solid var(--primary-bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #68b0ff, #6be9cf);
+    cursor: pointer;
+}
+
+/* Transition for smoother loading experience */
+#content-frame {
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Optional: Add these styles if you want a loading indicator for the whole app */
+.app-loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.app-loading .loader {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    :root {
+        --sidebar-width: 200px;
+    }
+
+    #sidebar {
+        position: absolute;
+        z-index: 10;
+        height: 100%;
+    }
+
+    #content-container {
+        margin-left: 0;
+    }
+}
