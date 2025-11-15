@@ -1,0 +1,18 @@
+# It will restart the computer and boot into the default local admin account
+%windir%\system32\sysprep\sysprep.exe /audit /reboot
+
+# Run Sysprep
+%windir%\system32\sysprep\sysprep.exe /generalize /oobe /shutdown
+
+/generalize → strips machine-specific data.
+/oobe → ensures Windows will show Out-of-Box Experience.
+/shutdown → powers off once done, ready for capture.
+
+# Capture the Custom Windows Image
+dism /Capture-Image /ImageFile:D:\install.wim /CaptureDir:C:\ /Name:windows_name
+
+# Delete SetupFiles Folder
+cmd.exe /c powershell.exe -NoProfile -Command "Remove-Item -Path 'C:\SetupFiles' -Recurse -Force -ErrorAction SilentlyContinue"
+
+# Add DefaultApp.xml
+dism.exe /Online /Import-DefaultAppAssociations:C:\SetupFiles\DefaultApp.xml

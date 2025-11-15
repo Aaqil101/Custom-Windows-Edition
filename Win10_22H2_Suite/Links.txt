@@ -1,0 +1,8 @@
+# Windows 10 22H2 FoD (Features on Demand)
+https://ia800503.us.archive.org/view_archive.php?archive=/0/items/windows-10-2004-and-later-windows-11-22h2-23h2-fod-iso-language-and-optional-features/19041.1.191206-1406.vb_release_amd64fre_FOD-PACKAGES_OEM_PT1_amd64fre_MULTI.iso
+
+# Full Written Guide (Including Links & Commands)
+https://memstechtips.com/create-custom-windows-iso-pre-installed-programs/
+
+# Create Your Own Answer File
+https://schneegans.de/windows/unattend-generator/

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DefaultAssociations>
+  <Association Identifier=".264" ProgId="mplayerc64.264" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".3g2" ProgId="mplayerc64.3g2" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".3gp" ProgId="mplayerc64.3gp" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".3gp2" ProgId="mplayerc64.3gp2" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".3gpp" ProgId="mplayerc64.3gpp" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".aac" ProgId="AppXqj98qxeaynz6dv4459ayz6bnqxbyaqcs" ApplicationName="Groove Music" />
+  <Association Identifier=".ac3" ProgId="AppXqj98qxeaynz6dv4459ayz6bnqxbyaqcs" ApplicationName="Groove Music" />
+  <Association Identifier=".adt" ProgId="AppXqj98qxeaynz6dv4459ayz6bnqxbyaqcs" ApplicationName="Groove Music" />
+  <Association Identifier=".adts" ProgId="AppXqj98qxeaynz6dv4459ayz6bnqxbyaqcs" ApplicationName="Groove Music" />
+  <Association Identifier=".alac" ProgId="mplayerc64.alac" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".amr" ProgId="AppXqj98qxeaynz6dv4459ayz6bnqxbyaqcs" ApplicationName="Groove Music" />
+  <Association Identifier=".amv" ProgId="mplayerc64.amv" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".arw" ProgId="AppX43hnxtbyyps62jhe9sqpdzxn1790zetc" ApplicationName="Photos" />
+  <Association Identifier=".asf" ProgId="mplayerc64.asf" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".avi" ProgId="mplayerc64.avi" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".bdmv" ProgId="mplayerc64.bdmv" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".bik" ProgId="mplayerc64.bik" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".bmp" ProgId="AppX43hnxtbyyps62jhe9sqpdzxn1790zetc" ApplicationName="Photos" />
+  <Association Identifier=".cr2" ProgId="AppX43hnxtbyyps62jhe9sqpdzxn1790zetc" ApplicationName="Photos" />
+  <Association Identifier=".crw" ProgId="AppX43hnxtbyyps62jhe9sqpdzxn1790zetc" ApplicationName="Photos" />
+  <Association Identifier=".dav" ProgId="mplayerc64.dav" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".dff" ProgId="mplayerc64.dff" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".dib" ProgId="AppX43hnxtbyyps62jhe9sqpdzxn1790zetc" ApplicationName="Photos" />
+  <Association Identifier=".divx" ProgId="mplayerc64.divx" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".dsf" ProgId="mplayerc64.dsf" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".dv" ProgId="mplayerc64.dv" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".ec3" ProgId="AppXqj98qxeaynz6dv4459ayz6bnqxbyaqcs" ApplicationName="Groove Music" />
+  <Association Identifier=".erf" ProgId="AppX43hnxtbyyps62jhe9sqpdzxn1790zetc" ApplicationName="Photos" />
+  <Association Identifier=".evo" ProgId="mplayerc64.evo" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".f4v" ProgId="mplayerc64.f4v" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".fbx" ProgId="AppXmgw6pxxs62rbgfp9petmdyb4fx7rnd4k" ApplicationName="3D Viewer" />
+  <Association Identifier=".flac" ProgId="AppXqj98qxeaynz6dv4459ayz6bnqxbyaqcs" ApplicationName="Groove Music" />
+  <Association Identifier=".flv" ProgId="mplayerc64.flv" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".gif" ProgId="AppX43hnxtbyyps62jhe9sqpdzxn1790zetc" ApplicationName="Photos" />
+  <Association Identifier=".glb" ProgId="AppXmgw6pxxs62rbgfp9petmdyb4fx7rnd4k" ApplicationName="3D Viewer" />
+  <Association Identifier=".gltf" ProgId="AppXmgw6pxxs62rbgfp9petmdyb4fx7rnd4k" ApplicationName="3D Viewer" />
+  <Association Identifier=".hdmov" ProgId="mplayerc64.hdmov" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".htm" ProgId="ChromeHTML" ApplicationName="Google Chrome" />
+  <Association Identifier=".html" ProgId="ChromeHTML" ApplicationName="Google Chrome" />
+  <Association Identifier=".ifo" ProgId="mplayerc64.ifo" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".inf" ProgId="inffile" ApplicationName="Notepad" />
+  <Association Identifier=".ini" ProgId="inifile" ApplicationName="Notepad" />
+  <Association Identifier=".ivf" ProgId="mplayerc64.ivf" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".jfif" ProgId="AppX43hnxtbyyps62jhe9sqpdzxn1790zetc" ApplicationName="Photos" />
+  <Association Identifier=".jpe" ProgId="AppX43hnxtbyyps62jhe9sqpdzxn1790zetc" ApplicationName="Photos" />
+  <Association Identifier=".jpeg" ProgId="AppX43hnxtbyyps62jhe9sqpdzxn1790zetc" ApplicationName="Photos" />
+  <Association Identifier=".jpg" ProgId="AppX43hnxtbyyps62jhe9sqpdzxn1790zetc" ApplicationName="Photos" />
+  <Association Identifier=".jxr" ProgId="AppX43hnxtbyyps62jhe9sqpdzxn1790zetc" ApplicationName="Photos" />
+  <Association Identifier=".kdc" ProgId="AppX43hnxtbyyps62jhe9sqpdzxn1790zetc" ApplicationName="Photos" />
+  <Association Identifier=".log" ProgId="txtfile" ApplicationName="Notepad" />
+  <Association Identifier=".m1v" ProgId="mplayerc64.m1v" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".m2p" ProgId="mplayerc64.m2p" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".m2t" ProgId="mplayerc64.m2t" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".m2ts" ProgId="mplayerc64.m2ts" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".M2V" ProgId="mplayerc64.m2v" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".m3u" ProgId="AppXqj98qxeaynz6dv4459ayz6bnqxbyaqcs" ApplicationName="Groove Music" />
+  <Association Identifier=".m4a" ProgId="AppXqj98qxeaynz6dv4459ayz6bnqxbyaqcs" ApplicationName="Groove Music" />
+  <Association Identifier=".m4b" ProgId="mplayerc64.m4b" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".m4r" ProgId="AppXqj98qxeaynz6dv4459ayz6bnqxbyaqcs" ApplicationName="Groove Music" />
+  <Association Identifier=".m4v" ProgId="mplayerc64.m4v" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".mht" ProgId="MSEdgeHTM" ApplicationName="Microsoft Edge" />
+  <Association Identifier=".mhtml" ProgId="MSEdgeHTM" ApplicationName="Microsoft Edge" />
+  <Association Identifier=".mk3d" ProgId="mplayerc64.mk3d" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".mka" ProgId="AppXqj98qxeaynz6dv4459ayz6bnqxbyaqcs" ApplicationName="Groove Music" />
+  <Association Identifier=".mkv" ProgId="mplayerc64.mkv" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".mo3" ProgId="mplayerc64.mo3" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".mod" ProgId="AppX6eg8h5sxqq90pv53845wmnbewywdqq5h" ApplicationName="Films &amp; TV" />
+  <Association Identifier=".mov" ProgId="mplayerc64.mov" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".MP2" ProgId="WMP11.AssocFile.MP3" ApplicationName="Windows Media Player" />
+  <Association Identifier=".mp2v" ProgId="mplayerc64.mp2v" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".mp3" ProgId="AppXqj98qxeaynz6dv4459ayz6bnqxbyaqcs" ApplicationName="Groove Music" />
+  <Association Identifier=".mp4" ProgId="mplayerc64.mp4" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".mp4v" ProgId="mplayerc64.mp4v" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".mpa" ProgId="AppXqj98qxeaynz6dv4459ayz6bnqxbyaqcs" ApplicationName="Groove Music" />
+  <Association Identifier=".mpcpl" ProgId="mplayerc64.mpcpl" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".MPE" ProgId="mplayerc64.mpe" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".mpeg" ProgId="mplayerc64.mpeg" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".mpg" ProgId="mplayerc64.mpg" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".mpl" ProgId="mplayerc64.mpl" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".mpls" ProgId="mplayerc64.mpls" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".mpv2" ProgId="mplayerc64.mpv2" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".mpv4" ProgId="mplayerc64.mpv4" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".mrw" ProgId="AppX43hnxtbyyps62jhe9sqpdzxn1790zetc" ApplicationName="Photos" />
+  <Association Identifier=".mtm" ProgId="mplayerc64.mtm" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".mts" ProgId="mplayerc64.mts" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".mxf" ProgId="mplayerc64.mxf" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".nef" ProgId="AppX43hnxtbyyps62jhe9sqpdzxn1790zetc" ApplicationName="Photos" />
+  <Association Identifier=".nrw" ProgId="AppX43hnxtbyyps62jhe9sqpdzxn1790zetc" ApplicationName="Photos" />
+  <Association Identifier=".obj" ProgId="AppXmgw6pxxs62rbgfp9petmdyb4fx7rnd4k" ApplicationName="3D Viewer" />
+  <Association Identifier=".ofr" ProgId="mplayerc64.ofr" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".ofs" ProgId="mplayerc64.ofs" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".oga" ProgId="AppXqj98qxeaynz6dv4459ayz6bnqxbyaqcs" ApplicationName="Groove Music" />
+  <Association Identifier=".ogg" ProgId="AppXqj98qxeaynz6dv4459ayz6bnqxbyaqcs" ApplicationName="Groove Music" />
+  <Association Identifier=".ogm" ProgId="mplayerc64.ogm" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".ogv" ProgId="mplayerc64.ogv" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".ogx" ProgId="AppX6eg8h5sxqq90pv53845wmnbewywdqq5h" ApplicationName="Films &amp; TV" />
+  <Association Identifier=".opus" ProgId="AppXqj98qxeaynz6dv4459ayz6bnqxbyaqcs" ApplicationName="Groove Music" />
+  <Association Identifier=".orf" ProgId="AppX43hnxtbyyps62jhe9sqpdzxn1790zetc" ApplicationName="Photos" />
+  <Association Identifier=".pdf" ProgId="Acrobat.Document.DC" ApplicationName="Adobe Acrobat" />
+  <Association Identifier=".pef" ProgId="AppX43hnxtbyyps62jhe9sqpdzxn1790zetc" ApplicationName="Photos" />
+  <Association Identifier=".ply" ProgId="AppXmgw6pxxs62rbgfp9petmdyb4fx7rnd4k" ApplicationName="3D Viewer" />
+  <Association Identifier=".png" ProgId="AppX43hnxtbyyps62jhe9sqpdzxn1790zetc" ApplicationName="Photos" />
+  <Association Identifier=".ps1" ProgId="Microsoft.PowerShellScript.1" ApplicationName="Notepad" />
+  <Association Identifier=".psd1" ProgId="Microsoft.PowerShellData.1" ApplicationName="Notepad" />
+  <Association Identifier=".psm1" ProgId="Microsoft.PowerShellModule.1" ApplicationName="Notepad" />
+  <Association Identifier=".raf" ProgId="AppX43hnxtbyyps62jhe9sqpdzxn1790zetc" ApplicationName="Photos" />
+  <Association Identifier=".ram" ProgId="mplayerc64.ram" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".raw" ProgId="AppX43hnxtbyyps62jhe9sqpdzxn1790zetc" ApplicationName="Photos" />
+  <Association Identifier=".rec" ProgId="mplayerc64.rec" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".rm" ProgId="mplayerc64.rm" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".rmvb" ProgId="mplayerc64.rmvb" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".rw2" ProgId="AppX43hnxtbyyps62jhe9sqpdzxn1790zetc" ApplicationName="Photos" />
+  <Association Identifier=".rwl" ProgId="AppX43hnxtbyyps62jhe9sqpdzxn1790zetc" ApplicationName="Photos" />
+  <Association Identifier=".scp" ProgId="txtfile" ApplicationName="Notepad" />
+  <Association Identifier=".smk" ProgId="mplayerc64.smk" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".sr2" ProgId="AppX43hnxtbyyps62jhe9sqpdzxn1790zetc" ApplicationName="Photos" />
+  <Association Identifier=".srw" ProgId="AppX43hnxtbyyps62jhe9sqpdzxn1790zetc" ApplicationName="Photos" />
+  <Association Identifier=".ssif" ProgId="mplayerc64.ssif" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".svg" ProgId="MSEdgeHTM" ApplicationName="Microsoft Edge" />
+  <Association Identifier=".tak" ProgId="mplayerc64.tak" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".tif" ProgId="PhotoViewer.FileAssoc.Tiff" ApplicationName="Windows Photo Viewer" />
+  <Association Identifier=".tiff" ProgId="PhotoViewer.FileAssoc.Tiff" ApplicationName="Windows Photo Viewer" />
+  <Association Identifier=".tod" ProgId="AppX6eg8h5sxqq90pv53845wmnbewywdqq5h" ApplicationName="Films &amp; TV" />
+  <Association Identifier=".tp" ProgId="mplayerc64.tp" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".trp" ProgId="mplayerc64.trp" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".TS" ProgId="mplayerc64.ts" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".TTS" ProgId="AppX6eg8h5sxqq90pv53845wmnbewywdqq5h" ApplicationName="Films &amp; TV" />
+  <Association Identifier=".txt" ProgId="txtfile" ApplicationName="Notepad" />
+  <Association Identifier=".umx" ProgId="mplayerc64.umx" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".url" ProgId="IE.AssocFile.URL" ApplicationName="Internet Browser" />
+  <Association Identifier=".video" ProgId="mplayerc64.video" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".vob" ProgId="mplayerc64.vob" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".wav" ProgId="AppXqj98qxeaynz6dv4459ayz6bnqxbyaqcs" ApplicationName="Groove Music" />
+  <Association Identifier=".wdp" ProgId="AppX43hnxtbyyps62jhe9sqpdzxn1790zetc" ApplicationName="Photos" />
+  <Association Identifier=".webm" ProgId="mplayerc64.webm" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".website" ProgId="IE.AssocFile.WEBSITE" ApplicationName="Internet Explorer" />
+  <Association Identifier=".wm" ProgId="AppX6eg8h5sxqq90pv53845wmnbewywdqq5h" ApplicationName="Films &amp; TV" />
+  <Association Identifier=".wma" ProgId="AppXqj98qxeaynz6dv4459ayz6bnqxbyaqcs" ApplicationName="Groove Music" />
+  <Association Identifier=".wmv" ProgId="mplayerc64.wmv" ApplicationName="MPC-HC (x64)" />
+  <Association Identifier=".WPL" ProgId="AppXqj98qxeaynz6dv4459ayz6bnqxbyaqcs" ApplicationName="Groove Music" />
+  <Association Identifier=".wtx" ProgId="txtfile" ApplicationName="Notepad" />
+  <Association Identifier=".xvid" ProgId="AppX6eg8h5sxqq90pv53845wmnbewywdqq5h" ApplicationName="Films &amp; TV" />
+  <Association Identifier=".zpl" ProgId="AppXqj98qxeaynz6dv4459ayz6bnqxbyaqcs" ApplicationName="Groove Music" />
+  <Association Identifier="bingmaps" ProgId="AppXp9gkwccvk6fa6yyfq3tmsk8ws2nprk1p" ApplicationName="Maps" />
+  <Association Identifier="http" ProgId="ChromeHTML" ApplicationName="Google Chrome" />
+  <Association Identifier="https" ProgId="ChromeHTML" ApplicationName="Google Chrome" />
+  <Association Identifier="mailto" ProgId="AppXydk58wgm44se4b399557yyyj1w7mbmvd" ApplicationName="Mail" />
+  <Association Identifier="microsoft-edge" ProgId="MSEdgeHTM" ApplicationName="Microsoft Edge" />
+  <Association Identifier="microsoft-edge-holographic" ProgId="MSEdgeHTM" ApplicationName="Microsoft Edge" />
+  <Association Identifier="ms-xbl-3d8b930f" ProgId="MSEdgeHTM" ApplicationName="Microsoft Edge" />
+  <Association Identifier="mswindowsmusic" ProgId="AppXtggqqtcfspt6ks3fjzyfppwc05yxwtwy" ApplicationName="Groove Music" />
+  <Association Identifier="mswindowsvideo" ProgId="AppX6w6n4f8xch1s3vzwf3af6bfe88qhxbza" ApplicationName="Films &amp; TV" />
+  <Association Identifier="read" ProgId="MSEdgeHTM" ApplicationName="Microsoft Edge" />
+</DefaultAssociations>
