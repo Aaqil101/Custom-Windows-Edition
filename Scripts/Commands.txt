@@ -1,0 +1,2 @@
+# Create the Task Using Command Prompt (as Administrator)
+schtasks /create /tn "\Winhance\BloatRemoval" /xml "C:\BloatRemoval.xml" /f
