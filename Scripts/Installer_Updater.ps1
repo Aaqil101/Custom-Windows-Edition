@@ -1,247 +1,50 @@
-# Software Installer Updater Script
-# Uses Winget first, falls back to Chocolatey, downloads latest installers
+# Winget Installer Updater with Version Check
+# Checks for latest versions and updates installers if needed
 
 # Set your target folder path here
-$TargetFolder = "D:\ISO FIles\Custom ISO Files\SetupFiles\Software"  # Change this to your folder path
+$TargetFolder = "D:\ISO FIles\Custom ISO Files\SetupFiles\Software"
 
 # Create folder if it doesn't exist
 if (!(Test-Path $TargetFolder)) {
     New-Item -ItemType Directory -Path $TargetFolder -Force | Out-Null
 }
 
-Write-Host "========================================" -ForegroundColor Cyan
-Write-Host "Software Installer Updater" -ForegroundColor Cyan
-Write-Host "========================================" -ForegroundColor Cyan
-Write-Host "Target folder: $TargetFolder`n" -ForegroundColor Yellow
+Write-Host "================================" -ForegroundColor Cyan
+Write-Host "Winget Installer Updater" -ForegroundColor Cyan
+Write-Host "================================" -ForegroundColor Cyan
+Write-Host "Target: $TargetFolder`n" -ForegroundColor Yellow
 
-# Check if Winget is installed
-Write-Host "Checking for Winget..." -ForegroundColor Cyan
-$wingetInstalled = $false
+# Check if Winget is available
 try {
     $null = winget --version
-    $wingetInstalled = $true
-    Write-Host "✓ Winget is installed`n" -ForegroundColor Green
+    Write-Host "[OK] Winget is available`n" -ForegroundColor Green
 }
 catch {
-    Write-Host "✗ Winget is NOT installed" -ForegroundColor Red
-    Write-Host "  Install from: https://aka.ms/getwinget`n" -ForegroundColor Yellow
-}
-
-# Check if Chocolatey is installed
-Write-Host "Checking for Chocolatey..." -ForegroundColor Cyan
-$chocoInstalled = $false
-try {
-    $null = choco --version
-    $chocoInstalled = $true
-    Write-Host "✓ Chocolatey is installed`n" -ForegroundColor Green
-}
-catch {
-    Write-Host "✗ Chocolatey is NOT installed" -ForegroundColor Red
-    Write-Host "  Install with: Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))`n" -ForegroundColor Yellow
-}
-
-if (!$wingetInstalled -and !$chocoInstalled) {
-    Write-Host "ERROR: Neither Winget nor Chocolatey is installed. Please install at least one." -ForegroundColor Red
+    Write-Host "[ERROR] Winget is not installed!" -ForegroundColor Red
+    Write-Host "Install from: https://aka.ms/getwinget" -ForegroundColor Yellow
     exit
 }
 
-Write-Host "========================================`n" -ForegroundColor Cyan
-
-# Define software with Winget and Chocolatey package names
-$Software = @(
-    @{
-        Name = "WinRAR"
-        WingetID = "RARLab.WinRAR"
-        ChocoID = "winrar"
-        DesiredName = "winrar"
-    },
-    @{
-        Name = "VLC"
-        WingetID = "VideoLAN.VLC"
-        ChocoID = "vlc"
-        DesiredName = "vlc-{version}-win64"
-        DynamicVersion = $true
-    },
-    @{
-        Name = "QuickLook"
-        WingetID = "QL-Win.QuickLook"
-        ChocoID = "quicklook"
-        DesiredName = "QuickLook"
-    },
-    @{
-        Name = "K-Lite Codec Pack Mega"
-        WingetID = "CodecGuide.K-LiteCodecPack.Mega"
-        ChocoID = "k-litecodecpackmega"
-        DesiredName = "K-Lite_Codec_Pack_Mega"
-    },
-    @{
-        Name = "Google Chrome"
-        WingetID = "Google.Chrome"
-        ChocoID = "googlechrome"
-        DesiredName = "googlechromestandaloneenterprise64"
-    },
-    @{
-        Name = "File Converter"
-        WingetID = "AdrienAllard.FileConverter"
-        ChocoID = "file-converter"
-        DesiredName = "FileConverter"
-    },
-    @{
-        Name = "Everything"
-        WingetID = "voidtools.Everything"
-        ChocoID = "everything"
-        DesiredName = "Everything"
-    },
-    @{
-        Name = "AnyDesk"
-        WingetID = "AnyDeskSoftwareGmbH.AnyDesk"
-        ChocoID = "anydesk"
-        DesiredName = "AnyDesk"
-    },
-    @{
-        Name = "7-Zip"
-        WingetID = "7zip.7zip"
-        ChocoID = "7zip"
-        DesiredName = "7-zip"
-    }
+# Define software to download
+$Apps = @(
+    @{ Name = "WinRAR"; ID = "RARLab.WinRAR" },
+    @{ Name = "VLC"; ID = "VideoLAN.VLC" },
+    @{ Name = "QuickLook"; ID = "QL-Win.QuickLook" },
+    @{ Name = "K-Lite Codec Pack Mega"; ID = "CodecGuide.K-LiteCodecPack.Mega" },
+    @{ Name = "Google Chrome"; ID = "Google.Chrome" },
+    @{ Name = "File Converter"; ID = "AdrienAllard.FileConverter" },
+    @{ Name = "Everything"; ID = "voidtools.Everything" },
+    @{ Name = "AnyDesk"; ID = "AnyDeskSoftwareGmbH.AnyDesk" },
+    @{ Name = "7-Zip"; ID = "7zip.7zip" }
 )
 
-# Function to download with Winget
-function Download-WithWinget {
-    param($ID, $Name, $Destination, $DynamicVersion)
-
-    Write-Host "  Trying Winget..." -ForegroundColor Yellow
-    try {
-        $tempDir = Join-Path $env:TEMP "winget_download_$([guid]::NewGuid())"
-        New-Item -ItemType Directory -Path $tempDir -Force | Out-Null
-
-        # Get version info if dynamic versioning is needed
-        $version = ""
-        if ($DynamicVersion) {
-            $wingetInfo = winget show --id $ID --accept-source-agreements 2>&1 | Out-String
-            if ($wingetInfo -match "Version:\s+(.+)") {
-                $version = $matches[1].Trim()
-                Write-Host "  Detected version: $version" -ForegroundColor Cyan
-            }
-        }
-
-        Write-Host ""
-        winget download --id $ID --download-directory $tempDir --accept-source-agreements --accept-package-agreements
-        Write-Host ""
-
-        # Find the downloaded installer
-        $installers = Get-ChildItem -Path $tempDir -Recurse -Include *.exe, *.msi, *.msix, *.appx
-
-        if ($installers.Count -gt 0) {
-            $installer = $installers[0]
-            $extension = $installer.Extension
-
-            # Replace {version} placeholder if present
-            $finalName = $Name
-            if ($DynamicVersion -and $version -and $Name -match "\{version\}") {
-                $finalName = $Name -replace "\{version\}", $version
-            }
-
-            $destPath = Join-Path $Destination "$finalName$extension"
-
-            # Remove old file if exists
-            if (Test-Path $destPath) {
-                Remove-Item $destPath -Force
-            }
-
-            Move-Item $installer.FullName $destPath -Force
-
-            # Cleanup temp directory
-            Remove-Item $tempDir -Recurse -Force -ErrorAction SilentlyContinue
-
-            # Clean up any YAML files in target directory
-            Get-ChildItem -Path $Destination -Filter "*.yaml" | Remove-Item -Force -ErrorAction SilentlyContinue
-
-            $fileSize = (Get-Item $destPath).Length / 1MB
-            Write-Host "  ✓ Downloaded with Winget ($([math]::Round($fileSize, 2)) MB)" -ForegroundColor Green
-            return $true
-        }
-        else {
-            Remove-Item $tempDir -Recurse -Force -ErrorAction SilentlyContinue
-            return $false
-        }
-    }
-    catch {
-        Write-Host "  ✗ Winget failed: $_" -ForegroundColor Red
-        return $false
-    }
-}
-
-# Function to download with Chocolatey
-function Download-WithChocolatey {
-    param($ID, $Name, $Destination, $DynamicVersion)
-
-    Write-Host "  Trying Chocolatey..." -ForegroundColor Yellow
-    try {
-        # Get version info if dynamic versioning is needed
-        $version = ""
-        if ($DynamicVersion) {
-            $chocoInfo = choco info $ID 2>&1 | Out-String
-            if ($chocoInfo -match "(\d+\.\d+\.\d+)") {
-                $version = $matches[1]
-                Write-Host "  Detected version: $version" -ForegroundColor Cyan
-            }
-        }
-
-        Write-Host ""
-        choco download $ID --output-directory="$Destination" -y
-        Write-Host ""
-
-        # Find the downloaded installer
-        $installers = Get-ChildItem -Path $Destination -Filter "*$ID*" -Include *.exe, *.msi, *.nupkg |
-                      Where-Object { $_.LastWriteTime -gt (Get-Date).AddMinutes(-2) } |
-                      Sort-Object LastWriteTime -Descending |
-                      Select-Object -First 1
-
-        if ($installers) {
-            $extension = $installers.Extension
-
-            # Replace {version} placeholder if present
-            $finalName = $Name
-            if ($DynamicVersion -and $version -and $Name -match "\{version\}") {
-                $finalName = $Name -replace "\{version\}", $version
-            }
-
-            $destPath = Join-Path $Destination "$finalName$extension"
-
-            # Remove old file if exists with same name
-            if (Test-Path $destPath) {
-                Remove-Item $destPath -Force
-            }
-
-            # Rename if different
-            if ($installers.FullName -ne $destPath) {
-                Move-Item $installers.FullName $destPath -Force
-            }
-
-            # Clean up any YAML files in target directory
-            Get-ChildItem -Path $Destination -Filter "*.yaml" | Remove-Item -Force -ErrorAction SilentlyContinue
-
-            $fileSize = (Get-Item $destPath).Length / 1MB
-            Write-Host "  ✓ Downloaded with Chocolatey ($([math]::Round($fileSize, 2)) MB)" -ForegroundColor Green
-            return $true
-        }
-        else {
-            return $false
-        }
-    }
-    catch {
-        Write-Host "  ✗ Chocolatey failed: $_" -ForegroundColor Red
-        return $false
-    }
-}
-
 # Function to get latest version from Winget
-function Get-WingetVersion {
-    param($ID)
+function Get-LatestVersion {
+    param($PackageID)
+
     try {
-        $wingetInfo = winget show --id $ID --accept-source-agreements 2>&1 | Out-String
-        if ($wingetInfo -match "Version:\s+(.+)") {
+        $info = winget show --id $PackageID --accept-source-agreements 2>&1 | Out-String
+        if ($info -match "Version:\s+(\d+\.[\d\.]+)") {
             return $matches[1].Trim()
         }
     }
@@ -251,125 +54,157 @@ function Get-WingetVersion {
     return $null
 }
 
-# Function to get latest version from Chocolatey
-function Get-ChocoVersion {
-    param($ID)
+# Function to extract version from filename
+function Get-FileVersion {
+    param($FileName)
+
+    if ($FileName -match "(\d+\.[\d\.]+)") {
+        return $matches[1]
+    }
+    return $null
+}
+
+# Function to compare versions
+function Compare-Versions {
+    param($Version1, $Version2)
+
     try {
-        $chocoInfo = choco info $ID 2>&1 | Out-String
-        if ($chocoInfo -match "(\d+\.\d+[\.\d+]*)") {
-            return $matches[1]
+        $v1 = [version]$Version1
+        $v2 = [version]$Version2
+
+        if ($v1 -gt $v2) { return 1 }
+        elseif ($v1 -lt $v2) { return -1 }
+        else { return 0 }
+    }
+    catch {
+        return -1  # If comparison fails, assume update needed
+    }
+}
+
+# Counters
+$updated = 0
+$skipped = 0
+$failed = 0
+
+# Process each app
+foreach ($app in $Apps) {
+    Write-Host "Checking: $($app.Name)" -ForegroundColor Cyan
+
+    try {
+        # Get latest available version
+        $latestVersion = Get-LatestVersion -PackageID $app.ID
+
+        if ($latestVersion) {
+            Write-Host "  Latest version: $latestVersion" -ForegroundColor Yellow
+        }
+        else {
+            Write-Host "  [WARN] Could not determine latest version" -ForegroundColor Yellow
+        }
+
+        # Look for existing installer in target folder
+        $existingFiles = Get-ChildItem -Path $TargetFolder -File | Where-Object {
+            $_.Name -match [regex]::Escape($app.Name) -or
+            $_.Name -match ($app.ID -split '\.' | Select-Object -Last 1)
+        }
+
+        $needsUpdate = $true
+        $oldFileName = $null
+
+        if ($existingFiles) {
+            $existingFile = $existingFiles[0]
+            $oldFileName = $existingFile.Name
+            $existingVersion = Get-FileVersion -FileName $existingFile.Name
+
+            Write-Host "  Existing file: $oldFileName" -ForegroundColor Gray
+
+            if ($existingVersion -and $latestVersion) {
+                Write-Host "  Installed version: $existingVersion" -ForegroundColor Gray
+
+                $comparison = Compare-Versions -Version1 $existingVersion -Version2 $latestVersion
+
+                if ($comparison -ge 0) {
+                    Write-Host "  [OK] Already up to date!" -ForegroundColor Green
+                    $needsUpdate = $false
+                    $skipped++
+                }
+                else {
+                    Write-Host "  [UPDATE] Newer version available" -ForegroundColor Yellow
+                }
+            }
+            else {
+                Write-Host "  [UPDATE] Downloading latest version" -ForegroundColor Yellow
+            }
+        }
+        else {
+            Write-Host "  [NEW] No existing installer found" -ForegroundColor Yellow
+        }
+
+        # Download if needed
+        if ($needsUpdate) {
+            # Create temp directory
+            $tempDir = Join-Path $env:TEMP "winget_$([guid]::NewGuid())"
+            New-Item -ItemType Directory -Path $tempDir -Force | Out-Null
+
+            Write-Host "  Downloading..." -ForegroundColor Cyan
+            Write-Host ""
+
+            # Download using winget (show output)
+            winget download --id $($app.ID) --download-directory $tempDir --accept-source-agreements --accept-package-agreements
+
+            Write-Host ""
+
+            # Find the installer file
+            $installer = Get-ChildItem -Path $tempDir -Recurse -Include *.exe, *.msi | Select-Object -First 1
+
+            if ($installer) {
+                # Determine final filename
+                if ($oldFileName) {
+                    # Use the old filename to maintain naming convention
+                    $finalFileName = $oldFileName
+                }
+                else {
+                    # Use the downloaded filename
+                    $finalFileName = $installer.Name
+                }
+
+                $destination = Join-Path $TargetFolder $finalFileName
+
+                # Remove old file if it exists
+                if (Test-Path $destination) {
+                    Remove-Item $destination -Force
+                }
+
+                # Move new file to destination
+                Move-Item $installer.FullName $destination -Force
+
+                $sizeMB = [math]::Round((Get-Item $destination).Length / 1MB, 2)
+                Write-Host "  [OK] Downloaded: $finalFileName ($sizeMB MB)" -ForegroundColor Green
+                $updated++
+            }
+            else {
+                Write-Host "  [FAIL] No installer found after download" -ForegroundColor Red
+                $failed++
+            }
+
+            # Cleanup temp directory
+            Remove-Item $tempDir -Recurse -Force -ErrorAction SilentlyContinue
         }
     }
     catch {
-        return $null
-    }
-    return $null
-}
-
-# Function to check if file exists with version
-function Get-InstalledVersion {
-    param($Destination, $NamePattern)
-
-    # Convert name pattern to regex (replace {version} with version capture group)
-    $pattern = $NamePattern -replace "\{version\}", "(\d+\.\d+[\.\d+]*)"
-
-    # Find files matching the pattern
-    $files = Get-ChildItem -Path $Destination -File | Where-Object {
-        $_.BaseName -match $pattern
-    }
-
-    if ($files) {
-        # Extract version from filename
-        $file = $files | Select-Object -First 1
-        if ($file.BaseName -match "(\d+\.\d+[\.\d+]*)") {
-            return @{
-                Version = $matches[1]
-                File = $file
-            }
-        }
-    }
-
-    return $null
-}
-
-# Download each software
-foreach ($app in $Software) {
-    Write-Host "Checking $($app.Name)..." -ForegroundColor Cyan
-
-    # Get latest available version
-    $latestVersion = $null
-    if ($wingetInstalled) {
-        $latestVersion = Get-WingetVersion -ID $app.WingetID
-    }
-    if (!$latestVersion -and $chocoInstalled) {
-        $latestVersion = Get-ChocoVersion -ID $app.ChocoID
-    }
-
-    if ($latestVersion) {
-        Write-Host "  Latest version available: $latestVersion" -ForegroundColor Cyan
-    }
-
-    # Check if we already have this version installed
-    $needsUpdate = $true
-    if ($app.DynamicVersion -and $latestVersion) {
-        $installed = Get-InstalledVersion -Destination $TargetFolder -NamePattern $app.DesiredName
-
-        if ($installed) {
-            Write-Host "  Installed version: $($installed.Version)" -ForegroundColor Yellow
-
-            if ($installed.Version -eq $latestVersion) {
-                Write-Host "  ✓ Already up to date! Skipping download." -ForegroundColor Green
-                $needsUpdate = $false
-            }
-            else {
-                Write-Host "  ⚠ Update available! Downloading..." -ForegroundColor Yellow
-                # Delete old version
-                Remove-Item $installed.File.FullName -Force
-            }
-        }
-        else {
-            Write-Host "  No existing version found. Downloading..." -ForegroundColor Yellow
-        }
-    }
-    else {
-        # For non-dynamic versions, check if any file exists with the desired name
-        $existingFiles = Get-ChildItem -Path $TargetFolder -File | Where-Object {
-            $_.BaseName -like "$($app.DesiredName)*"
-        }
-
-        if ($existingFiles) {
-            Write-Host "  File exists: $($existingFiles[0].Name)" -ForegroundColor Yellow
-            Write-Host "  Re-downloading to ensure latest version..." -ForegroundColor Yellow
-            Remove-Item $existingFiles[0].FullName -Force
-        }
-        else {
-            Write-Host "  No existing file found. Downloading..." -ForegroundColor Yellow
-        }
-    }
-
-    # Download if needed
-    if ($needsUpdate) {
-        $success = $false
-
-        # Try Winget first
-        if ($wingetInstalled) {
-            $success = Download-WithWinget -ID $app.WingetID -Name $app.DesiredName -Destination $TargetFolder -DynamicVersion $app.DynamicVersion
-        }
-
-        # Fall back to Chocolatey if Winget failed
-        if (!$success -and $chocoInstalled) {
-            $success = Download-WithChocolatey -ID $app.ChocoID -Name $app.DesiredName -Destination $TargetFolder -DynamicVersion $app.DynamicVersion
-        }
-
-        if (!$success) {
-            Write-Host "  ✗ Failed to download $($app.Name)" -ForegroundColor Red
-        }
+        Write-Host "  [FAIL] Error: $($_.Exception.Message)" -ForegroundColor Red
+        $failed++
     }
 
     Write-Host ""
 }
 
-Write-Host "========================================" -ForegroundColor Cyan
-Write-Host "Download process completed!" -ForegroundColor Green
-Write-Host "Files saved to: $TargetFolder" -ForegroundColor Yellow
-Write-Host "========================================" -ForegroundColor Cyan
+Write-Host "================================" -ForegroundColor Cyan
+Write-Host "Update Complete!" -ForegroundColor Green
+Write-Host ""
+Write-Host "Summary:" -ForegroundColor Cyan
+Write-Host "  Updated: $updated" -ForegroundColor Green
+Write-Host "  Already up to date: $skipped" -ForegroundColor Yellow
+Write-Host "  Failed: $failed" -ForegroundColor Red
+Write-Host ""
+Write-Host "Files location: $TargetFolder" -ForegroundColor Yellow
+Write-Host "================================" -ForegroundColor Cyan
