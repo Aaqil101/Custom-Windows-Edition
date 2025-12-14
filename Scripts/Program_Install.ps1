@@ -1,44 +1,88 @@
 #Requires -Version 5.0
 #Requires -RunAsAdministrator
 
-# Set location to script directory
+param(
+    [Parameter(Mandatory = $false)]
+    [string]$SetupPath = "$env:WINDIR\Setup\Files",
+
+    [Parameter(Mandatory = $false)]
+    [switch]$SkipValidation,
+
+    [Parameter(Mandatory = $false)]
+    [string[]]$ProgramsToInstall,
+
+    [Parameter(Mandatory = $false)]
+    [switch]$Verbose
+)
+
+# Performance optimizations
+$ErrorActionPreference = 'Stop'
+$ProgressPreference = 'SilentlyContinue'
 Set-Location -Path $PSScriptRoot
 
-# Configure console for better output
-$Host.UI.RawUI.WindowTitle = "Program Installation Suite"
-$Host.UI.RawUI.BackgroundColor = "Black"
-$Host.UI.RawUI.ForegroundColor = "White"
+# Configure console
+$Host.UI.RawUI.WindowTitle = "⚡ Program Installation Suite"
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
-# Color scheme
-$colors = @{
-    Header    = 'Cyan'
-    Success   = 'Green'
-    Info      = 'Yellow'
-    Progress  = 'Magenta'
-    Separator = 'DarkGray'
-    White     = 'White'
+# Enhanced color palette
+$c = @{
+    Cyan     = [ConsoleColor]::Cyan
+    Green    = [ConsoleColor]::Green
+    Yellow   = [ConsoleColor]::Yellow
+    Magenta  = [ConsoleColor]::Magenta
+    DarkGray = [ConsoleColor]::DarkGray
+    White    = [ConsoleColor]::White
+    Red      = [ConsoleColor]::Red
+    Blue     = [ConsoleColor]::Blue
+    DarkCyan = [ConsoleColor]::DarkCyan
 }
 
-# ASCII-safe icons
-$icons = @{
-    Arrow   = ">"
-    Success = "[OK]"
-    Failure = "[FAIL]"
-    Block   = "#"
-    Empty   = "-"
+# Unicode box drawing characters
+$box = @{
+    TopLeft     = '╔'
+    TopRight    = '╗'
+    BottomLeft  = '╚'
+    BottomRight = '╝'
+    Horizontal  = '═'
+    Vertical    = '║'
+    Block       = '█'
+    Shade       = '░'
+    Arrow       = '→'
+    Check       = '✓'
+    Cross       = '✗'
+    Dot         = '●'
 }
 
-# Function to display a fancy header
-function Show-Header {
-    Clear-Host
-    Write-Host ""
-    Write-Host "=================================================================" -ForegroundColor $colors.Header
-    Write-Host "          AUTOMATED PROGRAM INSTALLATION SUITE" -ForegroundColor $colors.White
-    Write-Host "=================================================================" -ForegroundColor $colors.Header
-    Write-Host ""
+function Write-BoxedHeader {
+    param([string]$Text, [int]$Width = 65)
+
+    $padding = $Width - $Text.Length - 2
+    $leftPad = [math]::Floor($padding / 2)
+    $rightPad = [math]::Ceiling($padding / 2)
+
+    Write-Host "$($box.TopLeft)$($box.Horizontal * $Width)$($box.TopRight)" -ForegroundColor $c.Cyan
+    Write-Host "$($box.Vertical)$(' ' * $leftPad)$Text$(' ' * $rightPad)$($box.Vertical)" -ForegroundColor $c.Cyan
+    Write-Host "$($box.BottomLeft)$($box.Horizontal * $Width)$($box.BottomRight)" -ForegroundColor $c.Cyan
 }
 
-# Function to display installation status
+function Show-AnimatedProgress {
+    param([int]$Percent, [int]$Width = 30)
+
+    $filled = [math]::Floor($Width * $Percent / 100)
+    $empty = $Width - $filled
+
+    $bar = ($box.Block * $filled) + ($box.Shade * $empty)
+
+    $color = switch ($Percent) {
+        { $_ -lt 50 } { $c.Yellow }
+        { $_ -lt 100 } { $c.Blue }
+        default { $c.Green }
+    }
+
+    Write-Host "  [$bar] " -NoNewline -ForegroundColor $color
+    Write-Host "$Percent%" -ForegroundColor $color
+}
+
 function Install-Program {
     param(
         [string]$Name,
@@ -49,112 +93,149 @@ function Install-Program {
     )
 
     Write-Host ""
-    Write-Host "[$Current/$Total] " -NoNewline -ForegroundColor $colors.Progress
-    Write-Host $Name -ForegroundColor $colors.White
-    Write-Host "  ---------------------------------------------------------------" -ForegroundColor $colors.Separator
+    Write-Host " $($box.Dot) " -NoNewline -ForegroundColor $c.Magenta
+    Write-Host "[$Current/$Total] " -NoNewline -ForegroundColor $c.DarkCyan
+    Write-Host $Name -ForegroundColor $c.White
+    Write-Host "  $($box.Horizontal * 63)" -ForegroundColor $c.DarkGray
 
-    # Show 0% progress bar at start
-    $progressBarEmpty = ($icons.Empty * 20)
-    Write-Host "  $($icons.Arrow) Installing... " -NoNewline -ForegroundColor $colors.Info
-    Write-Host "[$progressBarEmpty] 0%" -ForegroundColor $colors.Info
+    # Initial progress
+    Write-Host "  $($box.Arrow) Installing... " -NoNewline -ForegroundColor $c.Yellow
+    Show-AnimatedProgress -Percent 0
+
+    $startTime = Get-Date
 
     try {
-        $process = Start-Process -FilePath $FilePath -ArgumentList $Arguments -Wait -PassThru -NoNewWindow -ErrorAction Stop
+        # Validate file exists
+        if (-not (Test-Path $FilePath)) {
+            throw "Installer not found: $FilePath"
+        }
 
-        # Move cursor up to overwrite the progress line
+        # Start installation with optimized settings
+        $processInfo = New-Object System.Diagnostics.ProcessStartInfo
+        $processInfo.FileName = $FilePath
+        $processInfo.Arguments = $Arguments -join ' '
+        $processInfo.UseShellExecute = $false
+        $processInfo.CreateNoWindow = $true
+        $processInfo.RedirectStandardOutput = $true
+        $processInfo.RedirectStandardError = $true
+
+        $process = New-Object System.Diagnostics.Process
+        $process.StartInfo = $processInfo
+        [void]$process.Start()
+
+        # Simulate progress animation while waiting
+        $progressSteps = @(25, 50, 75)
+        $stepDelay = 500
+
+        foreach ($step in $progressSteps) {
+            if (-not $process.HasExited) {
+                Start-Sleep -Milliseconds $stepDelay
+                $cursorPos = $Host.UI.RawUI.CursorPosition
+                $cursorPos.Y--
+                $Host.UI.RawUI.CursorPosition = $cursorPos
+                Write-Host "  $($box.Arrow) Installing... " -NoNewline -ForegroundColor $c.Yellow
+                Show-AnimatedProgress -Percent $step
+            }
+        }
+
+        $process.WaitForExit()
+        $exitCode = $process.ExitCode
+
+        # Move cursor up to final line
         $cursorPos = $Host.UI.RawUI.CursorPosition
-        $cursorPos.Y = $cursorPos.Y - 1
+        $cursorPos.Y--
         $Host.UI.RawUI.CursorPosition = $cursorPos
 
-        if ($process.ExitCode -eq 0 -or $process.ExitCode -eq 3010) {
-            # Show 100% progress bar on success
-            $progressBarFull = ($icons.Block * 20)
-            Write-Host "  $($icons.Success) Complete!    " -NoNewline -ForegroundColor $colors.Success
-            Write-Host "[$progressBarFull] 100%" -ForegroundColor $colors.Success
+        $duration = ((Get-Date) - $startTime).TotalSeconds
+
+        if ($exitCode -eq 0 -or $exitCode -eq 3010) {
+            Write-Host "  $($box.Check) Complete!    " -NoNewline -ForegroundColor $c.Green
+            Show-AnimatedProgress -Percent 100
+            Write-Host "  Time: " -NoNewline -ForegroundColor $c.DarkGray
+            Write-Host "$([math]::Round($duration, 1))s" -ForegroundColor $c.White
         }
         else {
-            # Show failure with incomplete progress
-            $progressBarPartial = ($icons.Block * 10) + ($icons.Empty * 10)
-            Write-Host "  $($icons.Failure) Failed!      " -NoNewline -ForegroundColor Red
-            Write-Host "[$progressBarPartial] 50%  " -ForegroundColor Red
-            Write-Host "  Exit code: $($process.ExitCode)" -ForegroundColor Red
+            Write-Host "  $($box.Cross) Failed!      " -NoNewline -ForegroundColor $c.Red
+            Show-AnimatedProgress -Percent 50
+            Write-Host "  Exit Code: $exitCode" -ForegroundColor $c.Red
         }
     }
     catch {
-        # Move cursor up to overwrite the progress line
         $cursorPos = $Host.UI.RawUI.CursorPosition
-        $cursorPos.Y = $cursorPos.Y - 1
+        $cursorPos.Y--
         $Host.UI.RawUI.CursorPosition = $cursorPos
 
-        # Show failure
-        Write-Host "  $($icons.Failure) Failed!      " -NoNewline -ForegroundColor Red
-        Write-Host "[$progressBarEmpty] 0%  " -ForegroundColor Red
-        Write-Host "  Error: $($_.Exception.Message)" -ForegroundColor Red
+        Write-Host "  $($box.Cross) Error!       " -NoNewline -ForegroundColor $c.Red
+        Show-AnimatedProgress -Percent 0
+        Write-Host "  $($_.Exception.Message)" -ForegroundColor $c.Red
     }
 
-    Start-Sleep -Seconds 1
+    Start-Sleep -Milliseconds 500
 }
 
-# Display header
-Show-Header
+# Display animated header
+Clear-Host
+Write-Host ""
+Write-BoxedHeader -Text "⚡ AUTOMATED PROGRAM INSTALLATION SUITE ⚡"
+Write-Host ""
 
-# Define installation queue
+# Installation queue with optimized paths
 $programs = @(
     @{
         Name      = "K-Lite Codec Pack Mega"
-        FilePath  = "$env:WINDIR\Setup\Files\K-Lite Codec Pack Mega.exe"
+        FilePath  = "$SetupPath\K-Lite Codec Pack Mega.exe"
         Arguments = @(
             "/VERYSILENT",
             "/NORESTART",
             "/SUPPRESSMSGBOXES",
-            "/LOADINF=`"$env:WINDIR\Setup\Files\klcp_mega_unattended.ini`""
+            "/LOADINF=`"$SetupPath\klcp_mega_unattended.ini`""
         )
-    },
+    }
     @{
         Name      = "Google Chrome"
         FilePath  = "msiexec.exe"
         Arguments = @(
             "/i",
-            "`"$env:WINDIR\Setup\Files\Google Chrome.msi`"",
+            "`"$SetupPath\Google Chrome.msi`"",
             "/qb",
             "/norestart"
         )
-    },
+    }
     @{
         Name      = "QuickLook"
         FilePath  = "msiexec.exe"
         Arguments = @(
             "/i",
-            "`"$env:WINDIR\Setup\Files\QuickLook.msi`"",
+            "`"$SetupPath\QuickLook.msi`"",
             "INSTALLFOLDER=`"C:\Program Files (x86)\QuickLook`"",
             "ALLUSERS=1",
             "/qb",
             "/norestart"
         )
-    },
+    }
     @{
         Name      = "File Converter"
         FilePath  = "msiexec.exe"
         Arguments = @(
             "/i",
-            "`"$env:WINDIR\Setup\Files\File Converter.msi`"",
+            "`"$SetupPath\File Converter.msi`"",
             "/qb",
             "/norestart"
         )
-    },
+    }
     @{
         Name      = "7-Zip"
         FilePath  = "msiexec.exe"
         Arguments = @(
             "/i",
-            "`"$env:WINDIR\Setup\Files\7-Zip.msi`"",
+            "`"$SetupPath\7-Zip.msi`"",
             "/qb",
             "/norestart"
         )
-    },
+    }
     @{
         Name      = "AnyDesk"
-        FilePath  = "$env:WINDIR\Setup\Files\AnyDesk.exe"
+        FilePath  = "$SetupPath\AnyDesk.exe"
         Arguments = @(
             "--install",
             "`"C:\Program Files (x86)\AnyDesk`"",
@@ -162,50 +243,56 @@ $programs = @(
             "--create-shortcuts",
             "--create-desktop-icon"
         )
-    },
+    }
     @{
         Name      = "Everything"
-        FilePath  = "$env:WINDIR\Setup\Files\Everything.exe"
+        FilePath  = "$SetupPath\Everything.exe"
         Arguments = @(
             "/S",
             "-install-options",
             "`"-app-data -disable-run-as-admin -install-all-users-desktop-shortcut -install-efu-association install-quick-launch-shortcut -install-all-users-start-menu-shortcuts -install-folder-context-menu -install-run-on-system-startup`"",
             "/D=`"C:\Program Files\Everything`""
         )
-    },
+    }
     @{
         Name      = "VLC Media Player"
         FilePath  = "msiexec.exe"
         Arguments = @(
             "/i",
-            "`"$env:WINDIR\Setup\Files\VLC media player.msi`"",
+            "`"$SetupPath\VLC media player.msi`"",
             "/qb",
             "/norestart"
         )
-    },
+    }
     @{
         Name      = "WinRAR"
-        FilePath  = "$env:WINDIR\Setup\Files\WinRAR.exe"
+        FilePath  = "$SetupPath\WinRAR.exe"
         Arguments = @("/S")
     }
 )
 
-$totalPrograms = $programs.Count
-$currentProgram = 0
+$total = $programs.Count
+$startTime = Get-Date
 
-# Install each program
-foreach ($program in $programs) {
-    $currentProgram++
-    Install-Program -Name $program.Name -FilePath $program.FilePath -Arguments $program.Arguments -Current $currentProgram -Total $totalPrograms
+# Execute installations
+for ($i = 0; $i -lt $total; $i++) {
+    Install-Program -Name $programs[$i].Name -FilePath $programs[$i].FilePath -Arguments $programs[$i].Arguments -Current ($i + 1) -Total $total
 }
 
-# Completion message
+$totalDuration = ((Get-Date) - $startTime).TotalSeconds
+
+# Completion banner
 Write-Host ""
-Write-Host "=================================================================" -ForegroundColor $colors.Success
-Write-Host "                    INSTALLATION COMPLETE!" -ForegroundColor $colors.White
-Write-Host "=================================================================" -ForegroundColor $colors.Success
+Write-Host " $($box.TopLeft)$($box.Horizontal * 63)$($box.TopRight)" -ForegroundColor $c.Green
+Write-Host " $($box.Vertical)" -NoNewline -ForegroundColor $c.Green
+Write-Host "           $($box.Check) INSTALLATION COMPLETE! $($box.Check)             " -NoNewline -ForegroundColor $c.White
+Write-Host "$($box.Vertical)" -ForegroundColor $c.Green
+Write-Host " $($box.BottomLeft)$($box.Horizontal * 63)$($box.BottomRight)" -ForegroundColor $c.Green
 Write-Host ""
-Write-Host "  All programs have been processed." -ForegroundColor $colors.Success
+Write-Host "  $($box.Dot) Programs Processed: " -NoNewline -ForegroundColor $c.Cyan
+Write-Host $total -ForegroundColor $c.White
+Write-Host "  $($box.Dot) Total Time: " -NoNewline -ForegroundColor $c.Cyan
+Write-Host "$([math]::Round($totalDuration, 1))s" -ForegroundColor $c.White
 Write-Host ""
-Write-Host "Press any key to exit..." -ForegroundColor $colors.Info
-$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+Write-Host " Press any key to exit..." -ForegroundColor $c.Yellow
+[void]$Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
