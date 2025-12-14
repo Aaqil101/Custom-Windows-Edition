@@ -101,8 +101,8 @@ Show-Header
 # Define installation queue
 $programs = @(
     @{
-        Name      = "K-Lite Mega Codec Pack"
-        FilePath  = "$env:WINDIR\Setup\Files\K-Lite_Codec_Pack_Mega.exe"
+        Name      = "K-Lite Codec Pack Mega"
+        FilePath  = "$env:WINDIR\Setup\Files\K-Lite Codec Pack Mega.exe"
         Arguments = @(
             "/VERYSILENT",
             "/NORESTART",
@@ -115,7 +115,7 @@ $programs = @(
         FilePath  = "msiexec.exe"
         Arguments = @(
             "/i",
-            "`"$env:WINDIR\Setup\Files\googlechromestandaloneenterprise64.msi`"",
+            "`"$env:WINDIR\Setup\Files\Google Chrome.msi`"",
             "/qb",
             "/norestart"
         )
@@ -133,11 +133,11 @@ $programs = @(
         )
     },
     @{
-        Name      = "FileConverter"
+        Name      = "File Converter"
         FilePath  = "msiexec.exe"
         Arguments = @(
             "/i",
-            "`"$env:WINDIR\Setup\Files\FileConverter.msi`"",
+            "`"$env:WINDIR\Setup\Files\File Converter.msi`"",
             "/qb",
             "/norestart"
         )
@@ -147,7 +147,7 @@ $programs = @(
         FilePath  = "msiexec.exe"
         Arguments = @(
             "/i",
-            "`"$env:WINDIR\Setup\Files\7-zip.msi`"",
+            "`"$env:WINDIR\Setup\Files\7-Zip.msi`"",
             "/qb",
             "/norestart"
         )
@@ -175,15 +175,17 @@ $programs = @(
     },
     @{
         Name      = "VLC Media Player"
-        FilePath  = "$env:WINDIR\Setup\Files\vlc-3.0.21-win64.exe"
+        FilePath  = "msiexec.exe"
         Arguments = @(
-            "/L=1033",
-            "/S"
+            "/i",
+            "`"$env:WINDIR\Setup\Files\VLC media player.msi`"",
+            "/qb",
+            "/norestart"
         )
     },
     @{
         Name      = "WinRAR"
-        FilePath  = "$env:WINDIR\Setup\Files\winrar.exe"
+        FilePath  = "$env:WINDIR\Setup\Files\WinRAR.exe"
         Arguments = @("/S")
     }
 )

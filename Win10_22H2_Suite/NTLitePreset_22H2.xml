@@ -213,25 +213,25 @@
     <Execution BeforeLogonMode="1">
         <Add>
             <Item type="22">
-                <Path>D:\ISO FIles\Custom ISO Files\SetupFiles\Scripts\MAS_AIO.cmd</Path>
+                <Path>C:\Users\Hillcom\Documents\GitHub\Windows-Custom-Edition\Scripts\MAS_AIO.cmd</Path>
                 <DestMode>1</DestMode>
                 <DestPath>\Windows\Setup\Scripts\MAS_AIO.cmd</DestPath>
                 <Index>0</Index>
             </Item>
             <Item type="22">
-                <Path>D:\ISO FIles\Custom ISO Files\SetupFiles\Scripts\BloatRemoval.ps1</Path>
+                <Path>C:\Users\Hillcom\Documents\GitHub\Windows-Custom-Edition\Scripts\BloatRemoval.ps1</Path>
                 <DestMode>1</DestMode>
                 <DestPath>\ProgramData\Winhance\Scripts\BloatRemoval.ps1</DestPath>
                 <Index>1</Index>
             </Item>
             <Item type="22">
-                <Path>D:\ISO FIles\Custom ISO Files\SetupFiles\Scripts\BloatRemoval.xml</Path>
+                <Path>C:\Users\Hillcom\Documents\GitHub\Windows-Custom-Edition\Scripts\BloatRemoval.xml</Path>
                 <DestMode>1</DestMode>
                 <DestPath>\Windows\Setup\Files\BloatRemoval.xml</DestPath>
                 <Index>2</Index>
             </Item>
             <Item type="22">
-                <Path>D:\ISO FIles\Custom ISO Files\SetupFiles\Software\klcp_mega_unattended.ini</Path>
+                <Path>C:\Users\Hillcom\Documents\GitHub\Windows-Custom-Edition\Scripts\klcp_mega_unattended.ini</Path>
                 <DestMode>1</DestMode>
                 <DestPath>\Windows\Setup\Files\klcp_mega_unattended.ini</DestPath>
                 <Index>3</Index>
@@ -249,15 +249,15 @@
                 <Index>5</Index>
             </Item>
             <Item type="22">
-                <Path>D:\ISO FIles\Custom ISO Files\SetupFiles\Software\7-zip.msi</Path>
+                <Path>D:\ISO FIles\Custom ISO Files\SetupFiles\Software\7-Zip.msi</Path>
                 <DestMode>1</DestMode>
                 <DestPath>\Windows\Setup\Files\7-zip.msi</DestPath>
                 <Index>6</Index>
             </Item>
             <Item type="22">
-                <Path>D:\ISO FIles\Custom ISO Files\SetupFiles\Software\googlechromestandaloneenterprise64.msi</Path>
+                <Path>D:\ISO FIles\Custom ISO Files\SetupFiles\Software\Google Chrome.msi</Path>
                 <DestMode>1</DestMode>
-                <DestPath>\Windows\Setup\Files\googlechromestandaloneenterprise64.msi</DestPath>
+                <DestPath>\Windows\Setup\Files\Google Chrome.msi</DestPath>
                 <Index>7</Index>
             </Item>
             <Item type="22">
@@ -267,21 +267,21 @@
                 <Index>8</Index>
             </Item>
             <Item type="22">
-                <Path>D:\ISO FIles\Custom ISO Files\SetupFiles\Software\VLC_media_player.msi</Path>
+                <Path>D:\ISO FIles\Custom ISO Files\SetupFiles\Software\VLC media player.msi</Path>
                 <DestMode>1</DestMode>
-                <DestPath>\Windows\Setup\Files\VLC_media_player.msi</DestPath>
+                <DestPath>\Windows\Setup\Files\VLC media player.msi</DestPath>
                 <Index>9</Index>
             </Item>
             <Item type="22">
-                <Path>D:\ISO FIles\Custom ISO Files\SetupFiles\Software\K-Lite_Codec_Pack_Mega.exe</Path>
+                <Path>D:\ISO FIles\Custom ISO Files\SetupFiles\Software\K-Lite Codec Pack Mega.exe</Path>
                 <DestMode>1</DestMode>
-                <DestPath>\Windows\Setup\Files\K-Lite_Codec_Pack_Mega.exe</DestPath>
+                <DestPath>\Windows\Setup\Files\K-Lite Codec Pack Mega.exe</DestPath>
                 <Index>10</Index>
             </Item>
             <Item type="22">
-                <Path>D:\ISO FIles\Custom ISO Files\SetupFiles\Software\winrar.exe</Path>
+                <Path>D:\ISO FIles\Custom ISO Files\SetupFiles\Software\WinRAR.exe</Path>
                 <DestMode>1</DestMode>
-                <DestPath>\Windows\Setup\Files\winrar.exe</DestPath>
+                <DestPath>\Windows\Setup\Files\WinRAR.exe</DestPath>
                 <Index>11</Index>
             </Item>
             <Item type="19">
@@ -290,7 +290,7 @@
                 <Index>12</Index>
             </Item>
             <Item type="29">
-                <Path>D:\ISO FIles\Custom ISO Files\SetupFiles\Scripts\Install_QuickLookPlugins.ps1</Path>
+                <Path>C:\Users\Hillcom\Documents\GitHub\Windows-Custom-Edition\Scripts\Install_QuickLookPlugins.ps1</Path>
                 <Params></Params>
                 <DestMode>1</DestMode>
                 <Index>13</Index>
@@ -301,7 +301,7 @@
                 <Index>14</Index>
             </Item>
             <Item type="29">
-                <Path>D:\ISO FIles\Custom ISO Files\SetupFiles\Scripts\Program_Install.ps1</Path>
+                <Path>C:\Users\Hillcom\Documents\GitHub\Windows-Custom-Edition\Scripts\Program_Install.ps1</Path>
                 <Params></Params>
                 <DestMode>1</DestMode>
                 <Index>15</Index>
@@ -312,7 +312,7 @@
                 <Index>16</Index>
             </Item>
             <Item type="17">
-                <Path>D:\ISO FIles\Custom ISO Files\SetupFiles\Scripts\Activation.cmd</Path>
+                <Path>C:\Users\Hillcom\Documents\GitHub\Windows-Custom-Edition\Scripts\Activation.cmd</Path>
                 <Params></Params>
                 <DestMode>1</DestMode>
                 <Index>17</Index>
@@ -438,7 +438,7 @@
                 <Index>1019</Index>
             </Item>
             <Item type="18">
-                <Path>D:\ISO FIles\Custom ISO Files\SetupFiles\Scripts\QuickLookStartup.cmd</Path>
+                <Path>C:\Users\Hillcom\Documents\GitHub\Windows-Custom-Edition\Scripts\QuickLookStartup.cmd</Path>
                 <Params></Params>
                 <DestMode>1</DestMode>
                 <Index>1020</Index>
@@ -449,7 +449,7 @@
                 <Index>1021</Index>
             </Item>
             <Item type="30">
-                <Path>D:\ISO FIles\Custom ISO Files\SetupFiles\Win10_22H2_Suite\CleanUp.ps1</Path>
+                <Path>C:\Users\Hillcom\Documents\GitHub\Windows-Custom-Edition\Scripts\CleanUp.ps1</Path>
                 <Params></Params>
                 <DestMode>1</DestMode>
                 <Index>1022</Index>
@@ -462,6 +462,6 @@
         </Add>
     </Execution>
     <Registry>
-        <File>D:\ISO FIles\Custom ISO Files\SetupFiles\Win10_22H2_Suite\ApplyToDefault.reg</File>
+        <File>C:\Users\Hillcom\Documents\GitHub\Windows-Custom-Edition\Scripts\ApplyToDefault.reg</File>
     </Registry>
 </Preset>
