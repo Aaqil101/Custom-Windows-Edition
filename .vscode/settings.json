@@ -37,6 +37,7 @@
         "SUPPRESSMSGBOXES",
         "TIPC",
         "updateplatform",
+        "versionshort",
         "VERYSILENT",
         "voidtools",
         "wekyb",
