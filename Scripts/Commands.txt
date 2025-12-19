@@ -1,2 +1,6 @@
 # Create the Task Using Command Prompt (as Administrator)
 schtasks /create /tn "\Winhance\BloatRemoval" /xml "C:\BloatRemoval.xml" /f
+
+# Save the script with UTF-8 with BOM encoding
+$content = Get-Content "Program_Install.ps1" -Raw -Encoding UTF8
+[System.IO.File]::WriteAllText("Program_Install.ps1", $content, (New-Object System.Text.UTF8Encoding $true))
