@@ -41,13 +41,14 @@ $Apps = @(
     @{
         Name      = "VLC Media Player"
         ID        = "VideoLAN.VLC"
-        WantMSI   = $true
         DirectUrl = "https://download.videolan.org/pub/videolan/vlc/{version}/win64/vlc-{version}-win64.msi"
+        WantMSI   = $true
     }
     @{
-        Name    = "QuickLook"
-        ID      = "QL-Win.QuickLook"
-        WantMSI = $true
+        Name      = "QuickLook"
+        ID        = "QL-Win.QuickLook"
+        DirectUrl = "https://github.com/QL-Win/QuickLook/releases/download/{version}/QuickLook-{version}.msi"
+        WantMSI   = $true
     }
     @{
         Name    = "K-Lite Codec Pack Mega"
@@ -55,20 +56,22 @@ $Apps = @(
         WantMSI = $false
     }
     @{
-        Name    = "Google Chrome"
-        ID      = "Google.Chrome"
-        WantMSI = $true
+        Name      = "Google Chrome"
+        ID        = "Google.Chrome"
+        DirectUrl = "https://dl.google.com/chrome/install/googlechromestandaloneenterprise64.msi"
+        WantMSI   = $true
     }
     @{
-        Name    = "File Converter"
-        ID      = "AdrienAllard.FileConverter"
-        WantMSI = $true
+        Name      = "File Converter"
+        ID        = "AdrienAllard.FileConverter"
+        DirectUrl = "https://github.com/Tichau/FileConverter/releases/download/v{version}/FileConverter-{version}-x64-setup.msi"
+        WantMSI   = $true
     }
     @{
         Name      = "Everything"
         ID        = "voidtools.Everything"
-        WantMSI   = $false
         DirectUrl = "https://www.voidtools.com/Everything-{version}.x64-Setup.exe"
+        WantMSI   = $false
     }
     @{
         Name    = "AnyDesk"
@@ -78,8 +81,8 @@ $Apps = @(
     @{
         Name      = "7-Zip"
         ID        = "7zip.7zip"
-        WantMSI   = $true
         DirectUrl = "https://github.com/ip7z/7zip/releases/download/{version}/7z{versionshort}-x64.msi"
+        WantMSI   = $true
     }
 )
 #endregion
@@ -156,16 +159,18 @@ function Get-InstallerVersion {
 
     try {
         $fileInfo = Get-Item -LiteralPath $FilePath -ErrorAction Stop
-        $versionInfo = $fileInfo.VersionInfo
 
-        $version = $versionInfo.ProductVersion ?? $versionInfo.FileVersion
-        if ($version -and $version -match "(\d+\.[\d\.]+)") {
-            return $matches[1]
+        # First try to extract from filename (most reliable for renamed files)
+        if ($fileInfo.Name -match "[\s_\-v](\d+(?:\.\d+)+)") {
+            $version = $matches[1].TrimEnd('.')
+            return $version
         }
 
-        # Fallback: extract from filename
-        if ($fileInfo.Name -match "(\d+\.[\d\.]+)") {
-            return $matches[1]
+        # Then try file metadata
+        $versionInfo = $fileInfo.VersionInfo
+        $version = $versionInfo.ProductVersion ?? $versionInfo.FileVersion
+        if ($version -and $version -match "(\d+(?:\.\d+)+)") {
+            return $matches[1].TrimEnd('.')
         }
     }
     catch {}
@@ -196,8 +201,11 @@ function Find-ExistingInstaller {
     $files = Get-ChildItem -Path $Folder -File -ErrorAction SilentlyContinue
 
     foreach ($term in $searchTerms) {
-        $match = $files | Where-Object { $_.Name -like "*$term*" } | Select-Object -First 1
-        if ($match) { return $match }
+        $foundFiles = $files | Where-Object { $_.Name -like "*$term*" }
+        if ($foundFiles) {
+            # Return the most recently modified file
+            return $foundFiles | Sort-Object LastWriteTime -Descending | Select-Object -First 1
+        }
     }
     return $null
 }
@@ -263,8 +271,11 @@ function Update-Installer {
     $result = @{ Status = 'Unknown'; Message = ''; SizeMB = 0 }
 
     try {
-        # Check for latest version
-        $latestVersion = if (-not $Options.SkipVersionCheck) {
+        # Check for latest version (use user-provided version for Chrome if available)
+        $latestVersion = if ($App.UserProvidedVersion) {
+            $App.UserProvidedVersion
+        }
+        elseif (-not $Options.SkipVersionCheck) {
             Get-LatestVersion -PackageID $App.ID
         }
         else { $null }
@@ -280,7 +291,7 @@ function Update-Installer {
             $existingVersion = Get-InstallerVersion -FilePath $existingFile.FullName
 
             if ($existingVersion -and $latestVersion) {
-                Write-Status "Installed: v$existingVersion" -Type Info
+                Write-Status "Downloaded: v$existingVersion ($($existingFile.Name))" -Type Info
 
                 $comparison = Compare-SoftwareVersions -Version1 $existingVersion -Version2 $latestVersion
                 if ($comparison -eq 0) {
@@ -317,10 +328,18 @@ function Update-Installer {
                 throw "No installer found after download"
             }
 
-            # Move to target location
-            $finalName = "$($App.Name)$($installer.Extension)"
+            # Create filename with version for better tracking
+            $extension = $installer.Extension
+            if ($latestVersion) {
+                $finalName = "$($App.Name) v$latestVersion$extension"
+            }
+            else {
+                $finalName = "$($App.Name)$extension"
+            }
+
             $destination = Join-Path $TargetFolder $finalName
 
+            # Remove old version if exists
             if ($existingFile -and (Test-Path $existingFile.FullName)) {
                 Remove-Item $existingFile.FullName -Force -ErrorAction SilentlyContinue
             }
@@ -356,6 +375,21 @@ Write-Host $TargetFolder -ForegroundColor Yellow
 if ($Force) {
     Write-Host "  ⚡ Mode: " -NoNewline -ForegroundColor DarkGray
     Write-Host "FORCE UPDATE" -ForegroundColor Magenta
+}
+
+# Prompt for Chrome version
+Write-Host ""
+Write-Host "  🌐 Google Chrome Version Input" -ForegroundColor Cyan
+Write-Host "     (Check latest at: https://chromereleases.googleblog.com/)" -ForegroundColor DarkGray
+$chromeVersion = Read-Host "     Enter Chrome version (e.g., 131.0.6778.86) or press Enter to skip"
+
+if (-not [string]::IsNullOrWhiteSpace($chromeVersion)) {
+    # Update Chrome app configuration with user-provided version
+    $chromeApp = $Apps | Where-Object { $_.Name -eq "Google Chrome" }
+    if ($chromeApp) {
+        $chromeApp.UserProvidedVersion = $chromeVersion.Trim()
+        Write-Status "Chrome version set to: v$($chromeApp.UserProvidedVersion)" -Type Success
+    }
 }
 
 # Verify prerequisites
@@ -409,11 +443,11 @@ foreach ($app in $Apps) {
 Write-Host "`n"
 Write-Banner "OPERATION COMPLETE" -Color Green
 Write-Host "`n  📊 Results:" -ForegroundColor Cyan
-Write-Host "     Updated:        " -NoNewline -ForegroundColor DarkGray
+Write-Host "     Updated:           " -NoNewline -ForegroundColor DarkGray
 Write-Host $stats.Updated -ForegroundColor Green
-Write-Host "     Already current:" -NoNewline -ForegroundColor DarkGray
+Write-Host "     Already current:   " -NoNewline -ForegroundColor DarkGray
 Write-Host $stats.UpToDate -ForegroundColor Yellow
-Write-Host "     Failed:         " -NoNewline -ForegroundColor DarkGray
+Write-Host "     Failed:            " -NoNewline -ForegroundColor DarkGray
 Write-Host $stats.Failed -ForegroundColor Red
 
 Write-Host "`n  📂 Location: " -NoNewline -ForegroundColor DarkGray
