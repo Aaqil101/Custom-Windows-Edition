@@ -16,7 +16,7 @@
 param(
     [Parameter(Position = 0)]
     [ValidateNotNullOrEmpty()]
-    [string]$TargetFolder = "D:\ISO FIles\Custom ISO Files\SetupFiles\Software",
+    [string]$TargetFolder = "E:\ISO FIles\Custom ISO Files\SetupFiles\Software",
 
     [switch]$Force,
     [switch]$SkipVersionCheck
