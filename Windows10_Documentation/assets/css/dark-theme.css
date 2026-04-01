@@ -1,0 +1,115 @@
+/* =================================== */
+/*  Dark Theme Override
+/* =================================== */
+
+/* Base */
+body {
+  background: #1a1d23;
+  color: #c9cdd6;
+}
+
+#main-wrapper {
+  background: #1a1d23;
+}
+
+.preloader {
+  background-color: #1a1d23;
+}
+.preloader .lds-ellipsis div {
+  background: #c9cdd6;
+}
+
+/* Headings & text */
+h1, h2, h3, h4, h5, h6 {
+  color: #e8eaf0;
+}
+
+p.lead {
+  color: #a8adb8;
+}
+
+strong {
+  color: #e0e3ea;
+}
+
+a {
+  color: #5aabff;
+}
+
+a:hover {
+  color: #82c0ff;
+}
+
+kbd {
+  background-color: #2e333d;
+  color: #c9cdd6;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Divider */
+hr {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+hr.divider {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Sidebar navigation */
+.idocs-navigation {
+  background: #13151a !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.idocs-navigation .nav .nav-link {
+  color: rgba(220, 225, 235, 0.85);
+}
+
+.idocs-navigation .nav .nav .nav-link {
+  color: rgba(200, 205, 215, 0.7);
+}
+
+.idocs-navigation .nav .nav-item:hover > .nav-link,
+.idocs-navigation .nav .nav-item .nav-link.active {
+  color: #5aabff;
+}
+
+.idocs-navigation .nav .nav .nav-item .nav-link:after {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.idocs-navigation .nav .nav .nav-item .nav-link.active:after {
+  border-color: #5aabff;
+  border-width: 2px;
+}
+
+.idocs-navigation > .nav > .nav-item > .nav-link.active:after {
+  border-color: #e8eaf0;
+}
+
+/* Main content area */
+.idocs-content {
+  background: #1a1d23;
+}
+
+/* Back to top button */
+#back-to-top {
+  background: #2e333d;
+  color: #c9cdd6;
+}
+
+#back-to-top:hover {
+  background: #5aabff;
+  color: #fff;
+}
+
+/* Bootstrap bg-light override */
+.bg-light {
+  background-color: #13151a !important;
+}
+
+/* Lists in content */
+.idocs-content ul li,
+.idocs-content ol li {
+  color: #c9cdd6;
+}

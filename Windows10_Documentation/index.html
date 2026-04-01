@@ -6,12 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
     <link href="assets/images/favicon.png" rel="icon" />
-    <title>Documentation | Your ThemeForest item Name</title>
-    <meta name="description" content="Your ThemeForest item Name and description">
-    <meta name="author" content="harnishdesign.net">
+    <title>Custom Windows — Included Software</title>
+    <meta name="description" content="Documentation for all pre-installed software in the Custom Windows Edition">
 
     <!-- Stylesheet
-    ============================== -->
+============================== -->
     <!-- Bootstrap -->
     <link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap/css/bootstrap.min.css" />
     <!-- Font Awesome Icon -->
@@ -22,6 +21,8 @@
     <link rel="stylesheet" type="text/css" href="assets/vendor/highlight.js/styles/github.css" />
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" type="text/css" href="assets/css/stylesheet.css" />
+    <!-- Dark Theme -->
+    <link rel="stylesheet" type="text/css" href="assets/css/dark-theme.css" />
 </head>
 
 <body data-spy="scroll" data-target=".idocs-navigation" data-offset="125">
@@ -45,16 +46,17 @@
   ============================ -->
         <header id="header" class="sticky-top">
             <!-- Navbar -->
-            <nav class="primary-menu navbar navbar-expand-lg navbar-dropdown-dark">
+            <nav class="primary-menu navbar navbar-expand-lg bg-dark navbar-text-light navbar-dropdown-dark border-0">
                 <div class="container-fluid">
                     <!-- Sidebar Toggler -->
                     <button id="sidebarCollapse" class="navbar-toggler d-block d-md-none"
                         type="button"><span></span><span class="w-75"></span><span class="w-50"></span></button>
 
                     <!-- Logo -->
-                    <a class="logo ml-md-3" href="index.html" title="iDocs Template"> <img src="assets/images/logo.png"
-                            alt="iDocs Template" /> </a>
-                    <span class="text-2 ml-2">v1.0</span>
+                    <a class="logo ml-md-3" href="index.html" title="Custom Windows Edition">
+                        <img src="assets/images/logo-light.png" alt="Custom Windows Edition" />
+                    </a>
+                    <span class="text-2 text-light ml-2">Included Software</span>
                     <!-- Logo End -->
 
                     <!-- Navbar Toggler -->
@@ -63,43 +65,10 @@
 
                     <div id="header-nav" class="collapse navbar-collapse justify-content-end">
                         <ul class="navbar-nav">
-                            <li class="dropdown"> <a class="dropdown-toggle" href="#">Dropdown</a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="#">Dropdown
-                                            Action</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="index.html">Action</a></li>
-                                            <li><a class="dropdown-item" href="feature-header-dark.html">Another
-                                                    Action</a></li>
-                                            <li><a class="dropdown-item" href="feature-header-primary.html">Something
-                                                    Else Here</a></li>
-                                            <li><a class="dropdown-item" href="index-2.html">Another Link</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a class="dropdown-item" href="#">Another Action</a>
-                                    <li><a class="dropdown-item" href="#">Something Else Here</a></li>
-                                </ul>
-                            </li>
                             <li><a target="_blank"
-                                    href="https://themeforest.net/user/harnishdesign/portfolio?ref=HarnishDesign">Other
-                                    Template</a></li>
-                            <li><a target="_blank"
-                                    href="https://themeforest.net/user/harnishdesign/#contact?ref=HarnishDesign">Support</a>
-                            </li>
+                                    href="https://github.com/AaqilIlyas/Custom-Windows-Edition">GitHub</a></li>
                         </ul>
                     </div>
-                    <ul class="social-icons social-icons-sm ml-lg-2 mr-2">
-                        <li class="social-icons-twitter"><a data-toggle="tooltip"
-                                href="http://www.twitter.com/harnishdesign/" target="_blank" title=""
-                                data-original-title="Twitter"><i class="fab fa-twitter"></i></a></li>
-                        <li class="social-icons-facebook"><a data-toggle="tooltip"
-                                href="http://www.facebook.com/harnishdesign/" target="_blank" title=""
-                                data-original-title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                        <li class="social-icons-dribbble"><a data-toggle="tooltip"
-                                href="http://www.dribbble.com/harnishdesign/" target="_blank" title=""
-                                data-original-title="Dribbble"><i class="fab fa-dribbble"></i></a></li>
-                    </ul>
                 </div>
             </nav>
             <!-- Navbar End -->
@@ -111,1537 +80,600 @@
         <div id="content" role="main">
 
             <!-- Sidebar Navigation
-	============================ -->
+    ============================ -->
             <div class="idocs-navigation bg-light">
-                <ul class="nav flex-column ">
-                    <li class="nav-item"><a class="nav-link active" href="#idocs_start">Getting Started</a>
+                <ul class="nav flex-column">
+                    <li class="nav-item"><a class="nav-link active" href="#overview">Overview</a></li>
+
+                    <li class="nav-item"><a class="nav-link" href="#browsers-internet">Browsers &amp; Internet</a>
                         <ul class="nav flex-column">
-                            <li class="nav-item"><a class="nav-link" href="#idocs_installation">Installation</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#idocs_html_structure">HTML Structure</a>
-                            </li>
-                            <li class="nav-item"><a class="nav-link" href="#idocs_sass">Sass</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#idocs_color_schemes">Color Schemes</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#idocs_theme_customization">Customization</a>
-                            </li>
-                            <li class="nav-item"><a class="nav-link" href="#idocs_logo_settings">Logo Settings</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#chrome">Google Chrome</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#anydesk">AnyDesk</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="#idocs_layout">Layout</a>
+
+                    <li class="nav-item"><a class="nav-link" href="#media-playback">Media &amp; Playback</a>
                         <ul class="nav flex-column">
-                            <li class="nav-item"><a class="nav-link" href="#idocs_header">Header</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#idocs_navbar">Navbar</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#idocs_sidebar">Sidebar</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#idocs_footer">Footer</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#idocs_box_layout">Box Layout</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#vlc">VLC Media Player</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#klite">K-Lite Codec Pack Mega</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="#idocs_content">Content</a>
+
+                    <li class="nav-item"><a class="nav-link" href="#files-utilities">Files &amp; Utilities</a>
                         <ul class="nav flex-column">
-                            <li class="nav-item"><a class="nav-link" href="#idocs_typography">Typography</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#idocs_code">Code</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#idocs_table">Table</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#idocs_icons">Icons</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#idocs_image">Image</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#idocs_video">Video</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#idocs_components">Components</a>
-                        <ul class="nav flex-column">
-                            <li class="nav-item"><a class="nav-link" href="#idocs_accordion">Accordion</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#idocs_tabs">Tabs</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#idocs_social_icon">Social Icon</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#idocs_helper_classes">Helper Classes</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#idocs_faq">FAQ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#idocs_source_credits">Source & Credits</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#idocs_support">Support</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#idocs_templates">More Templates</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#idocs_changelog">Changelog</a>
-                        <ul class="nav flex-column">
-                            <li class="nav-item"><a class="nav-link" href="#v1-1">v1.1</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#v1-0">v1.0</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#7zip">7-Zip</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#winrar">WinRAR</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#everything">Everything</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#fileconverter">File Converter</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#quicklook">QuickLook</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
 
             <!-- Docs Content
-	============================ -->
+    ============================ -->
             <div class="idocs-content">
                 <div class="container">
 
-                    <!-- Getting Started
-		============================ -->
-                    <section id="idocs_start">
-                        <h1>Documentation</h1>
-                        <h2>Your ThemeForest Item Name Here</h2>
-                        <p class="lead">Thank you so much for purchasing our item from themeforest.</p>
+                    <!-- Overview
+        ============================ -->
+                    <section id="overview">
+                        <h1>Included Software</h1>
+                        <h2>Custom Windows Edition</h2>
+                        <p class="lead">This Windows installation comes with the following software pre-installed and
+                            ready to use out of the box.</p>
                         <hr>
                         <div class="row">
                             <div class="col-sm-6 col-lg-4">
                                 <ul class="list-unstyled">
-                                    <li><strong>Version:</strong> 1.0</li>
-                                    <li><strong>Author:</strong> <a href="http://www.harnishdesign.net"
-                                            target="_blank">Harnish Design</a></li>
+                                    <li><strong>Total Apps:</strong> 9</li>
+                                    <li><strong>Installation:</strong> Automatic on first boot</li>
                                 </ul>
                             </div>
                             <div class="col-sm-6 col-lg-4">
                                 <ul class="list-unstyled">
-                                    <li><strong class="font-weight-700">Created:</strong> 8 April, 2020</li>
-                                    <li><strong>Update:</strong> 12 May, 2020</li>
+                                    <li><strong>Bloatware:</strong> Removed</li>
+                                    <li><strong>Updates:</strong> Managed via Winget</li>
                                 </ul>
                             </div>
                         </div>
-                        <p class="alert alert-info">If you have any questions that are beyond the scope of this help
-                            file, Please feel free to email via <a target="_blank"
-                                href="https://themeforest.net/user/harnishdesign/#contact?ref=HarnishDesign">Item
-                                Support Page</a>.</p>
                     </section>
 
                     <hr class="divider">
 
-                    <!-- Installation
-		============================ -->
-                    <section id="idocs_installation">
-                        <h2>Installation</h2>
-                        <p class="lead">Follow the steps below to setup your site template:</p>
-                        <ol>
-                            <li>Unzip the downloaded package and open the <strong>/HTML</strong> folder to find all the
-                                template files. You will need to upload these files to your hosting web server using FTP
-                                or localhost in order to use it on your website.</li>
-                            <li>Below is the folder structure and needs to be uploaded to your website or localhost root
-                                directory:
+                    <!-- Browsers & Internet heading
+        ============================ -->
+                    <section id="browsers-internet">
+                        <h2>Browsers &amp; Internet</h2>
+                        <p>Apps for browsing the web and accessing remote machines.</p>
+                    </section>
+
+                    <hr class="divider">
+
+                    <!-- Google Chrome
+        ============================ -->
+                    <section id="chrome">
+                        <div class="row align-items-center">
+                            <div class="col-md-2 text-center mb-3 mb-md-0">
+                                <img src="assets/images/Google%20Chrome/imgi_1_chrome-logo-m100.svg" alt="Google Chrome"
+                                    class="img-fluid" style="max-width:80px;">
+                            </div>
+                            <div class="col-md-10">
+                                <h2><a href="https://www.google.com/chrome/" target="_blank" rel="noopener">Google
+                                        Chrome</a></h2>
+                                <p>Google Chrome is a fast, secure, and widely-used web browser developed by Google. It
+                                    offers a clean interface, powerful developer tools, and seamless integration with
+                                    Google services like Gmail, Drive, and YouTube.</p>
+                                <h6>Key Features</h6>
                                 <ul>
-                                    <li><code>HTML/assets</code> - Contains all of the assets referenced
-                                        <ul>
-                                            <li><code>HTML/css</code> - Stylesheet files</li>
-                                            <li><code>HTML/images</code> - Images files</li>
-                                            <li><code>HTML/js</code> - Javacript files</li>
-                                            <li><code>HTML/sass</code> - Sass files</li>
-                                            <li><code>HTML/vendor</code> – All external libs.</li>
-                                        </ul>
-                                    </li>
-                                    <li><code>HTML/index.html</code> - Homepage
+                                    <li>Built-in password manager and autofill</li>
+                                    <li>Sync bookmarks, history, and settings across devices via Google account</li>
+                                    <li>Vast library of extensions from the Chrome Web Store</li>
+                                    <li>Built-in PDF viewer and reader mode</li>
+                                    <li>Automatic updates and strong security sandboxing</li>
+                                    <li>Fast JavaScript engine (V8) for snappy web app performance</li>
                                 </ul>
-                            </li>
-                            <li>You should upload all or specific HTML files as per your need.</li>
-                            <li>You are good to go for adding your content now!</li>
-                        </ol>
-                    </section>
-
-                    <hr class="divider">
-
-                    <!-- HTML Structure
-		============================ -->
-                    <section id="idocs_html_structure">
-                        <h2>HTML Structure</h2>
-                        <p>iDocs follows a simple and easy to customize coding structure. Here is the sample for your
-                            reference:<br>
-                            The template is based on <a class="ml-1" target="_blank" href="https://getbootstrap.com/"><i
-                                    class="fas fa-external-link-alt"></i> Bootstrap Framework</a></p>
-                        <pre><code class="html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-
-&lt;!-- Your Title, Description, Stylesheets
-============================================= --&gt;
-
-&lt;/head&gt;
-
-&lt;body data-spy=&quot;scroll&quot; data-target=&quot;.idocs-navigation&quot; data-offset=&quot;125&quot;&gt;
-
-&lt;!-- Document Wrapper
-=============================== --&gt;
-&lt;div id=&quot;main-wrapper&quot;&gt;
-
-  &lt;!-- Header
-  ============================ --&gt;
-  &lt;header id=&quot;header&quot; class=&quot;sticky-top&quot;&gt;
-   ......
-  &lt;/header&gt;
-  &lt;!-- Header End --&gt;
-
-  &lt;!-- Content
-  ============================ --&gt;
-  &lt;div id=&quot;content&quot; role=&quot;main&quot;&gt;
-
-    &lt;!-- Sidebar Navigation
-    ============================ --&gt;
-    &lt;div class=&quot;idocs-navigation bg-light&quot;&gt;
-     .....
-    &lt;/div&gt;
-
-    &lt;!-- Docs Content
-    ============================ --&gt;
-    &lt;div class=&quot;idocs-content&quot;&gt;
-      &lt;div class=&quot;container&quot;&gt;
-        .......
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;!-- Content end --&gt;
-
-  &lt;!-- Footer --&gt;
-  &lt;footer id=&quot;footer&quot; class=&quot;section bg-dark footer-text-light&quot;&gt;
-    &lt;div class=&quot;container&quot;&gt; ...... &lt;/div&gt;
-  &lt;/footer&gt;
-  &lt;!-- Footer end --&gt;
-
-&lt;/div&gt;
-&lt;!-- Document Wrapper end --&gt;
-
-&lt;!-- JavaScript --&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
-                        <p class="alert alert-info">If you need more information, please visit bootstrap site: <a
-                                target="_blank"
-                                href="https://getbootstrap.com/docs/4.4/layout/grid/">https://getbootstrap.com</a></p>
-                    </section>
-
-                    <hr class="divider">
-
-                    <!-- Sass
-		============================ -->
-                    <section id="idocs_sass">
-                        <h2>Sass</h2>
-                        <p>We have added SASS <code>.scss</code> files in template. If you know how to use SASS you can
-                            change sass files and compile the css as well.
-                            You can find sass file here - <code>HTML/assets/sass</code></p>
-                        <p>Open the <code>sass/_variables.scss</code> and Edit the values according to your needs. If
-                            you need more Advanced Setup then you can Edit the Respective Files yourself which have been
-                            branched inside the same Folder. It is completely at your discretion only to include the
-                            Required <code>.scss</code> Files you need to minimize the amount of CSS & including only
-                            the Styles of the Blocks you need. This can be setup in your <code>stylesheet.scss</code>
-                            File.</p>
-                    </section>
-
-                    <hr class="divider">
-
-                    <!-- Color Schemes
-		============================ -->
-                    <section id="idocs_color_schemes">
-                        <h2>Color Schemes</h2>
-                        <p>You can change your Website's Color Scheme in an instant. We have build <strong>10
-                                Color</strong> css file for change template primary color.</p>
-                        <ul>
-                            <li><code>color-blue.css</code> - Blue Color</li>
-                            <li><code>color-brown.css</code> - Brown Color</li>
-                            <li><code>color-cyan.css</code> - Cyan Color</li>
-                            <li><code>color-green.css</code> - Green Color</li>
-                            <li><code>color-orange.css</code> - Orange Color</li>
-                            <li><code>color-indigo.css</code> - Indigo Color</li>
-                            <li><code>color-purple.css</code> - Purple Color</li>
-                            <li><code>color-red.css</code> - Red Color</li>
-                            <li><code>color-teal.css</code> - Teal Color</li>
-                            <li><code>color-yellow.css</code> - Yellow Color</li>
-                        </ul>
-                        <p>Simply add Color CSS file link it in the Document <code>&lt;head&gt;</code>.<br>
-                            Make sure you add the <code>css/color-blue.css</code> stylesheet in your head after the
-                            <code>css/stylesheet.css</code> file linking from above mentioned 10 color css file.
-                        </p>
-                        <p><strong>For Example:</strong></p>
-                        <pre><code class="html">&lt;head&gt;
-&lt;!-- Stylesheet
-============================== --&gt;
-&lt;!-- Bootstrap --&gt;
-&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;assets/vendor/bootstrap/css/bootstrap.min.css&quot; /&gt;
-&lt;!-- Font Awesome Icon --&gt;
-&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;assets/vendor/font-awesome/css/all.min.css&quot; /&gt;
-&lt;!-- Magnific Popup --&gt;
-&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;assets/vendor/magnific-popup/magnific-popup.min.css&quot; /&gt;
-&lt;!-- Highlight Syntax --&gt;
-&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;assets/vendor/highlight.js/styles/github.css&quot; /&gt;
-&lt;!-- Custom Stylesheet --&gt;
-&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;assets/css/stylesheet.css&quot; /&gt;
-
-&lt;!-- Here goes your Colors Css --&gt;
-&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;assets/css/color-orange.css&quot; /&gt;
-&lt;/head&gt;</code></pre>
-                    </section>
-
-                    <hr class="divider">
-
-                    <!-- Customization
-		============================ -->
-                    <section id="idocs_theme_customization">
-                        <h2>Theme Customization</h2>
-                        <p>We have include a Custom CSS File in the <code>css</code> Folder so that you can better
-                            handle your Customizations for New Styles or
-                            Overwriting Default Theme Styles. Simply add all your Custom CSS Codes in the
-                            <code>css/custom.css</code> File and link it in the Document <code>&lt;head&gt;</code> after
-                            the <code>css/stylesheet.css</code> Linking. Also make sure that this is the Last Linked CSS
-                            File in the Document <code>&lt;head&gt;</code> so that your Custom CSS Styles are
-                            Overwritten properly.
-                        </p>
-                        <pre><code class="html">&lt;head&gt;
-&lt;!-- Stylesheet
-============================== --&gt;
-&lt;!-- Bootstrap --&gt;
-&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;assets/vendor/bootstrap/css/bootstrap.min.css&quot; /&gt;
-&lt;!-- Font Awesome Icon --&gt;
-&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;assets/vendor/font-awesome/css/all.min.css&quot; /&gt;
-&lt;!-- Magnific Popup --&gt;
-&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;assets/vendor/magnific-popup/magnific-popup.min.css&quot; /&gt;
-&lt;!-- Highlight Syntax --&gt;
-&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;assets/vendor/highlight.js/styles/github.css&quot; /&gt;
-&lt;!-- Custom Stylesheet --&gt;
-&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;assets/css/stylesheet.css&quot; /&gt;
-
-&lt;!-- Here goes your custom.css
-============================================= --&gt;
-&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;assets/css/custom.css&quot; /&gt;
-&lt;/head&gt;</code></pre>
-                    </section>
-
-                    <hr class="divider">
-
-                    <!-- Logo Settings
-		============================ -->
-                    <section id="idocs_logo_settings">
-                        <h2>Logo Settings</h2>
-                        <p>The Logo Container can be found in the Header Container - <code>&lt;header&gt;</code></p>
-                        <pre><code class="html">&lt;!-- Logo --&gt;
-&lt;a class=&quot;logo ml-3 ml-md-0&quot; href=&quot;index.html&quot; title=&quot;iDocs&quot;&gt;
-   &lt;img src=&quot;images/logo-light.png&quot; alt=&quot;iDocs&quot;/&gt;
-&lt;/a&gt;
-&lt;!-- Logo End --&gt;
-</code></pre>
-                    </section>
-
-
-                    <hr class="divider">
-
-                    <!-- Layout
-		============================ -->
-                    <section id="idocs_layout">
-                        <h2>Layout</h2>
-                        <p class="lead mb-5">Documentation and examples for header, navbar, sidebar, footer</p>
-                    </section>
-
-
-                    <!-- Header
-		============================ -->
-                    <section id="idocs_header">
-                        <h2>Header</h2>
-                        <p>The list of various header types & its descriptions are provided below for your reference:
-                        </p>
-
-                        <h4>Light</h4>
-                        <p>Header with white background Color & Dark text. <span class="text-info">See below image and
-                                code for more information.</span></p>
-                        <p><a class="popup-img" href="assets/images/header-light.jpg"><img class="img-fluid border"
-                                    src="assets/images/header-light.jpg" alt=""></a></p>
-                        <pre><code class="html">&lt;!-- Header
-============================ --&gt;
-&lt;header id=&quot;header&quot; class=&quot;sticky-top&quot;&gt;
-  &lt;!-- Navbar --&gt;
-  &lt;nav class=&quot;primary-menu navbar navbar-expand-lg&quot;&gt;
-    &lt;div class=&quot;container-fluid&quot;&gt;
-      .....
-    &lt;/div&gt;
-  &lt;/nav&gt;
-  &lt;!-- Navbar End --&gt;
-&lt;/header&gt;
-&lt;!-- Header End --&gt;
-</code></pre>
-
-                        <h4>Dark</h4>
-                        <p>Header with dark background & Light text. <span class="text-info">See below image and code
-                                for more information.</span></p>
-                        <p><a class="popup-img" href="assets/images/header-dark.jpg"><img class="img-fluid border"
-                                    src="assets/images/header-dark.jpg" alt=""></a></p>
-                        <p>Add the <code>.bg-dark</code> and <code>.navbar-text-light</code> Class to the
-                            <code>&lt;nav&gt;</code> Tag to display a Dark Header.
-                        </p>
-                        <pre><code class="html">&lt;!-- Header
-============================ --&gt;
-&lt;header id=&quot;header&quot; class=&quot;sticky-top&quot;&gt;
-  &lt;!-- Navbar --&gt;
-  &lt;nav class=&quot;primary-menu navbar navbar-expand-lg bg-dark navbar-text-light&quot;&gt;
-    &lt;div class=&quot;container-fluid&quot;&gt;
-      .....
-    &lt;/div&gt;
-  &lt;/nav&gt;
-  &lt;!-- Navbar End --&gt;
-&lt;/header&gt;
-&lt;!-- Header End --&gt;
-</code></pre>
-                    </section>
-
-                    <hr class="divider">
-
-                    <!-- Navbar
-		============================ -->
-                    <section id="idocs_navbar">
-                        <h2>Navbar</h2>
-                        <p class="lead">Documentation and examples for powerful responsive navigation header</p>
-                        <h4 class="mt-5">Left align</h4>
-                        <p>Header with Navigation alligned Left. <span class="text-info">See below image and code for
-                                more information.</span></p>
-                        <p><a class="popup-img" href="assets/images/navbar-left.jpg"><img class="img-fluid border"
-                                    src="assets/images/navbar-left.jpg" alt=""></a></p>
-                        <p>Add the <code>.justify-content-left</code> class to the element of collapse to display a
-                            align left navbar.</p>
-                        <pre><code class="html">&lt;div id=&quot;header-nav&quot; class=&quot;collapse navbar-collapse justify-content-start&quot;&gt;
-  &lt;ul class=&quot;navbar-nav&quot;&gt;
-    .......
-  &lt;/ul&gt;
-&lt;/div&gt;
-</code></pre>
-
-                        <h4 class="mt-5">Right align</h4>
-                        <p>Header with Navigation alligned Right. <span class="text-info">See below image and code for
-                                more information.</span></p>
-                        <p><a class="popup-img" href="assets/images/navbar-right.jpg"><img class="img-fluid border"
-                                    src="assets/images/navbar-left.jpg" alt=""></a></p>
-                        <p>Add the <code>.justify-content-end</code> class to the element of collapse to display a align
-                            right navbar.</p>
-                        <pre><code class="html">&lt;div id=&quot;header-nav&quot; class=&quot;collapse navbar-collapse justify-content-end&quot;&gt;
-  &lt;ul class=&quot;navbar-nav&quot;&gt;
-    .......
-  &lt;/ul&gt;
-&lt;/div&gt;
-</code></pre>
-
-                        <h4 class="mt-5">Center Align</h4>
-                        <p>Header with Navigation alligned Center. <span class="text-info">See below image and code for
-                                more information.</span></p>
-                        <p><img class="img-fluid border" src="assets/images/navbar-center.jpg" alt=""></p>
-                        <p>Add the <code>.justify-content-center</code> class to the element of collapse to display a
-                            align center navbar.</p>
-                        <pre><code class="html">&lt;div id=&quot;header-nav&quot; class=&quot;collapse navbar-collapse justify-content-center&quot;&gt;
-  &lt;ul class=&quot;navbar-nav&quot;&gt;
-    .......
-  &lt;/ul&gt;
-&lt;/div&gt;
-</code></pre>
-                    </section>
-
-                    <hr class="divider">
-
-                    <!-- Sidebar
-		============================ -->
-                    <section id="idocs_sidebar">
-                        <h2>Sidebar</h2>
-                        <p class="lead">We have built fixed sidebar navigation with <a target="_blank"
-                                href="https://getbootstrap.com/docs/4.4/components/scrollspy/">bootstrap scrollspy</a>
-                            function for docs layout. which is automatically update navigation based on scroll position
-                            to indicate which link is currently active in the viewport.</p>
-                        <p>The example below sidebar vertical navigation with bootstrap <a target="_blank"
-                                href="https://getbootstrap.com/docs/4.4/components/navs/">navs</a> and <a
-                                target="_blank"
-                                href="https://getbootstrap.com/docs/4.4/components/scrollspy/">scrollspy</a> components
-                            and section of docs content.</p>
-                        <pre class="pre-scrollable"><code class="html">&lt;!-- Sidebar Navigation
-============================ --&gt;
-&lt;div class=&quot;idocs-navigation bg-light&quot;&gt;
-  &lt;ul class=&quot;nav flex-column &quot;&gt;
-    &lt;li class=&quot;nav-item&quot;&gt;&lt;a class=&quot;nav-link active&quot; href=&quot;#item_1&quot;&gt;Item 1&lt;/a&gt;
-      &lt;ul class=&quot;nav flex-column&quot;&gt;
-        &lt;li class=&quot;nav-item&quot;&gt;&lt;a class=&quot;nav-link&quot; href=&quot;#item_1_1&quot;&gt;Sub Item 1.1&lt;/a&gt;&lt;/li&gt;
-        &lt;li class=&quot;nav-item&quot;&gt;&lt;a class=&quot;nav-link&quot; href=&quot;#item_1_2&quot;&gt;Sub Item 1.2&lt;/a&gt;&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/li&gt;
-    &lt;li class=&quot;nav-item&quot;&gt;&lt;a class=&quot;nav-link&quot; href=&quot;#item_2&quot;&gt;Item 2&lt;/a&gt;
-      &lt;ul class=&quot;nav flex-column&quot;&gt;
-        &lt;li class=&quot;nav-item&quot;&gt;&lt;a class=&quot;nav-link&quot; href=&quot;#item_2_1&quot;&gt;Sub Item 2.1&lt;/a&gt;&lt;/li&gt;
-        &lt;li class=&quot;nav-item&quot;&gt;&lt;a class=&quot;nav-link&quot; href=&quot;#item_2_2&quot;&gt;Sub Item 2.2&lt;/a&gt;&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/li&gt;
-    &lt;li class=&quot;nav-item&quot;&gt;&lt;a class=&quot;nav-link&quot; href=&quot;#item_3&quot;&gt;Item 3&lt;/a&gt;&lt;/li&gt;
-    &lt;li class=&quot;nav-item&quot;&gt;&lt;a class=&quot;nav-link&quot; href=&quot;#item_4&quot;&gt;Item 4&lt;/a&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/div&gt;
-
-&lt;!-- Docs Content
-============================ --&gt;
-&lt;div class=&quot;idocs-content&quot;&gt;
-  &lt;div class=&quot;container&quot;&gt;
-
-    &lt;!-- Item 1 --&gt;
-    &lt;section id=&quot;item_1&quot;&gt;
-      &lt;h2&gt;Item 1&lt;/h2&gt;
-      &lt;p&gt;...&lt;/p&gt;
-    &lt;/section&gt;
-    &lt;hr class=&quot;divider&quot;&gt;
-
-        &lt;!-- Item 1.1 --&gt;
-        &lt;section id=&quot;item_1_1&quot;&gt;
-          &lt;h2&gt;Item 1.1&lt;/h2&gt;
-          &lt;p&gt;...&lt;/p&gt;
-        &lt;/section&gt;
-        &lt;hr class=&quot;divider&quot;&gt;
-
-        &lt;!-- Item 1.2 --&gt;
-        &lt;section id=&quot;item_1_2&quot;&gt;
-          &lt;h2&gt;Item 1.2&lt;/h2&gt;
-          &lt;p&gt;...&lt;/p&gt;
-        &lt;/section&gt;
-        &lt;hr class=&quot;divider&quot;&gt;
-
-    &lt;!-- Item 2 --&gt;
-    &lt;section id=&quot;item_2&quot;&gt;
-      &lt;h2&gt;Item 2&lt;/h2&gt;
-      &lt;p&gt;...&lt;/p&gt;
-    &lt;/section&gt;
-    &lt;hr class=&quot;divider&quot;&gt;
-
-        &lt;!-- Item 2.1 --&gt;
-        &lt;section id=&quot;item_2_1&quot;&gt;
-          &lt;h2&gt;Item 2.1&lt;/h2&gt;
-          &lt;p&gt;...&lt;/p&gt;
-        &lt;/section&gt;
-        &lt;hr class=&quot;divider&quot;&gt;
-
-        &lt;!-- Item 2.2 --&gt;
-        &lt;section id=&quot;item_2_2&quot;&gt;
-          &lt;h2&gt;Item 2.2&lt;/h2&gt;
-          &lt;p&gt;...&lt;/p&gt;
-        &lt;/section&gt;
-        &lt;hr class=&quot;divider&quot;&gt;
-
-    &lt;!-- Item 3 --&gt;
-    &lt;section id=&quot;item_3&quot;&gt;
-      &lt;h2&gt;Item 3&lt;/h2&gt;
-      &lt;p&gt;...&lt;/p&gt;
-    &lt;/section&gt;
-    &lt;hr class=&quot;divider&quot;&gt;
-
-    &lt;!-- Item 4 --&gt;
-    &lt;section id=&quot;item_4&quot;&gt;
-      &lt;h2&gt;Item 4&lt;/h2&gt;
-      &lt;p&gt;...&lt;/p&gt;
-    &lt;/section&gt;
-
-  &lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-
-                        <h4>Light Sidebar:</h4>
-                        <p>Light background Color & Dark text for light sidebar. See below image and code for more
-                            information.</p>
-
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <p><a class="popup-img" href="assets/images/sidebar-light.jpg"><img
-                                            class="img-fluid border" src="assets/images/sidebar-light.jpg" alt=""></a>
-                                </p>
                             </div>
                         </div>
-
-                        <p>Add the <code>.bg-light</code> class to the main sidebar navigation div element to display a
-                            light sidebar.</p>
-                        <pre><code>&lt;!-- Sidebar Navigation
-============================ --&gt;
-&lt;div class=&quot;idocs-navigation bg-light&quot;&gt;
-  ....
-&lt;/div&gt;</code></pre>
-
-                        <h4>Dark Sidebar:</h4>
-                        <p>Dark background Color & Light text for dark sidebar. See below image and code for more
-                            information.</p>
-
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <p><a class="popup-img" href="assets/images/sidebar-dark.jpg"><img
-                                            class="img-fluid border" src="assets/images/sidebar-dark.jpg" alt=""></a>
-                                </p>
-                            </div>
-                        </div>
-
-                        <p>Add the <code>.bg-dark</code> and <code>.docs-navigation-dark</code> class to the main
-                            sidebar navigation div element to display a dark sidebar.</p>
-                        <pre><code>&lt;!-- Sidebar Navigation
-============================ --&gt;
-&lt;div class=&quot;idocs-navigation bg-dark docs-navigation-dark&quot;&gt;
-  ....
-&lt;/div&gt;</code></pre>
-                    </section>
-
-                    <hr class="divider">
-
-                    <!-- Footer
-		============================ -->
-                    <section id="idocs_footer">
-                        <h2>Footer</h2>
-                        <p>The list of various footer types & its descriptions are provided below for your reference:
-                        </p>
-                        <h4>Light Footer</h4>
-                        <p>Footer with white background Color & Dark text. See below code for more information.</p>
-                        <pre><code class="html">&lt;!-- Footer
-============================================= --&gt;
-  &lt;footer id=&quot;footer&quot; class=&quot;section bg-light&quot;&gt;
-    &lt;div class=&quot;container&quot;&gt;
-    	..........
-    &lt;/div&gt;
-  &lt;/footer&gt;
-&lt;!-- Footer end --&gt;</code></pre>
-                        <h4>Dark Footer</h4>
-                        <p>Footer with dark background color & Light text. See below code for more information.</p>
-                        <p>Add the <code>.bg-dark</code> and <code>.footer-text-light</code> Class to the
-                            <code>footer</code> Tag to display a Dark footer.
-                        </p>
-                        <pre><code class="html">&lt;!-- Footer
-============================================= --&gt;
-&lt;footer id=&quot;footer&quot; class=&quot;section bg-dark footer-text-light&quot;&gt;
-    &lt;div class=&quot;container&quot;&gt;
-    	..........
-    &lt;/div&gt;
-&lt;/footer&gt;
-&lt;!-- Footer end --&gt;</code></pre>
-                    </section>
-
-                    <hr class="divider">
-
-                    <!-- Box Layout Style
-		============================ -->
-                    <section id="idocs_box_layout">
-                        <h2>Box Layout Style</h2>
-                        <div>
-                            <p>Default Layout Style is wide. Please add the <code>.box</code> class to the
-                                <code>&lt;body&gt;</code> Tag for box layout.
-                            </p>
-                            <pre><code class="html">&lt;body class="box" data-spy="scroll" data-target=".idocs-navigation" data-offset="125"&gt;</code></pre>
-                        </div>
-                    </section>
-
-                    <hr class="divider">
-
-                    <!-- Content
-		============================ -->
-                    <section id="idocs_content">
-                        <h2>Content</h2>
-                        <p class="lead mb-5">Documentation and examples for displaying typography, code, table, image
-                            and video and more..</p>
-                    </section>
-
-                    <!-- Typography
-		============================ -->
-                    <section id="idocs_typography">
-                        <h2>Typography</h2>
-                        <p class="text-4">Documentation and examples for typography, headings, body text, lists, and
-                            more.</p>
-                        <h3>Headings</h3>
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>Heading</th>
-                                    <th>Example</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><code>&lt;h1&gt;&lt;/h1&gt;</code></td>
-                                    <td>
-                                        <h1>h1. Heading</h1>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><code>&lt;h2&gt;&lt;/h2&gt;</code></td>
-                                    <td>
-                                        <h2>h2. Heading</h2>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><code>&lt;h3&gt;&lt;/h3&gt;</code></td>
-                                    <td>
-                                        <h3>h3. Heading</h3>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><code>&lt;h4&gt;&lt;/h4&gt;</code></td>
-                                    <td>
-                                        <h4>h4. Heading</h4>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><code>&lt;h5&gt;&lt;/h5&gt;</code></td>
-                                    <td>
-                                        <h5>h5. Heading</h5>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><code>&lt;h6&gt;&lt;/h6&gt;</code></td>
-                                    <td>
-                                        <h6>h6. Heading</h6>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                        <h3 class="mt-5">Lead</h3>
-                        <p>Make a paragraph stand out by adding <code>.lead</code></p>
-                        <p class="lead">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Anim
-                            pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-                        </p>
-                        <pre><code class="html">&lt;p class=&quot;lead&quot;&gt;
-   Lorem Ipsum is simply dummy text of the printing and typesetting industry. Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-&lt;/p&gt;</code></pre>
-
-                        <h3 class="mt-5">Inline Text elements</h3>
-                        <p>You can use the mark tag to <mark>highlight</mark> text.</p>
-                        <p><del>This line of text is meant to be treated as deleted text.</del></p>
-                        <p><s>This line of text is meant to be treated as no longer accurate.</s></p>
-                        <p><ins>This line of text is meant to be treated as an addition to the document.</ins></p>
-                        <p><u>This line of text will render as underlined</u></p>
-                        <p><small>This line of text is meant to be treated as fine print.</small></p>
-                        <p><strong>This line rendered as bold text.</strong></p>
-                        <p><em>This line rendered as italicized text.</em></p>
-
-                        <pre><code class="html">&lt;p&gt;You can use the mark tag to &lt;mark&gt;highlight&lt;/mark&gt; text.&lt;/p&gt;
-&lt;p&gt;&lt;del&gt;This line of text is meant to be treated as deleted text.&lt;/del&gt;&lt;/p&gt;
-&lt;p&gt;&lt;s&gt;This line of text is meant to be treated as no longer accurate.&lt;/s&gt;&lt;/p&gt;
-&lt;p&gt;&lt;ins&gt;This line of text is meant to be treated as an addition to the document.&lt;/ins&gt;&lt;/p&gt;
-&lt;p&gt;&lt;u&gt;This line of text will render as underlined&lt;/u&gt;&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;This line of text is meant to be treated as fine print.&lt;/small&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;This line rendered as bold text.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;This line rendered as italicized text.&lt;/em&gt;&lt;/p&gt;
-</code></pre>
-                    </section>
-
-                    <hr class="divider">
-
-                    <!-- Code
-		============================ -->
-                    <section id="idocs_code">
-                        <h2>Code</h2>
-                        <p class="text-4">Documentation and examples for displaying inline and multiline blocks of code
-                        </p>
-
-                        <h3 class="mt-5">Inline code</h3>
-                        <p>Wrap inline snippets of code with <code>&lt;code&gt;</code>. <span class="text-info">Be sure
-                                to escape HTML angle brackets</span>.</p>
-
-                        <p>For example, <code>&lt;section&gt;</code> should be wrapped as inline.</p>
-                        <pre><code class="html">For example, &lt;code&gt;&amp;lt;section&amp;gt;&lt;/code&gt; should be wrapped as inline.</code></pre>
-
-
-                        <h3 class="mt-5">Code blocks</h3>
-                        <p>Use <code>&lt;pre&gt;</code>s for multiple lines of code. <span class="text-info">Once again,
-                                be sure to escape any angle brackets in the code for proper rendering</span>. You may
-                            optionally add the <code>.pre-scrollable</code> class, which will set a max-height of 340px
-                            and provide a y-axis scrollbar.</p>
-                        <p><strong>For example:</strong></p>
-                        <pre><code class="html">&lt;p&gt;Sample text here...&lt;/p&gt;
-&lt;p&gt;And another line of sample text here...&lt;/p&gt;
-</code></pre>
-                        <p><strong>Have to use something like:</strong></p>
-                        <pre><code class="html">&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;Sample text here...&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;And another line of sample text here...&amp;lt;/p&amp;gt;
-&lt;/pre&gt;&lt;/code&gt;
-</code></pre>
-
-                        <h3 class="mt-5">Syntax highlighter</h3>
-                        <p>We use <strong><a target="_blank" href="https://highlightjs.org/">Highlight Js</a></strong>
-                            for syntax highlight code snippet.</p>
-                        <p>You can refer more information here: <a class="btn btn-primary" target="_blank"
-                                href="https://highlightjs.org/usage/"><i class="fas fa-external-link-alt mr-1"></i> How
-                                to use highlight.js</a></p>
-                    </section>
-
-                    <hr class="divider">
-
-                    <!-- Table
-		============================ -->
-                    <section id="idocs_table">
-                        <h2>Table</h2>
-                        <p class="text-4">Documentation and examples for opt-in styling of tables.</p>
-                        <p>iDocs is based on Bootstrap 4, so you can easily use Bootstrap's table classes to style your
-                            table. <a class="ml-1" target="_blank"
-                                href="https://getbootstrap.com/docs/4.4/content/tables/"><i
-                                    class="fas fa-external-link-alt"></i> Bootstrap Documentation</a></p>
-
-                        <h3 class="mt-5">Bordered</h3>
-                        <pre><code class="html">&lt;table class=&quot;table table-bordered&quot;&gt;
-   .......
-&lt;/table&gt;</code></pre>
-
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">First</th>
-                                    <th scope="col">Last</th>
-                                    <th scope="col">Handle</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Larry</td>
-                                    <td>the Bird</td>
-                                    <td>@twitter</td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                        <h3 class="mt-5">Striped</h3>
-                        <pre><code class="html">&lt;table class=&quot;table table-bordered table-striped&quot;&gt;
-   .......
-&lt;/table&gt;</code></pre>
-
-                        <table class="table table-bordered table-striped">
-                            <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">First</th>
-                                    <th scope="col">Last</th>
-                                    <th scope="col">Handle</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Larry</td>
-                                    <td>the Bird</td>
-                                    <td>@twitter</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <p><span class="badge badge-danger text-uppercase mr-2">Note</span>You can refer more
-                            information in Bootstrap Documentation here: <a class="btn btn-primary" target="_blank"
-                                href="https://getbootstrap.com/docs/4.4/content/tables/"><i
-                                    class="fas fa-external-link-alt mr-1"></i> Bootstrap Documentation</a></p>
-                    </section>
-
-                    <hr class="divider">
-
-                    <!-- Icons
-		============================ -->
-                    <section id="idocs_icons">
-                        <h2>Icons</h2>
-                        <p><strong>Font Awesome</strong> icon sets are used in iDocs.</p>
-
-                        <pre><code class="html">&lt;i class=&quot;fas fa-mobile-alt&quot;&gt;&lt;/i&gt;
-&lt;i class=&quot;fab fa-twitter&quot;&gt;&lt;/i&gt;
-&lt;i class=&quot;fas fa-credit-card&quot;&gt;&lt;/i&gt;
-&lt;i class=&quot;fab fa-facebook-f&quot;&gt;&lt;/i&gt;
-</code></pre>
-                        <p><span class="badge badge-danger text-uppercase mr-2">Note</span>Please go to their official
-                            documentation pages for a full list of icons: <a class="btn btn-primary" target="_blank"
-                                href="https://fontawesome.com/icons"><i class="fas fa-external-link-alt mr-1"></i> Font
-                                Awesome</a></p>
-                    </section>
-
-                    <hr class="divider">
-
-                    <!-- Image
-		============================ -->
-                    <section id="idocs_image">
-                        <h2>Image</h2>
-                        <p class="text-4">Documentation and examples for opting images into responsive behavior and add
-                            lightweight styles to them—all via classes.</p>
-
-                        <h3 class="mt-5">Responsive Images</h3>
-                        <p>Images in Bootstrap are made responsive with <code>.img-fluid.</code>
-                            <code>max-width: 100%;</code> and <code>height: auto;</code> are applied to the image so
-                            that it scales with the parent element.
-                        </p>
-                        <p><img src="assets/images/screenshot.jpg" class="img-fluid" alt="Responsive image"></p>
-                        <pre><code class="html">&lt;img src=&quot;assets/images/screenshot.jpg&quot; class=&quot;img-fluid&quot; alt=&quot;Responsive image&quot;&gt;</code></pre>
-
-                        <h3 class="mt-5">Image lightbox</h3>
-                        <p>Show image popup when click on image:</p>
-                        <p><a class="popup-img" href="assets/images/screenshot.jpg"><img
-                                    src="assets/images/screenshot-thumb.jpg" class="img-fluid img-thumbnail"
-                                    alt="image"></a></p>
-                        <pre><code class="html">&lt;a class=&quot;popup-img&quot; href=&quot;assets/images/screenshot.jpg&quot;&gt;
-  &lt;img src=&quot;assets/images/screenshot-thumb.jpg&quot; class=&quot;img-fluid img-thumbnail&quot; alt=&quot;image&quot;&gt;
-&lt;/a&gt;</code></pre>
-
-                        <h3 class="mt-5">Image Lightbox with Link</h3>
-                        <p>Show image popup when click on link: <a class="popup-img"
-                                href="assets/images/screenshot.jpg">Click Here for Popup Image</a></p>
-                        <pre><code class="html">&lt;a class=&quot;popup-img&quot; href=&quot;assets/images/screenshot.jpg&quot;&gt;Click Here for Popup Image&lt;/a&gt;</code></pre>
-
-                        <h3 class="mt-5">Image lightbox with Button</h3>
-                        <p>Show image popup when click on button: <a class="btn btn-primary popup-img"
-                                href="assets/images/screenshot.jpg">Click Here for Popup Image</a></p>
-                        <pre><code class="html">&lt;a class=&quot;btn btn-primary popup-img&quot; href=&quot;assets/images/screenshot.jpg&quot;&gt;Click Here for Popup Image&lt;/a&gt;</code></pre>
-                    </section>
-
-                    <hr class="divider">
-
-                    <!-- Video
-		============================ -->
-                    <section id="idocs_video">
-                        <h2>Video</h2>
-                        <p class="text-4">Create responsive video embeds based on the width of the parent by creating an
-                            intrinsic ratio that scales on any device.</p>
-
-                        <h3 class="mt-5">Embedded Video</h3>
-                        <p>Wrap any embed like an <code>&lt;iframe&gt;</code> in a parent element with
-                            <code>.embed-responsive</code> and an aspect ratio. The <code>.embed-responsive-item</code>
-                            isn’t strictly required, but we encourage it.
-                        </p>
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/7e90gBu4pas"
-                                allowfullscreen></iframe>
-                        </div>
-                        <pre><code class="html">&lt;div class=&quot;embed-responsive embed-responsive-16by9&quot;&gt;
-  &lt;iframe class=&quot;embed-responsive-item&quot; src=&quot;https://www.youtube.com/embed/7e90gBu4pas&quot; allowfullscreen&gt;&lt;/iframe&gt;
-&lt;/div&gt;</code></pre>
-                        <p><span class="badge badge-danger text-uppercase mr-2">Note</span>Please go to official
-                            bootstrap documentation for a full information of embed video: <a class="btn btn-primary"
-                                target="_blank" href="https://getbootstrap.com/docs/4.4/utilities/embed/"><i
-                                    class="fas fa-external-link-alt mr-1"></i> Bootstrap Documentation</a></p>
-
-                        <h3 class="mt-5">Popup with Video</h3>
-                        <p>Show <strong>Youtube</strong> and <strong>Vimeo</strong> video popup when click on link:</p>
-                        <p><a class="popup-youtube" href="http://www.youtube.com/watch?v=7e90gBu4pas">Open Popup YouTube
-                                Video </a></p>
-                        <pre><code class="html">&lt;a class=&quot;popup-youtube&quot; href=&quot;http://www.youtube.com/watch?v=7e90gBu4pas&quot;&gt;Open Popup YouTube Video &lt;/a&gt;</code></pre>
-
-                        <p><a class="popup-vimeo" href="https://vimeo.com/45830194">Open Popup Vimeo video</a></p>
-                        <pre><code class="html">&lt;a class=&quot;popup-vimeo&quot; href=&quot;https://vimeo.com/45830194&quot;&gt;Open Popup Vimeo video&lt;/a&gt;</code></pre>
-                    </section>
-
-                    <hr class="divider">
-
-                    <!-- Components
-		============================ -->
-                    <section id="idocs_components">
-                        <h2>Components</h2>
-                        <p class="mb-5">Setting up components is very easy. Here is the Some of shortcodes describe.
-                            also, <strong>iDocs</strong> is based on Bootstrap 4, so you can easily use Bootstrap's
-                            components: <a class="ml-1" target="_blank"
-                                href="https://getbootstrap.com/docs/4.4/components/"><i
-                                    class="fas fa-external-link-alt"></i> Bootstrap Documentation</a></p>
-                    </section>
-
-                    <!-- Accordion
-		  ============================ -->
-                    <section id="idocs_accordion">
-                        <h2>Accordion</h2>
-                        <p>You can extend the default collapse behavior to create an accordion. To properly achieve the
-                            accordion style, be sure to use <code>.accordion</code> as a wrapper.</p>
-                        <p>See below image and code for more information.</p>
-                        <p><a class="popup-img" href="assets/images/accordion.jpg"><img class="img-fluid border"
-                                    src="assets/images/accordion.jpg" alt=""></a></p>
-                        <pre><code class="html">&lt;div class=&quot;accordion&quot; id=&quot;accordionDefault&quot;&gt;
-  &lt;div class=&quot;card&quot;&gt;
-    &lt;div class=&quot;card-header&quot; id=&quot;headingOne&quot;&gt;
-      &lt;h5 class=&quot;mb-0&quot;&gt; &lt;a href=&quot;#&quot; data-toggle=&quot;collapse&quot; data-target=&quot;#collapseOne&quot; aria-expanded=&quot;true&quot; aria-controls=&quot;collapseOne&quot;&gt;Accordion Title&lt;/a&gt; &lt;/h5&gt;
-    &lt;/div&gt;
-    &lt;div id=&quot;collapseOne&quot; class=&quot;collapse show&quot; aria-labelledby=&quot;headingOne&quot; data-parent=&quot;#accordionDefault&quot;&gt;
-      &lt;div class=&quot;card-body&quot;&gt;This is Accordion Content&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;card&quot;&gt;
-    &lt;div class=&quot;card-header&quot; id=&quot;headingTwo&quot;&gt;
-      &lt;h5 class=&quot;mb-0&quot;&gt; &lt;a href=&quot;#&quot; class=&quot;collapsed&quot; data-toggle=&quot;collapse&quot; data-target=&quot;#collapseTwo&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;collapseTwo&quot;&gt;Accordion Title&lt;/a&gt; &lt;/h5&gt;
-    &lt;/div&gt;
-    &lt;div id=&quot;collapseTwo&quot; class=&quot;collapse&quot; aria-labelledby=&quot;headingTwo&quot; data-parent=&quot;#accordionDefault&quot;&gt;
-      &lt;div class=&quot;card-body&quot;&gt;This is Accordion Content&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;card&quot;&gt;
-    &lt;div class=&quot;card-header&quot; id=&quot;headingThree&quot;&gt;
-      &lt;h5 class=&quot;mb-0&quot;&gt; &lt;a href=&quot;#&quot; class=&quot;collapsed&quot; data-toggle=&quot;collapse&quot; data-target=&quot;#collapseThree&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;collapseThree&quot;&gt;Accordion Title&lt;/a&gt; &lt;/h5&gt;
-    &lt;/div&gt;
-    &lt;div id=&quot;collapseThree&quot; class=&quot;collapse&quot; aria-labelledby=&quot;headingThree&quot; data-parent=&quot;#accordionDefault&quot;&gt;
-      &lt;div class=&quot;card-body&quot;&gt;This is Accordion Content&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-                        <h4>Options:</h4>
-                        <div class="table-responsive">
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th>Type Class</th>
-                                        <th>Features</th>
-                                        <th>Code Example</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><code>.accordion-alternate</code></td>
-                                        <td>Alternate Minimal Style for the accordions.</td>
-                                        <td>
-                                            <pre class="mb-0"><code>&lt;div class=&quot;accordion accordion-alternate&quot; id=&quot;accordionDefault&quot;&gt;
-  .......
-&lt;/div&gt;</code></pre>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>.arrow-right</code></td>
-                                        <td>For set arrow in right side in accordions</td>
-                                        <td>
-                                            <pre class="mb-0"><code>&lt;div class=&quot;accordion arrow-right&quot; id=&quot;accordionDefault&quot;&gt;
-  .......
-&lt;/div&gt;</code></pre>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </section>
-
-                    <hr class="divider">
-
-                    <!-- Tabs
-		  ============================ -->
-                    <section id="idocs_tabs">
-                        <h2>Tabs</h2>
-                        <p class="text-4">Default <a
-                                href="https://getbootstrap.com/docs/4.4/components/navs/#javascript-behavior">Bootstrap
-                                Nav</a> component combined with iDocs for unique tabs.</p>
-                        <p>See below image and code for more information.</p>
-                        <p><a class="popup-img" href="assets/images/tabs.jpg"><img class="img-fluid border"
-                                    src="assets/images/tabs.jpg" alt=""></a></p>
-
-                        <pre><code class="html">&lt;ul class=&quot;nav nav-tabs&quot; id=&quot;myTab&quot; role=&quot;tablist&quot;&gt;
-  &lt;li class=&quot;nav-item&quot; role=&quot;presentation&quot;&gt;
-    &lt;a class=&quot;nav-link active&quot; id=&quot;home-tab&quot; data-toggle=&quot;tab&quot; href=&quot;#home&quot; role=&quot;tab&quot; aria-controls=&quot;home&quot; aria-selected=&quot;true&quot;&gt;Home&lt;/a&gt;
-  &lt;/li&gt;
-  &lt;li class=&quot;nav-item&quot; role=&quot;presentation&quot;&gt;
-    &lt;a class=&quot;nav-link&quot; id=&quot;profile-tab&quot; data-toggle=&quot;tab&quot; href=&quot;#profile&quot; role=&quot;tab&quot; aria-controls=&quot;profile&quot; aria-selected=&quot;false&quot;&gt;Profile&lt;/a&gt;
-  &lt;/li&gt;
-  &lt;li class=&quot;nav-item&quot; role=&quot;presentation&quot;&gt;
-    &lt;a class=&quot;nav-link&quot; id=&quot;contact-tab&quot; data-toggle=&quot;tab&quot; href=&quot;#contact&quot; role=&quot;tab&quot; aria-controls=&quot;contact&quot; aria-selected=&quot;false&quot;&gt;Contact&lt;/a&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;tab-content my-3&quot; id=&quot;myTabContent&quot;&gt;
-  &lt;div class=&quot;tab-pane fade show active&quot; id=&quot;home&quot; role=&quot;tabpanel&quot; aria-labelledby=&quot;home-tab&quot;&gt;This is Tab Content Home&lt;/div&gt;
-  &lt;div class=&quot;tab-pane fade&quot; id=&quot;profile&quot; role=&quot;tabpanel&quot; aria-labelledby=&quot;profile-tab&quot;&gt;This is Tab Content Profile&lt;/div&gt;
-  &lt;div class=&quot;tab-pane fade&quot; id=&quot;contact&quot; role=&quot;tabpanel&quot; aria-labelledby=&quot;contact-tab&quot;&gt;This is Tab Content Contact&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-
-                        <h4>Options:</h4>
-                        <div class="table-responsive">
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th>Type Class</th>
-                                        <th>Features</th>
-                                        <th>Code Example</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><code>Basic Navs</code></td>
-                                        <td>Basic Navs Style for the Tabs</td>
-                                        <td>
-                                            <pre class="mb-0"><code>&lt;ul class=&quot;nav &quot; id=&quot;myTab&quot; role=&quot;tablist&quot;&gt;
-  .......
-&lt;/ul&gt;</code></pre>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>.nav-separator</code></td>
-                                        <td>Basic Navs Style with Separator for the Tabs</td>
-                                        <td>
-                                            <pre class="mb-0"><code>&lt;ul class=&quot;nav &quot; id=&quot;myTab&quot; role=&quot;tablist&quot;&gt;
-  .......
-&lt;/ul&gt;</code></pre>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>.nav-tabs</code></td>
-                                        <td>Tabs Navs Style for the Tabs. For example - above Preview Example.</td>
-                                        <td>
-                                            <pre class="mb-0"><code>&lt;ul class=&quot;nav nav-tabs&quot; id=&quot;myTab&quot; role=&quot;tablist&quot;&gt;
-  .......
-&lt;/ul&gt;</code></pre>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>.nav-pills</code></td>
-                                        <td>Pills Navs Style for the Tabs</td>
-                                        <td>
-                                            <pre class="mb-0"><code>&lt;ul class=&quot;nav nav-pills&quot; id=&quot;myTab&quot; role=&quot;tablist&quot;&gt;
-  .......
-&lt;/ul&gt;</code></pre>
-                                        </td>
-                                    </tr>
-
-                                </tbody>
-                            </table>
-                        </div>
-                    </section>
-
-                    <hr class="divider">
-
-                    <!-- Social Icon
-		  ============================ -->
-                    <section id="idocs_social_icon">
-                        <h3>Social Icon</h3>
-                        <p>Social links with different styles. See below code for more information.</p>
-                        <pre><code class="html">&lt;div class=&quot;d-flex flex-column&quot;&gt;
-  &lt;ul class=&quot;social-icons&quot;&gt;
-    &lt;li&gt;&lt;a data-toggle=&quot;tooltip&quot; href=&quot;http://www.facebook.com/&quot; target=&quot;_blank&quot; title=&quot;&quot; data-original-title=&quot;Facebook&quot;&gt;&lt;i class=&quot;fab fa-facebook-f&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a data-toggle=&quot;tooltip&quot; href=&quot;http://www.twitter.com/&quot; target=&quot;_blank&quot; title=&quot;&quot; data-original-title=&quot;Twitter&quot;&gt;&lt;i class=&quot;fab fa-twitter&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a data-toggle=&quot;tooltip&quot; href=&quot;http://www.google.com/&quot; target=&quot;_blank&quot; title=&quot;&quot; data-original-title=&quot;Google&quot;&gt;&lt;i class=&quot;fab fa-google&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a data-toggle=&quot;tooltip&quot; href=&quot;http://www.linkedin.com/&quot; target=&quot;_blank&quot; title=&quot;&quot; data-original-title=&quot;Linkedin&quot;&gt;&lt;i class=&quot;fab fa-linkedin-in&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a data-toggle=&quot;tooltip&quot; href=&quot;http://www.youtube.com/&quot; target=&quot;_blank&quot; title=&quot;&quot; data-original-title=&quot;Youtube&quot;&gt;&lt;i class=&quot;fab fa-youtube&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a data-toggle=&quot;tooltip&quot; href=&quot;http://www.instagram.com/&quot; target=&quot;_blank&quot; title=&quot;&quot; data-original-title=&quot;Instagram&quot;&gt;&lt;i class=&quot;fab fa-instagram&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/div&gt;
-</code></pre>
-                        <h4>Options:</h4>
-                        <div class="table-responsive">
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th>Type Class</th>
-                                        <th>Features</th>
-                                        <th>Code Example</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Default (Dark)</td>
-                                        <td>Default Social Icon with Dark Color</td>
-                                        <td>
-                                            <pre class="mb-0"><code>&lt;ul class=&quot;social-icons&quot;&gt;
-  .......
-&lt;/ul&gt;</code></pre>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>.social-icons-light</code></td>
-                                        <td>Social Icon with Light Color</td>
-                                        <td>
-                                            <pre class="mb-0"><code>&lt;ul class=&quot;social-icons social-icons-light&quot;&gt;
-  .......
-&lt;/ul&gt;</code></pre>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>.social-icons-muted</code></td>
-                                        <td>Social Icon with Muted Color</td>
-                                        <td>
-                                            <pre class="mb-0"><code>&lt;ul class=&quot;social-icons social-icons-muted&quot;&gt;
-  .......
-&lt;/ul&gt;</code></pre>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>.social-icons-sm</code></td>
-                                        <td>Social Icon with Small Icon Size</td>
-                                        <td>
-                                            <pre class="mb-0"><code>&lt;ul class=&quot;social-icons social-icons-sm&quot;&gt;
-  .......
-&lt;/ul&gt;</code></pre>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>.social-icons-lg</code></td>
-                                        <td>Social Icon with Large Icon Size</td>
-                                        <td>
-                                            <pre class="mb-0"><code>&lt;ul class=&quot;social-icons social-icons-lg&quot;&gt;
-  .......
-&lt;/ul&gt;</code></pre>
-                                        </td>
-                                    </tr>
-
-                                </tbody>
-                            </table>
-                        </div>
-                    </section>
-
-                    <hr class="divider">
-
-                    <!-- Helper Classes
-		  ============================ -->
-                    <section id="idocs_helper_classes">
-                        <h3>Helper Classes</h3>
-                        <p>We have created some really useful helper classes for you. Here are a few of them. also, You
-                            can refer other default bootstrap helper classes here: <a class="ml-1" target="_blank"
-                                href="https://getbootstrap.com/docs/4.4/utilities/"><i
-                                    class="fas fa-external-link-alt"></i> Bootstrap Documentation</a> </p>
-
-                        <h5>Text Size:</h5>
-                        <ul>
-                            <li><code>.text-0</code> - Changes the Font size to 11px.</li>
-                            <li><code>.text-1</code> - Changes the Font size to 12px.</li>
-                            <li><code>.text-2</code> - Changes the Font size to 14px.</li>
-                            <li><code>.text-3</code> - Changes the Font size to 16px.</li>
-                            <li><code>.text-4</code> - Changes the Font size to 18px.</li>
-                            <li><code>.text-5</code> - Changes the Font size to 21px.</li>
-                            <li><code>.text-6</code> - Changes the Font size to 24px.</li>
-                            <li><code>.text-7</code> - Changes the Font size to 28px.</li>
-                            <li><code>.text-8</code> - Changes the Font size to 32px.</li>
-                            <li><code>.text-9</code> - Changes the Font size to 36px.</li>
-                            <li><code>.text-10</code> - Changes the Font size to 40px.</li>
-                            <li><code>.text-11</code> - Changes the Font size to 44px.</li>
-                            <li><code>.text-12</code> - Changes the Font size to 48px.</li>
-                            <li><code>.text-13</code> - Changes the Font size to 52px.</li>
-                            <li><code>.text-14</code> - Changes the Font size to 56px.</li>
-                            <li><code>.text-15</code> - Changes the Font size to 60px.</li>
-                            <li><code>.text-16</code> - Changes the Font size to 64px.</li>
-                            <li><code>.text-17</code> - Changes the Font size to 72px.</li>
-                            <li><code>.text-18</code> - Changes the Font size to 80px.</li>
-                            <li><code>.text-19</code> - Changes the Font size to 84px.</li>
-                            <li><code>.text-20</code> - Changes the Font size to 92px.</li>
-                        </ul>
-                        <h5>Font Weight:</h5>
-                        <ul>
-                            <li><code>.font-weight-100</code> - For font weight of 100.</li>
-                            <li><code>.font-weight-200</code> - For font weight of 200.</li>
-                            <li><code>.font-weight-300</code> - For font weight of 300.</li>
-                            <li><code>.font-weight-400</code> - For font weight of 400.</li>
-                            <li><code>.font-weight-500</code> - For font weight of 500.</li>
-                            <li><code>.font-weight-600</code> - For font weight of 600.</li>
-                            <li><code>.font-weight-700</code> - For font weight of 700.</li>
-                            <li><code>.font-weight-800</code> - For font weight of 800.</li>
-                            <li><code>.font-weight-900</code> - For font weight of 900.</li>
-                        </ul>
-                        <h5>Background Color:</h5>
-                        <ul>
-                            <li><code>.bg-transparent</code> - For background color of transparent</li>
-                            <li><code>.bg-light</code> - For background color of light gray</li>
-                            <li><code>.bg-light-1</code> - For background color of more light gray</li>
-                            <li><code>.bg-light-2</code> - For background color of more light gray</li>
-                            <li><code>.bg-light-3</code> - For background color of more light gray</li>
-                            <li><code>.bg-light-4</code> - For background color of more light gray</li>
-                            <li><code>.bg-dark</code> - For background color of dark</li>
-                            <li><code>.bg-dark-1</code> - For background color of dark gray</li>
-                            <li><code>.bg-dark-2</code> - For background color of more dark gray</li>
-                            <li><code>.bg-dark-3</code> - For background color of more dark gray</li>
-                            <li><code>.bg-dark-4</code> - For background color of more dark gray</li>
-                        </ul>
-                        <h5>Box Shadow</h5>
-                        <ul>
-                            <li><code>.shadow-none</code> - For No shadow to elements with box-shadow utilities.</li>
-                            <li><code>.shadow-sm</code> - For Small shadow to elements with box-shadow utilities.</li>
-                            <li><code>.shadow</code> - For Regular shadow to elements with box-shadow utilities.</li>
-                            <li><code>.shadow-md</code> - For medium light shadows to elements with box-shadow
-                                utilities.</li>
-                            <li><code>.shadow-lg</code> - For Larger shadows to elements with box-shadow utilities.</li>
-                        </ul>
-                        <h5>Opacity</h5>
-                        <ul>
-                            <li><code>.opacity-1</code> - For 10% opacity.</li>
-                            <li><code>.opacity-2</code> - For 20% opacity.</li>
-                            <li><code>.opacity-3</code> - For 30% opacity.</li>
-                            <li><code>.opacity-4</code> - For 40% opacity.</li>
-                            <li><code>.opacity-5</code> - For 50% opacity.</li>
-                            <li><code>.opacity-6</code> - For 60% opacity.</li>
-                            <li><code>.opacity-7</code> - For 70% opacity.</li>
-                            <li><code>.opacity-8</code> - For 80% opacity.</li>
-                            <li><code>.opacity-9</code> - For 90% opacity.</li>
-                        </ul>
-                        <h5>Border Radius</h5>
-                        <ul>
-                            <li><code>.rounded-top-0</code> - No Border Radius for top.</li>
-                            <li><code>.rounded-bottom-0</code> - No Border Radius for bottom.</li>
-                            <li><code>.rounded-left-0</code> - No Border Radius for left.</li>
-                            <li><code>.rounded-right-0</code> - No Border Radius for right.</li>
-                        </ul>
-                        <h5>Borders, Sizing, Spacing (margin & padding) and also much more....</h5>
-                        <div class="alert alert-info">You can refer for use other default bootstrap helper classes here
-                            - <a
-                                href="https://getbootstrap.com/docs/4.4/utilities/">https://getbootstrap.com/docs/4.4/utilities/</a>
-                        </div>
-                    </section>
-
-
-                    <hr class="divider">
-
-                    <!-- FAQ
-		============================ -->
-                    <section id="idocs_faq">
-                        <h2>FAQ</h2>
-                        <p class="text-4">A FAQ is a list of frequently asked questions (FAQs) and answers on a
-                            particular topic.</p>
-
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="accordion accordion-alterate arrow-right" id="popularTopics">
-                                    <div class="card">
-                                        <div class="card-header" id="heading1">
-                                            <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse"
-                                                    data-target="#collapse1" aria-expanded="false"
-                                                    aria-controls="collapse1">What does royalty free mean?</a> </h5>
-                                        </div>
-                                        <div id="collapse1" class="collapse" aria-labelledby="heading1"
-                                            data-parent="#popularTopics">
-                                            <div class="card-body"> Lorem Ipsum is simply dummy text of the printing and
-                                                typesetting industry. Lorem Ipsum has been the industry's standard dummy
-                                                text ever since the 1500s, when an unknown printer took a galley of type
-                                                and scrambled it to make a type specimen book. It has survived not only
-                                                five centuries, but also the leap into electronic typesetting, remaining
-                                                essentially unchanged. </div>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <div class="card-header" id="heading2">
-                                            <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse"
-                                                    data-target="#collapse2" aria-expanded="false"
-                                                    aria-controls="collapse2">What is a single application?</a> </h5>
-                                        </div>
-                                        <div id="collapse2" class="collapse" aria-labelledby="heading2"
-                                            data-parent="#popularTopics">
-                                            <div class="card-body"> Iisque Anim pariatur cliche reprehenderit, enim
-                                                eiusmod high life accusamus terry richardson ad squid. Food truck quinoa
-                                                nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a
-                                                bird on it squid single-origin coffee nulla assumenda shoreditch et.
-                                                Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                                                nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <div class="card-header" id="heading3">
-                                            <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse"
-                                                    data-target="#collapse3" aria-expanded="false"
-                                                    aria-controls="collapse3">What are some examples of permitted end
-                                                    products?</a> </h5>
-                                        </div>
-                                        <div id="collapse3" class="collapse" aria-labelledby="heading3"
-                                            data-parent="#popularTopics">
-                                            <div class="card-body"> Iisque persius interesset his et, in quot quidam
-                                                persequeris vim, ad mea essent possim iriure. Mutat tacimates id sit.
-                                                Ridens mediocritatem ius an, eu nec magna imperdiet. </div>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <div class="card-header" id="heading4">
-                                            <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse"
-                                                    data-target="#collapse4" aria-expanded="false"
-                                                    aria-controls="collapse4">I'm not sure if my use is covered. What
-                                                    should I do?</a> </h5>
-                                        </div>
-                                        <div id="collapse4" class="collapse" aria-labelledby="heading4"
-                                            data-parent="#popularTopics">
-                                            <div class="card-body"> Lorem Ipsum is simply dummy text of the printing and
-                                                typesetting industry. Anim pariatur cliche reprehenderit, enim eiusmod
-                                                high life accusamus terry richardson ad squid. Food truck quinoa
-                                                nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a
-                                                bird on it squid single-origin coffee nulla assumenda shoreditch et.
-                                                Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                                                nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <div class="card-header" id="heading5">
-                                            <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse"
-                                                    data-target="#collapse5" aria-expanded="false"
-                                                    aria-controls="collapse5">What is a single application?</a> </h5>
-                                        </div>
-                                        <div id="collapse5" class="collapse" aria-labelledby="heading5"
-                                            data-parent="#popularTopics">
-                                            <div class="card-body"> Lorem Ipsum is simply dummy text of the printing and
-                                                typesetting industry. Food truck quinoa nesciunt laborum eiusmod. Brunch
-                                                3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin
-                                                coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
-                                                craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad
-                                                vegan excepteur butcher vice lomo. </div>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <div class="card-header" id="heading6">
-                                            <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse"
-                                                    data-target="#collapse6" aria-expanded="false"
-                                                    aria-controls="collapse6">Am I allowed to modify the item that I
-                                                    purchased?</a> </h5>
-                                        </div>
-                                        <div id="collapse6" class="collapse" aria-labelledby="heading6"
-                                            data-parent="#popularTopics">
-                                            <div class="card-body"> Lorem Ipsum is simply dummy text of the printing and
-                                                typesetting industry. Food truck quinoa nesciunt laborum eiusmod. Brunch
-                                                3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin
-                                                coffee nulla assumenda shoreditch et. Ad vegan excepteur butcher vice
-                                                lomo. </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </section>
-
-                    <hr class="divider">
-
-                    <!-- Source & Credits
-		============================ -->
-                    <section id="idocs_source_credits">
-                        <h2>Source & Credits</h2>
-                        <h4>Images:</h4>
-                        <ul>
-                            <li>Unsplash - <a target="_blank" href="https://unsplash.com/">https://unsplash.com/</a>
-                            </li>
-                        </ul>
-                        <h4>Fonts:</h4>
-                        <ul>
-                            <li>Icons Font Face - <a target="_blank"
-                                    href="https://fontawesome.com/">https://fontawesome.com/</a></li>
-                        </ul>
-                        <h4>Scripts:</h4>
-                        <ul>
-                            <li>jQuery - <a target="_blank" href="http://www.jquery.com/">http://www.jquery.com/</a>
-                            </li>
-                            <li>Bootstrap 4 - <a target="_blank"
-                                    href="http://getbootstrap.com/">http://getbootstrap.com/</a></li>
-                            <li>Highlight Js - <a target="_blank"
-                                    href="https://highlightjs.org/">https://highlightjs.org/</a></li>
-                            <li>jQuery easing - <a target="_blank"
-                                    href="http://gsgd.co.uk/sandbox/jquery/easing/">http://gsgd.co.uk/sandbox/jquery/easing/</a>
-                            </li>
-                            <li>Magnific Popup - <a target="_blank"
-                                    href="http://dimsemenov.com/plugins/magnific-popup/">http://dimsemenov.com/plugins/magnific-popup/</a>
-                            </li>
-                        </ul>
-                    </section>
-
-                    <hr class="divider">
-
-                    <!-- Support
-		============================ -->
-                    <section id="idocs_support">
-                        <h2>Support</h2>
-                        <p>If this documentation doesn't answer your questions, So, Please send us Email via <a
-                                class="btn btn-primary" target="_blank"
-                                href="https://themeforest.net/user/harnishdesign#contact">Item Support Page</a></p>
-                        <p> We are located in GMT +5:30 time zone and we answer all questions within 12-24 hours in
-                            weekdays. In some rare cases the waiting time can be to 48 hours. (except holiday seasons
-                            which might take longer).</p>
-                        <div class="alert alert-warning mb-4"><span
-                                class="badge badge-danger text-uppercase">Note:</span> While we aim to provide the best
-                            support possible, please keep in mind that it only extends to verified buyers and only to
-                            issues related to our template like bugs and errors. Custom modifications or third party
-                            module implementations are not included.</div>
-                        <h4>Don’t forget to Rate this template
-                            <i class="fas fa-star text-warning"></i> <i class="fas fa-star text-warning"></i> <i
-                                class="fas fa-star text-warning"></i> <i class="fas fa-star text-warning"></i> <i
-                                class="fas fa-star text-warning"></i>
-                        </h4>
-                        <div class="alert alert-success">
-                            Please Add your Review (Opinion) for Our template. It would be a great support for us.<br>
-                            Go to your <strong>Themeforest Profile</strong> > <strong>Downloads Tab</strong> > & then
-                            You can Rate & Review for our template.<br>
-                            Thank You.
-                        </div>
-                    </section>
-
-                    <hr class="divider">
-
-                    <!-- More Templates
-		============================ -->
-                    <section id="idocs_templates">
-                        <h2>More Templates</h2>
-                        <p class="lead">Checkout Our Below Premium Templates</p>
-
-                        <div class="row">
-                            <div class="col-4 my-3 text-center">
-                                <a target="_blank" href="https://themeforest.net/item/x/28476751?ref=HarnishDesign"><img
-                                        class="img-fluid border" src="assets/images/templates/simone.jpg" alt="">
-                                    <h6 class="pt-2">Simone - Personal Portfolio Template</h6>
+                        <div class="row mt-3">
+                            <div class="col-6 col-md-4 mb-3">
+                                <a href="assets/images/Google%20Chrome/imgi_2_hero-rm_desktop.png"
+                                    class="popup-img d-block">
+                                    <img src="assets/images/Google%20Chrome/imgi_2_hero-rm_desktop.png"
+                                        alt="Chrome desktop" class="img-fluid rounded">
                                 </a>
                             </div>
-                            <div class="col-4 my-3 text-center">
-                                <a target="_blank" href="https://themeforest.net/item/x/26454458?ref=HarnishDesign"><img
-                                        class="img-fluid border" src="assets/images/templates/kenil.jpg" alt="">
-                                    <h6 class="pt-2">Kenil - Responsive Bootstrap 4 One Page Portfolio Template</h6>
+                            <div class="col-6 col-md-4 mb-3">
+                                <a href="assets/images/Google%20Chrome/imgi_3_gemini-in-chrome_desktop.png"
+                                    class="popup-img d-block">
+                                    <img src="assets/images/Google%20Chrome/imgi_3_gemini-in-chrome_desktop.png"
+                                        alt="Gemini in Chrome" class="img-fluid rounded">
                                 </a>
                             </div>
-                            <div class="col-4 my-3 text-center">
-                                <a target="_blank" href="https://themeforest.net/item/x/26313677?ref=HarnishDesign"><img
-                                        class="img-fluid border" src="assets/images/templates/doon.jpg" alt="">
-                                    <h6 class="pt-2">Doon - One Page Parallax HTML Template</h6>
+                            <div class="col-6 col-md-4 mb-3">
+                                <a href="assets/images/Google%20Chrome/imgi_70_extensions-ui-2x.png"
+                                    class="popup-img d-block">
+                                    <img src="assets/images/Google%20Chrome/imgi_70_extensions-ui-2x.png"
+                                        alt="Chrome extensions" class="img-fluid rounded">
                                 </a>
                             </div>
-
-                            <div class="col-4 my-3 text-center">
-                                <a target="_blank" href="https://themeforest.net/item/x/27172933?ref=HarnishDesign"><img
-                                        class="img-fluid border" src="assets/images/templates/domainx.jpg" alt="">
-                                    <h6 class="pt-2">DomainX- Domain for Sale HTML Template</h6>
+                            <div class="col-6 col-md-4 mb-3">
+                                <a href="assets/images/Google%20Chrome/imgi_76_energy-saver_desktop.png"
+                                    class="popup-img d-block">
+                                    <img src="assets/images/Google%20Chrome/imgi_76_energy-saver_desktop.png"
+                                        alt="Chrome energy saver" class="img-fluid rounded">
                                 </a>
                             </div>
-                            <div class="col-4 my-3 text-center">
-                                <a target="_blank" href="https://themeforest.net/item/x/28848609?ref=HarnishDesign"><img
-                                        class="img-fluid border" src="assets/images/templates/oxyy.jpg" alt="">
-                                    <h6 class="pt-2">Oxyy - Login and Register Form HTML Templates</h6>
+                            <div class="col-6 col-md-4 mb-3">
+                                <a href="assets/images/Google%20Chrome/imgi_77_tabs-groups_desktop.png"
+                                    class="popup-img d-block">
+                                    <img src="assets/images/Google%20Chrome/imgi_77_tabs-groups_desktop.png"
+                                        alt="Chrome tab groups" class="img-fluid rounded">
                                 </a>
                             </div>
-                            <div class="col-4 my-3 text-center">
-                                <a target="_blank" href="https://themeforest.net/item/x/27034971?ref=HarnishDesign"><img
-                                        class="img-fluid border" src="assets/images/templates/koice.jpg" alt="">
-                                    <h6 class="pt-2">Koice - Invoice HTML Template</h6>
+                            <div class="col-6 col-md-4 mb-3">
+                                <a href="assets/images/Google%20Chrome/imgi_79_search_desktop.png"
+                                    class="popup-img d-block">
+                                    <img src="assets/images/Google%20Chrome/imgi_79_search_desktop.png"
+                                        alt="Chrome search" class="img-fluid rounded">
                                 </a>
                             </div>
-
-                            <div class="col-4 my-3 text-center">
-                                <a target="_blank" href="https://themeforest.net/item/x/24017808?ref=HarnishDesign"><img
-                                        class="img-fluid border" src="assets/images/templates/payyed.jpg" alt="">
-                                    <h6 class="pt-2">Payyed - Money Transfer and Online Payments HTML Template</h6>
+                            <div class="col-6 col-md-4 mb-3">
+                                <a href="assets/images/Google%20Chrome/imgi_80_updates-2x.png"
+                                    class="popup-img d-block">
+                                    <img src="assets/images/Google%20Chrome/imgi_80_updates-2x.png" alt="Chrome updates"
+                                        class="img-fluid rounded">
                                 </a>
                             </div>
-                            <div class="col-4 my-3 text-center">
-                                <a target="_blank" href="https://themeforest.net/item/x/22375065?ref=HarnishDesign"><img
-                                        class="img-fluid border" src="assets/images/templates/quickai.jpg" alt="">
-                                    <h6 class="pt-2">Quickai - Recharge & Bill Payment, Booking HTML5 Template</h6>
+                            <div class="col-6 col-md-4 mb-3">
+                                <a href="assets/images/Google%20Chrome/imgi_13_theme-ui-2.webp"
+                                    class="popup-img d-block">
+                                    <img src="assets/images/Google%20Chrome/imgi_13_theme-ui-2.webp"
+                                        alt="Chrome theme UI" class="img-fluid rounded">
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-4 mb-3">
+                                <a href="assets/images/Google%20Chrome/imgi_64_theme-ui-1-2x.webp"
+                                    class="popup-img d-block">
+                                    <img src="assets/images/Google%20Chrome/imgi_64_theme-ui-1-2x.webp"
+                                        alt="Chrome theme UI 2" class="img-fluid rounded">
                                 </a>
                             </div>
                         </div>
-
-                        <p class="text-center"><a class="btn btn-lg btn-primary my-4" target="_blank"
-                                href="https://themeforest.net/user/harnishdesign/portfolio?ref=HarnishDesign">Our
-                                Portfolio</a></p>
-
                     </section>
 
                     <hr class="divider">
 
-                    <!-- Changelog
-		============================ -->
+                    <!-- AnyDesk
+        ============================ -->
+                    <section id="anydesk">
+                        <div class="row align-items-center">
+                            <div class="col-md-2 text-center mb-3 mb-md-0">
+                                <img src="assets/images/AnyDesk/imgi_162_0x0.png" alt="AnyDesk" class="img-fluid"
+                                    style="max-width:80px;">
+                            </div>
+                            <div class="col-md-10">
+                                <h2><a href="https://anydesk.com/" target="_blank" rel="noopener">AnyDesk</a></h2>
+                                <p>AnyDesk is a lightweight and fast remote desktop application that lets you access and
+                                    control another computer from anywhere. It is commonly used for IT support, remote
+                                    work, and file transfers between machines.</p>
+                                <h6>Key Features</h6>
+                                <ul>
+                                    <li>Low-latency remote access with high-quality display</li>
+                                    <li>File transfer between local and remote machines</li>
+                                    <li>Unattended access support for servers and home PCs</li>
+                                    <li>Cross-platform — connects to Windows, macOS, Linux, Android, and iOS</li>
+                                    <li>Session recording and audit log</li>
+                                    <li>No installation required on the remote side (portable mode)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-6 col-md-4 mb-3">
+                                <a href="assets/images/AnyDesk/imgi_170_anydesk-device-mac-3cc376.jpg" class="popup-img d-block">
+                                    <img src="assets/images/AnyDesk/imgi_170_anydesk-device-mac-3cc376.jpg" alt="AnyDesk on Mac" class="img-fluid rounded">
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-4 mb-3">
+                                <a href="assets/images/AnyDesk/imgi_183_Vi7dVW8gYcAoFsqRp4udZW.jpg" class="popup-img d-block">
+                                    <img src="assets/images/AnyDesk/imgi_183_Vi7dVW8gYcAoFsqRp4udZW.jpg" alt="AnyDesk screenshot" class="img-fluid rounded">
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-4 mb-3">
+                                <a href="assets/images/AnyDesk/imgi_198_ZxByQPpviyAXC9SJP87KVH.jpg" class="popup-img d-block">
+                                    <img src="assets/images/AnyDesk/imgi_198_ZxByQPpviyAXC9SJP87KVH.jpg" alt="AnyDesk screenshot" class="img-fluid rounded">
+                                </a>
+                            </div>
+                        </div>
+                    </section>
 
-                    <section id="idocs_changelog">
-                        <h2>Changelog</h2>
-                        <p class="text-4">See what's new added, changed, fixed, improved or updated in the latest
-                            versions. </p>
-                        <p class="alert alert-info mb-5"> For Future Updates Follow Us <a target="_blank"
-                                href="http://themeforest.net/user/harnishdesign?ref=HarnishDesign">@themeforest</a> / <a
-                                target="_blank" href="http://facebook.com/harnishdesign">@facebook</a> / <a
-                                target="_blank" href="http://twitter.com/harnishdesign">@twitter</a> / <a
-                                target="_blank" href="https://dribbble.com/harnishdesign">@Dribbble</a></p>
+                    <hr class="divider">
 
-                        <h3 id="v1-1">Version 1.1 <small class="text-muted">(12 Oct, 2020)</small></h3>
-                        <ul class="changelog">
-                            <li><span class="badge badge-success">Added</span> Your information here for added new
-                                feature</li>
-                            <li><span class="badge badge-danger">Fixed</span> Some minor bugs for browser compatibility
-                            </li>
-                            <li><span class="badge badge-danger">Fixed</span> Some minor bugs for responsive</li>
-                            <li><span class="badge badge-info">Updated</span> FontAwesome to Latest Version</li>
-                            <li><span class="badge badge-info">Updated</span> Bootstrap to Latest Version</li>
-                            <li><span class="badge badge-info">Updated</span> Improvements in CSS and JS</li>
-                        </ul>
+                    <!-- Media & Playback heading
+        ============================ -->
+                    <section id="media-playback">
+                        <h2>Media &amp; Playback</h2>
+                        <p>Apps for playing audio, video, and handling media codecs.</p>
+                    </section>
 
-                        <hr class="divider">
+                    <hr class="divider">
 
-                        <h3 id="v1-0">Version 1.0 <small class="text-muted">(8 April, 2020)</small></h3>
-                        <p>Initial Release</p>
+                    <!-- VLC Media Player
+        ============================ -->
+                    <section id="vlc">
+                        <div class="row align-items-center">
+                            <div class="col-md-2 text-center mb-3 mb-md-0">
+                                <img src="assets/images/VLC%20Media%20Player/imgi_4_vlc.mini.svg" alt="VLC Media Player" class="img-fluid"
+                                    style="max-width:80px;">
+                            </div>
+                            <div class="col-md-10">
+                                <h2><a href="https://www.videolan.org/vlc/" target="_blank" rel="noopener">VLC Media
+                                        Player</a></h2>
+                                <p>VLC is a free, open-source media player that supports virtually every audio and video
+                                    format without needing additional codecs. It can play files from local storage,
+                                    discs, network streams, and webcams.</p>
+                                <h6>Key Features</h6>
+                                <ul>
+                                    <li>Plays almost any media format (MKV, MP4, AVI, FLAC, MP3, and more)</li>
+                                    <li>DVD and Blu-ray playback support</li>
+                                    <li>Network stream playback (HTTP, RTSP, MMS)</li>
+                                    <li>Subtitle support with customizable appearance</li>
+                                    <li>Basic audio and video conversion</li>
+                                    <li>No spyware, ads, or user tracking</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-6 col-md-4 mb-3">
+                                <a href="assets/images/VLC%20Media%20Player/imgi_5_playback-medium.jpg" class="popup-img d-block">
+                                    <img src="assets/images/VLC%20Media%20Player/imgi_5_playback-medium.jpg" alt="VLC playback" class="img-fluid rounded">
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-4 mb-3">
+                                <a href="assets/images/VLC%20Media%20Player/imgi_21_vlc_101_w7.jpg" class="popup-img d-block">
+                                    <img src="assets/images/VLC%20Media%20Player/imgi_21_vlc_101_w7.jpg" alt="VLC on Windows 7" class="img-fluid rounded">
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-4 mb-3">
+                                <a href="assets/images/VLC%20Media%20Player/imgi_23_VLC_Qt4.jpg" class="popup-img d-block">
+                                    <img src="assets/images/VLC%20Media%20Player/imgi_23_VLC_Qt4.jpg" alt="VLC Qt4" class="img-fluid rounded">
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-4 mb-3">
+                                <a href="assets/images/VLC%20Media%20Player/imgi_25_vlc-2.2-macosx-playback-dark.jpg" class="popup-img d-block">
+                                    <img src="assets/images/VLC%20Media%20Player/imgi_25_vlc-2.2-macosx-playback-dark.jpg" alt="VLC macOS dark playback" class="img-fluid rounded">
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-4 mb-3">
+                                <a href="assets/images/VLC%20Media%20Player/imgi_26_vlc-2.2-macosx-audio-playback-dark.jpg" class="popup-img d-block">
+                                    <img src="assets/images/VLC%20Media%20Player/imgi_26_vlc-2.2-macosx-audio-playback-dark.jpg" alt="VLC macOS audio dark" class="img-fluid rounded">
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-4 mb-3">
+                                <a href="assets/images/VLC%20Media%20Player/imgi_27_vlc-2.2-macosx-playback.jpg" class="popup-img d-block">
+                                    <img src="assets/images/VLC%20Media%20Player/imgi_27_vlc-2.2-macosx-playback.jpg" alt="VLC macOS playback" class="img-fluid rounded">
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-4 mb-3">
+                                <a href="assets/images/VLC%20Media%20Player/imgi_30_VLC_Gnome.png" class="popup-img d-block">
+                                    <img src="assets/images/VLC%20Media%20Player/imgi_30_VLC_Gnome.png" alt="VLC on Gnome" class="img-fluid rounded">
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-4 mb-3">
+                                <a href="assets/images/VLC%20Media%20Player/imgi_31_vlc_101_w7_2.jpg" class="popup-img d-block">
+                                    <img src="assets/images/VLC%20Media%20Player/imgi_31_vlc_101_w7_2.jpg" alt="VLC Windows screenshot 2" class="img-fluid rounded">
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-4 mb-3">
+                                <a href="assets/images/VLC%20Media%20Player/imgi_32_vlc_101_w7_1.jpg" class="popup-img d-block">
+                                    <img src="assets/images/VLC%20Media%20Player/imgi_32_vlc_101_w7_1.jpg" alt="VLC Windows screenshot 3" class="img-fluid rounded">
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+
+                    <hr class="divider">
+
+                    <!-- K-Lite Codec Pack Mega
+        ============================ -->
+                    <section id="klite">
+                        <div class="row align-items-center">
+                            <div class="col-md-2 text-center mb-3 mb-md-0">
+                                <img src="assets/images/K-Lite%20Codec%20Pack/imgi_10_d0b9e469a67d7b15.png" alt="K-Lite Codec Pack Mega"
+                                    class="img-fluid" style="max-width:80px;">
+                            </div>
+                            <div class="col-md-10">
+                                <h2><a href="https://www.codecguide.com/download_k-lite_codec_pack_mega.htm"
+                                        target="_blank" rel="noopener">K-Lite Codec Pack Mega</a></h2>
+                                <p>K-Lite Codec Pack Mega is a comprehensive collection of codecs, filters, and tools
+                                    that enables Windows and its built-in apps to play virtually any audio or video
+                                    format. It also includes Media Player Classic – Home Cinema (MPC-HC) as a standalone
+                                    player.</p>
+                                <h6>Key Features</h6>
+                                <ul>
+                                    <li>Adds support for H.264, H.265, AV1, VP9, and hundreds of other formats to
+                                        Windows</li>
+                                    <li>Includes MPC-HC — a lightweight, feature-rich media player</li>
+                                    <li>Hardware-accelerated decoding (DXVA2 / D3D11) for smooth 4K playback</li>
+                                    <li>Subtitle rendering with MadVR support</li>
+                                    <li>Seek preview (thumbnail scrubbing) in MPC-HC</li>
+                                    <li>Unattended/silent installation — pre-configured out of the box</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-6 col-md-4 mb-3">
+                                <a href="assets/images/K-Lite%20Codec%20Pack/imgi_157_k-lite-mega-codec-pack-374-1.jpg" class="popup-img d-block">
+                                    <img src="assets/images/K-Lite%20Codec%20Pack/imgi_157_k-lite-mega-codec-pack-374-1.jpg" alt="K-Lite installer" class="img-fluid rounded">
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-4 mb-3">
+                                <a href="assets/images/K-Lite%20Codec%20Pack/imgi_158_mpc.jpg" class="popup-img d-block">
+                                    <img src="assets/images/K-Lite%20Codec%20Pack/imgi_158_mpc.jpg" alt="MPC-HC player" class="img-fluid rounded">
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-4 mb-3">
+                                <a href="assets/images/K-Lite%20Codec%20Pack/imgi_300_Media-Player-Classic-MPC-HC_screenshot.webp" class="popup-img d-block">
+                                    <img src="assets/images/K-Lite%20Codec%20Pack/imgi_300_Media-Player-Classic-MPC-HC_screenshot.webp" alt="MPC-HC screenshot" class="img-fluid rounded">
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+
+                    <hr class="divider">
+
+                    <!-- Files & Utilities heading
+        ============================ -->
+                    <section id="files-utilities">
+                        <h2>Files &amp; Utilities</h2>
+                        <p>Apps for managing, searching, compressing, previewing, and converting files.</p>
+                    </section>
+
+                    <hr class="divider">
+
+                    <!-- 7-Zip
+        ============================ -->
+                    <section id="7zip">
+                        <div class="row align-items-center">
+                            <div class="col-md-2 text-center mb-3 mb-md-0">
+                                <img src="assets/images/7-Zip/logo.png" alt="7-Zip" class="img-fluid"
+                                    style="max-width:80px;">
+                            </div>
+                            <div class="col-md-10">
+                                <h2><a href="https://www.7-zip.org/" target="_blank" rel="noopener">7-Zip</a></h2>
+                                <p>7-Zip is a free, open-source file archiver with a high compression ratio. It
+                                    integrates into Windows Explorer via a right-click context menu, making it fast and
+                                    easy to compress or extract files without opening a separate application.</p>
+                                <h6>Key Features</h6>
+                                <ul>
+                                    <li>Creates and extracts 7z, ZIP, TAR, GZIP, BZIP2, XZ, and more</li>
+                                    <li>Extracts RAR, ISO, CAB, MSI, WIM, and many other formats</li>
+                                    <li>AES-256 encryption for both 7z and ZIP archives</li>
+                                    <li>High compression ratio — often better than ZIP or RAR</li>
+                                    <li>Windows Explorer shell integration (right-click menu)</li>
+                                    <li>Completely free with no ads or restrictions</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-6 col-md-4 mb-3">
+                                <a href="assets/images/7-Zip/imgi_23_.jpg" class="popup-img d-block">
+                                    <img src="assets/images/7-Zip/imgi_23_.jpg" alt="7-Zip screenshot" class="img-fluid rounded">
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-4 mb-3">
+                                <a href="assets/images/7-Zip/imgi_50_.jpg" class="popup-img d-block">
+                                    <img src="assets/images/7-Zip/imgi_50_.jpg" alt="7-Zip screenshot" class="img-fluid rounded">
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-4 mb-3">
+                                <a href="assets/images/7-Zip/imgi_73_.jpg" class="popup-img d-block">
+                                    <img src="assets/images/7-Zip/imgi_73_.jpg" alt="7-Zip screenshot" class="img-fluid rounded">
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-4 mb-3">
+                                <a href="assets/images/7-Zip/imgi_161_.jpg" class="popup-img d-block">
+                                    <img src="assets/images/7-Zip/imgi_161_.jpg" alt="7-Zip screenshot" class="img-fluid rounded">
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+
+                    <hr class="divider">
+
+                    <!-- WinRAR
+        ============================ -->
+                    <section id="winrar">
+                        <div class="row align-items-center">
+                            <div class="col-md-2 text-center mb-3 mb-md-0">
+                                <img src="assets/images/WinRAR/rar-archive_57.png" alt="WinRAR" class="img-fluid"
+                                    style="max-width:80px;">
+                            </div>
+                            <div class="col-md-10">
+                                <h2><a href="https://www.win-rar.com/" target="_blank" rel="noopener">WinRAR</a></h2>
+                                <p>WinRAR is a powerful archive manager that supports the RAR and ZIP formats natively,
+                                    as well as unpacking many other archive types. It is the go-to tool for creating RAR
+                                    archives and repairing damaged ones.</p>
+                                <h6>Key Features</h6>
+                                <ul>
+                                    <li>Create and extract RAR (including RAR5) and ZIP archives</li>
+                                    <li>Extract over 15 archive formats (7z, TAR, GZ, ISO, CAB, and more)</li>
+                                    <li>Repair damaged archives with recovery record support</li>
+                                    <li>Create self-extracting (SFX) archives — no WinRAR needed to extract</li>
+                                    <li>Password protection and AES-256 encryption</li>
+                                    <li>Split archives into multiple volumes for easier sharing</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-6 col-md-4 mb-3">
+                                <a href="assets/images/WinRAR/imgi_58_.jpg" class="popup-img d-block">
+                                    <img src="assets/images/WinRAR/imgi_58_.jpg" alt="WinRAR screenshot" class="img-fluid rounded">
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-4 mb-3">
+                                <a href="assets/images/WinRAR/imgi_185_.jpg" class="popup-img d-block">
+                                    <img src="assets/images/WinRAR/imgi_185_.jpg" alt="WinRAR screenshot" class="img-fluid rounded">
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-4 mb-3">
+                                <a href="assets/images/WinRAR/imgi_213_.jpg" class="popup-img d-block">
+                                    <img src="assets/images/WinRAR/imgi_213_.jpg" alt="WinRAR screenshot" class="img-fluid rounded">
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-4 mb-3">
+                                <a href="assets/images/WinRAR/imgi_254_.jpg" class="popup-img d-block">
+                                    <img src="assets/images/WinRAR/imgi_254_.jpg" alt="WinRAR screenshot" class="img-fluid rounded">
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+
+                    <hr class="divider">
+
+                    <!-- Everything
+        ============================ -->
+                    <section id="everything">
+                        <div class="row align-items-center">
+                            <div class="col-md-2 text-center mb-3 mb-md-0">
+                                <img src="assets/images/Everything/Everything.ico" alt="Everything"
+                                    class="img-fluid" style="max-width:80px;">
+                            </div>
+                            <div class="col-md-10">
+                                <h2><a href="https://www.voidtools.com/" target="_blank" rel="noopener">Everything</a>
+                                </h2>
+                                <p>Everything is an ultra-fast file search utility for Windows that indexes the entire
+                                    NTFS file system in seconds. Unlike Windows Search, results appear instantly as you
+                                    type — no waiting, no indexing delays.</p>
+                                <h6>Key Features</h6>
+                                <ul>
+                                    <li>Indexes the full file system almost instantly on first launch</li>
+                                    <li>Real-time updates — new files appear in results immediately</li>
+                                    <li>Supports wildcards, regex, and advanced search filters</li>
+                                    <li>Filter by size, date, path, extension, and more</li>
+                                    <li>Accessible via keyboard shortcut from anywhere</li>
+                                    <li>Extremely lightweight — uses minimal CPU and memory</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-6 col-md-4 mb-3">
+                                <a href="assets/images/Everything/Everything.Search.Window.png" class="popup-img d-block">
+                                    <img src="assets/images/Everything/Everything.Search.Window.png" alt="Everything search window" class="img-fluid rounded">
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+
+                    <hr class="divider">
+
+                    <!-- File Converter
+        ============================ -->
+                    <section id="fileconverter">
+                        <div class="row align-items-center">
+                            <div class="col-md-2 text-center mb-3 mb-md-0">
+                                <img src="assets/images/File%20Converter/FileConverter_Icon.png" alt="File Converter"
+                                    class="img-fluid" style="max-width:80px;">
+                            </div>
+                            <div class="col-md-10">
+                                <h2><a href="https://file-converter.io/" target="_blank" rel="noopener">File
+                                        Converter</a></h2>
+                                <p>File Converter is a simple but powerful tool that adds a "Convert to…" option to your
+                                    right-click context menu. Select one or multiple files, choose a target format, and
+                                    the conversion runs in the background — no app window needed.</p>
+                                <h6>Key Features</h6>
+                                <ul>
+                                    <li>Convert audio: MP3, AAC, FLAC, OGG, WAV, and more</li>
+                                    <li>Convert video: MP4, MKV, AVI, WebM, GIF, and more</li>
+                                    <li>Convert images: JPG, PNG, WebP, ICO, and more</li>
+                                    <li>Batch convert multiple files at once</li>
+                                    <li>Powered by FFmpeg — reliable and high quality output</li>
+                                    <li>Fully integrated into Windows Explorer right-click menu</li>
+                                </ul>
+                            </div>
+                            <div class="col-12 mt-3">
+                                <a href="assets/images/File%20Converter/FileConverter_Usage.gif"
+                                    class="popup-img d-inline-block">
+                                    <img src="assets/images/File%20Converter/FileConverter_Usage.gif"
+                                        alt="File Converter usage demo" class="img-fluid rounded"
+                                        style="max-width:600px;">
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-4 mt-3">
+                                <a href="assets/images/File%20Converter/screenshot3.png" class="popup-img d-block">
+                                    <img src="assets/images/File%20Converter/screenshot3.png" alt="File Converter screenshot" class="img-fluid rounded">
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+
+                    <hr class="divider">
+
+                    <!-- QuickLook
+        ============================ -->
+                    <section id="quicklook">
+                        <div class="row align-items-center">
+                            <div class="col-md-2 text-center mb-3 mb-md-0">
+                                <img src="assets/images/QuickLook/QuickLook_Icon.png" alt="QuickLook" class="img-fluid"
+                                    style="max-width:80px;">
+                            </div>
+                            <div class="col-md-10">
+                                <h2><a href="https://github.com/QL-Win/QuickLook" target="_blank"
+                                        rel="noopener">QuickLook</a></h2>
+                                <p>QuickLook brings macOS-style file previews to Windows. Select any file in Explorer
+                                    and press <kbd>Space</kbd> to instantly preview its contents — no need to open the
+                                    file in a separate application.</p>
+                                <h6>Key Features</h6>
+                                <ul>
+                                    <li>Preview images, videos, audio files, and animated GIFs</li>
+                                    <li>Preview PDFs, Word documents, Excel spreadsheets, and PowerPoint files</li>
+                                    <li>Preview ZIP archives, source code files, and Markdown</li>
+                                    <li>Extensible via plugins (pre-installed on this Windows edition)</li>
+                                    <li>Press <kbd>Space</kbd> to open, <kbd>Space</kbd> again or <kbd>Esc</kbd> to
+                                        close</li>
+                                    <li>Runs silently in the system tray — always available</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-6 col-md-4 mb-3">
+                                <a href="assets/images/QuickLook/QuickLook_Example1.jpg" class="popup-img d-block">
+                                    <img src="assets/images/QuickLook/QuickLook_Example1.jpg" alt="QuickLook example 1"
+                                        class="img-fluid rounded">
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-4 mb-3">
+                                <a href="assets/images/QuickLook/QuickLook_Example2.jpg" class="popup-img d-block">
+                                    <img src="assets/images/QuickLook/QuickLook_Example2.jpg" alt="QuickLook example 2"
+                                        class="img-fluid rounded">
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-4 mb-3">
+                                <a href="assets/images/QuickLook/QuickLook_Example3.jpg" class="popup-img d-block">
+                                    <img src="assets/images/QuickLook/QuickLook_Example3.jpg" alt="QuickLook example 3"
+                                        class="img-fluid rounded">
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-4 mb-3">
+                                <a href="assets/images/QuickLook/QuickLook_Example4.jpg" class="popup-img d-block">
+                                    <img src="assets/images/QuickLook/QuickLook_Example4.jpg" alt="QuickLook example 4"
+                                        class="img-fluid rounded">
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-4 mb-3">
+                                <a href="assets/images/QuickLook/QuickLook_Example5.jpg" class="popup-img d-block">
+                                    <img src="assets/images/QuickLook/QuickLook_Example5.jpg" alt="QuickLook example 5"
+                                        class="img-fluid rounded">
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-4 mb-3">
+                                <a href="assets/images/QuickLook/QuickLook_Example6.jpg" class="popup-img d-block">
+                                    <img src="assets/images/QuickLook/QuickLook_Example6.jpg" alt="QuickLook example 6"
+                                        class="img-fluid rounded">
+                                </a>
+                            </div>
+                        </div>
                     </section>
 
                 </div>
@@ -1655,20 +687,10 @@
         <footer id="footer" class="section bg-dark footer-text-light">
             <div class="container">
                 <ul class="social-icons social-icons-lg social-icons-muted justify-content-center mb-3">
-                    <li><a data-toggle="tooltip" href="https://twitter.com/harnishdesign/" target="_blank" title=""
-                            data-original-title="Twitter"><i class="fab fa-twitter"></i></a></li>
-                    <li><a data-toggle="tooltip" href="http://www.facebook.com/harnishdesign/" target="_blank" title=""
-                            data-original-title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                    <li><a data-toggle="tooltip" href="http://www.dribbble.com/harnishdesign/" target="_blank" title=""
-                            data-original-title="Dribbble"><i class="fab fa-dribbble"></i></a></li>
-                    <li><a data-toggle="tooltip" href="http://www.github.com/" target="_blank" title=""
-                            data-original-title="GitHub"><i class="fab fa-github"></i></a></li>
+                    <li><a data-toggle="tooltip" href="https://github.com/AaqilIlyas/Custom-Windows-Edition"
+                            target="_blank" title="" data-original-title="GitHub"><i class="fab fa-github"></i></a></li>
                 </ul>
-                <p class="text-center">Copyright &copy; 2020 <a
-                        href="http://www.harnishdesign.net/idocs-one-page-documentation-html-template/">iDocs</a>. All
-                    Rights Reserved.</p>
-                <p class="text-2 text-center mb-0">Design &amp; Develop by <a class="btn-link" target="_blank"
-                        href="http://www.harnishdesign.net/">HarnishDesign</a>.</p>
+                <p class="text-center mb-0">Custom Windows Edition &mdash; Included Software Documentation</p>
             </div>
         </footer>
         <!-- Footer end -->
