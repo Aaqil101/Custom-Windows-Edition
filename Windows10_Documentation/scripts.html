@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+    <link href="assets/images/Hillcom/logo.jpg" rel="icon" />
+    <title>Windows 10 25H2 Hillcom Edition — System Scripts</title>
+    <meta name="description" content="Documentation for background scripts and registry tweaks in Windows 10 25H2 Hillcom Edition">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/vendor/magnific-popup/magnific-popup.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/vendor/highlight.js/styles/atom-one-dark.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/stylesheet.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/dark-theme.css" />
+</head>
+
+<body data-spy="scroll" data-target=".idocs-navigation" data-offset="125">
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!-- Preloader End -->
+
+    <!-- Document Wrapper -->
+    <div id="main-wrapper">
+
+        <!-- Header -->
+        <header id="header" class="sticky-top">
+            <nav class="primary-menu navbar navbar-expand-lg bg-dark navbar-text-light navbar-dropdown-dark border-0">
+                <div class="container-fluid">
+                    <button id="sidebarCollapse" class="navbar-toggler d-block d-md-none"
+                        type="button"><span></span><span class="w-75"></span><span class="w-50"></span></button>
+
+                    <!-- Logo -->
+                    <a class="logo ml-md-3" href="index.html" title="Windows 10 25H2 Hillcom Edition">
+                        <img src="assets/images/Hillcom/logo.jpg" alt="Windows 10 25H2 Hillcom Edition"
+                            style="max-height:40px;" />
+                    </a>
+                    <span class="text-2 text-light ml-2">System Scripts</span>
+                    <!-- Logo End -->
+
+                    <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
+                        data-target="#header-nav"><span></span><span></span><span></span></button>
+
+                    <div id="header-nav" class="collapse navbar-collapse justify-content-end">
+                        <ul class="navbar-nav">
+                            <li><a href="index.html" class="btn btn-sm btn-outline-secondary ml-2">&larr; Back to Included Software</a></li>
+                            <li><a href="remove.html" class="btn btn-sm btn-outline-danger ml-2">Remove Documentation</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!-- Header End -->
+
+        <!-- Content -->
+        <div id="content" role="main">
+
+            <!-- Sidebar Navigation -->
+            <div class="idocs-navigation bg-light">
+                <ul class="nav flex-column">
+                    <li class="nav-item"><a class="nav-link active" href="#system-scripts">System Scripts</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#registry-tweaks">Registry Tweaks</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#bloat-removal">Bloat Removal</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#pause-windows-update">Pause Windows Update</a></li>
+                </ul>
+            </div>
+
+            <!-- Docs Content -->
+            <div class="idocs-content">
+                <div class="container">
+
+                    <!-- System Scripts Overview -->
+                    <section id="system-scripts">
+                        <h1>System Scripts</h1>
+                        <h2>Windows 10 25H2 Hillcom Edition</h2>
+                        <p class="lead">Background scripts and registry tweaks applied automatically during setup to optimise and clean up your Windows installation.</p>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-6 col-lg-4">
+                                <ul class="list-unstyled">
+                                    <li><strong>Registry Tweaks:</strong> Applied once on setup</li>
+                                    <li><strong>Bloat Removal:</strong> Runs on every logon</li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-6 col-lg-4">
+                                <ul class="list-unstyled">
+                                    <li><strong>Pause Updates:</strong> Runs on every boot</li>
+                                    <li><strong>All scripts:</strong> Can be disabled or removed</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <hr class="divider">
+
+                    <!-- Registry Tweaks -->
+                    <section id="registry-tweaks">
+                        <h2>Registry Tweaks</h2>
+                        <p>A set of registry entries applied once during setup via <code>ApplyToDefault.reg</code>.
+                            These tweaks adjust system behaviour and visual settings for a better out-of-the-box
+                            experience.</p>
+                        <h6>Applied Tweaks</h6>
+                        <ul>
+                            <li><strong>AutoColorization</strong> — Accent colour automatically picked from your wallpaper</li>
+                            <li><strong>MenuShowDelay</strong> — Reduced to 100ms for snappier context menus</li>
+                            <li><strong>DisableSearchBoxSuggestions</strong> — Removes Bing web suggestions from File Explorer search</li>
+                            <li><strong>EnableTransparency</strong> — Enables Fluent/Acrylic transparency effects</li>
+                            <li><strong>LaunchTo (This PC)</strong> — File Explorer opens to This PC instead of Quick Access</li>
+                            <li><strong>TaskbarSmallIcons</strong> — Taskbar uses small icons for a more compact layout</li>
+                            <li><strong>StartupDelayInMSec</strong> — Explorer startup delay reduced to 1ms for faster login</li>
+                            <li><strong>NumLock on login</strong> — Num Lock is automatically enabled at the login screen</li>
+                        </ul>
+                        <h6>How to Revert — Command Prompt</h6>
+                        <p>Open <strong>Command Prompt as Administrator</strong> and run the commands for any tweaks you want to undo:</p>
+                        <pre><code>rem AutoColorization — disable
+reg add "HKCU\Control Panel\Desktop" /v AutoColorization /t REG_DWORD /d 0 /f
+
+rem MenuShowDelay — restore to Windows default (400ms)
+reg add "HKCU\Control Panel\Desktop" /v MenuShowDelay /t REG_SZ /d 400 /f
+
+rem DisableSearchBoxSuggestions — remove (restores Bing suggestions)
+reg delete "HKLM\SOFTWARE\Policies\Microsoft\Windows\Explorer" /v DisableSearchBoxSuggestions /f
+
+rem EnableTransparency — disable transparency
+reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" /v EnableTransparency /t REG_DWORD /d 0 /f
+
+rem LaunchTo — restore to Quick Access (default)
+reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v LaunchTo /t REG_DWORD /d 2 /f
+
+rem TaskbarSmallIcons — restore normal icon size
+reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v TaskbarSmallIcons /t REG_DWORD /d 0 /f
+
+rem StartupDelayInMSec — remove (restores default delay)
+reg delete "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Serialize" /v StartupDelayInMSec /f
+
+rem NumLock — disable NumLock at login
+reg add "HKCU\Control Panel\Keyboard" /v InitialKeyboardIndicators /t REG_SZ /d 0 /f
+reg add "HKU\.DEFAULT\Control Panel\Keyboard" /v InitialKeyboardIndicators /t REG_SZ /d 0 /f</code></pre>
+
+                        <h6>How to Revert — PowerShell</h6>
+                        <p>Open <strong>PowerShell as Administrator</strong> and run:</p>
+                        <pre><code># AutoColorization — disable
+Set-ItemProperty -Path "HKCU:\Control Panel\Desktop" -Name "AutoColorization" -Value 0
+
+# MenuShowDelay — restore default (400ms)
+Set-ItemProperty -Path "HKCU:\Control Panel\Desktop" -Name "MenuShowDelay" -Value "400"
+
+# DisableSearchBoxSuggestions — remove
+Remove-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Explorer" -Name "DisableSearchBoxSuggestions" -Force
+
+# EnableTransparency — disable
+Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" -Name "EnableTransparency" -Value 0
+
+# LaunchTo — restore Quick Access
+Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "LaunchTo" -Value 2
+
+# TaskbarSmallIcons — restore normal size
+Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "TaskbarSmallIcons" -Value 0
+
+# StartupDelayInMSec — remove
+Remove-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Serialize" -Name "StartupDelayInMSec" -Force
+
+# NumLock — disable at login
+Set-ItemProperty -Path "HKCU:\Control Panel\Keyboard" -Name "InitialKeyboardIndicators" -Value "0"
+Set-ItemProperty -Path "Registry::HKU\.DEFAULT\Control Panel\Keyboard" -Name "InitialKeyboardIndicators" -Value "0"</code></pre>
+
+                        <div class="alert alert-warning mt-3" role="alert">
+                            <strong>&#9888; Important:</strong> Hillcom is <strong>not responsible</strong> for any
+                            damage, instability, or data loss caused by editing the Windows registry. Registry changes
+                            take effect after restarting Explorer or rebooting. Proceed only if you are confident in
+                            what you are doing. When in doubt, create a registry backup first via <strong>regedit &rarr; File
+                                &rarr; Export</strong>.
+                        </div>
+                        <h6 class="mt-4">What is the Windows Registry?</h6>
+                        <p><a href="https://www.youtube.com/watch?v=_U78iAem3uo" target="_blank" rel="noopener">Understanding the Windows Registry</a></p>
+                    </section>
+
+                    <hr class="divider">
+
+                    <!-- Bloat Removal -->
+                    <section id="bloat-removal">
+                        <h2>Bloat Removal</h2>
+                        <p>A PowerShell script (<code>BloatRemoval.ps1</code>) registered as a scheduled task that runs
+                            automatically on logon. It removes pre-installed Microsoft apps that most users do not need,
+                            keeping the system clean and lightweight.</p>
+                        <h6>Apps Removed</h6>
+                        <ul>
+                            <li>Bing News &amp; Bing Weather</li>
+                            <li>Get Help</li>
+                            <li>Windows Dev Home</li>
+                            <li>Microsoft Family</li>
+                            <li>Feedback Hub</li>
+                            <li>Microsoft People</li>
+                            <li>Xbox Identity Provider &amp; TCUI</li>
+                            <li>Get Started</li>
+                            <li>Microsoft Copilot</li>
+                            <li>Microsoft Office Hub</li>
+                            <li>Windows Recall (optional feature)</li>
+                        </ul>
+                        <h6>How to Disable the Scheduled Task</h6>
+                        <ol>
+                            <li>Press <kbd>Win + R</kbd>, type <code>taskschd.msc</code> and press <kbd>Enter</kbd></li>
+                            <li>In the left panel, expand <strong>Task Scheduler Library</strong> → <strong>Winhance</strong></li>
+                            <li>Right-click <strong>BloatRemoval</strong> and choose <strong>Disable</strong> or <strong>Delete</strong></li>
+                        </ol>
+                        <h6>How to Remove the Script</h6>
+                        <ol>
+                            <li>Delete the file at <code>C:\ProgramData\Winhance\Scripts\BloatRemoval.ps1</code></li>
+                            <li>Optionally delete the log folder at <code>C:\ProgramData\Winhance\Logs\</code></li>
+                        </ol>
+                        <h6 class="mt-4">What is Task Scheduler?</h6>
+                        <p><a href="https://www.youtube.com/watch?v=4xoPkn_q9mU" target="_blank" rel="noopener">Windows 11 and Windows 10: Exploring Task Scheduler</a></p>
+                    </section>
+
+                    <hr class="divider">
+
+                    <!-- Pause Windows Update -->
+                    <section id="pause-windows-update">
+                        <h2>Pause Windows Update</h2>
+                        <p>A PowerShell script (<code>PauseWindowsUpdate.ps1</code>) registered as a scheduled task that
+                            runs on every boot. It automatically pauses both feature and quality Windows Updates for 7
+                            days, preventing unexpected update interruptions.</p>
+                        <h6>Key Details</h6>
+                        <ul>
+                            <li>Runs daily on every system boot</li>
+                            <li>Pauses feature updates and quality updates for 7 days from current date</li>
+                            <li>Writes pause timestamps to <code>HKLM\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings</code></li>
+                            <li>Updates can still be installed manually via Windows Update Settings at any time</li>
+                        </ul>
+                        <h6>How to Disable the Scheduled Task</h6>
+                        <ol>
+                            <li>Press <kbd>Win + R</kbd>, type <code>taskschd.msc</code> and press <kbd>Enter</kbd></li>
+                            <li>Search for the task named <strong>PauseWindowsUpdate</strong></li>
+                            <li>Right-click it and choose <strong>Disable</strong> or <strong>Delete</strong></li>
+                        </ol>
+                        <h6>How to Resume Updates Immediately</h6>
+                        <ol>
+                            <li>Open <strong>Settings</strong> → <strong>Update &amp; Security</strong> → <strong>Windows Update</strong></li>
+                            <li>Click <strong>Resume updates</strong></li>
+                        </ol>
+                        <h6 class="mt-4">What is Task Scheduler?</h6>
+                        <p><a href="https://www.youtube.com/watch?v=4xoPkn_q9mU" target="_blank" rel="noopener">Windows 11 and Windows 10: Exploring Task Scheduler</a></p>
+                    </section>
+
+                </div>
+            </div>
+
+        </div>
+        <!-- Content End -->
+
+        <!-- Footer -->
+        <footer id="footer" class="section bg-dark footer-text-light">
+            <div class="container">
+                <ul class="social-icons social-icons-lg social-icons-muted justify-content-center mb-3">
+                    <li><a data-toggle="tooltip" href="https://web.facebook.com/Hillcom.lk/" target="_blank" title="" data-original-title="Facebook"><i class="fab fa-facebook"></i></a></li>
+                    <li><a data-toggle="tooltip" href="mailto:Info@hillcom.lk" title="" data-original-title="Email"><i class="fas fa-envelope"></i></a></li>
+                    <li><a data-toggle="tooltip" href="https://wa.me/704885679" target="_blank" title="" data-original-title="WhatsApp"><i class="fab fa-whatsapp"></i></a></li>
+                    <li><a data-toggle="tooltip" href="https://www.instagram.com/hillcom_/" target="_blank" title="" data-original-title="Instagram"><i class="fab fa-instagram"></i></a></li>
+                    <li><a data-toggle="tooltip" href="https://www.threads.com/@hillcom_" target="_blank" title="" data-original-title="Threads" style="display:inline-flex;align-items:center;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" width="1em" height="1em" fill="currentColor"><path d="M141.537 88.988a66.667 66.667 0 0 0-2.518-1.143c-1.482-27.307-16.403-42.94-41.457-43.1h-.34c-14.986 0-27.449 6.396-35.12 18.036l13.779 9.452c5.73-8.695 14.724-10.548 21.348-10.548h.229c8.249.053 14.474 2.452 18.503 7.129 2.932 3.405 4.893 8.111 5.864 14.05-7.314-1.243-15.224-1.626-23.68-1.14-23.82 1.371-39.134 15.264-38.105 34.568.522 9.792 5.4 18.216 13.735 23.719 7.047 4.652 16.124 6.927 25.557 6.412 12.458-.683 22.231-5.436 29.049-14.127 5.178-6.6 8.453-15.153 9.899-25.93 5.937 3.583 10.337 8.298 12.767 13.966 4.132 9.635 4.373 25.468-8.546 38.376-11.319 11.308-24.925 16.2-45.488 16.35-22.809-.169-40.06-7.484-51.275-21.742C35.236 139.966 29.808 120.682 29.605 96c.203-24.682 5.63-43.966 16.133-57.317C56.954 24.425 74.206 17.11 97.015 16.94c22.975.17 40.526 7.52 52.171 21.847 5.71 7.026 10.015 15.86 12.853 26.162l16.147-4.308c-3.44-12.68-8.853-23.606-16.219-32.668C147.036 9.607 125.202.195 97.105 0h-.195C68.78.195 47.219 9.65 32.7 28.08 19.797 44.378 13.038 67.408 12.8 96v.072c.238 28.592 7.001 51.62 19.92 67.919C47.22 182.354 68.78 191.81 96.91 192h.19c24.77-.166 42.249-6.667 56.57-21.016 18.671-18.693 18.111-42.117 11.94-56.478-4.413-10.292-12.638-18.853-23.073-24.518Zm-40.356 40.354c-10.402.569-21.224-4.081-21.797-14.073-.412-7.529 5.35-15.929 22.55-16.929 1.973-.114 3.91-.168 5.81-.168 6.11 0 11.828.59 17.018 1.69-1.935 24.117-13.975 28.924-23.581 29.48Z"/></svg></a></li>
+                </ul>
+                <p class="text-center mb-0">Windows 10 25H2 Hillcom Edition &mdash; System Scripts Documentation</p>
+            </div>
+        </footer>
+        <!-- Footer End -->
+
+    </div>
+    <!-- Document Wrapper End -->
+
+    <!-- Back To Top -->
+    <a id="back-to-top" data-toggle="tooltip" title="Back to Top" href="javascript:void(0)"><i class="fa fa-chevron-up"></i></a>
+
+    <!-- JavaScript -->
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/highlight.js/highlight.min.js"></script>
+    <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="assets/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <!-- Copy Button -->
+    <script src="assets/js/copy-button.js"></script>
+</body>
+
+</html>
