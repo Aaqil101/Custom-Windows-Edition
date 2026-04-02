@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
-    <link href="assets/images/Hillcom/logo.jpg" rel="icon" />
+    <link href="assets/images/Hillcom/Logo.svg" rel="icon" />
     <title>Windows 10 25H2 Hillcom Edition — Included Software</title>
     <meta name="description"
         content="Documentation for all pre-installed software in the Windows 10 25H2 Hillcom Edition">
@@ -52,8 +52,8 @@
 
                     <!-- Logo -->
                     <a class="logo ml-md-3" href="index.html" title="Windows 10 25H2 Hillcom Edition">
-                        <img src="assets/images/Hillcom/logo.jpg" alt="Windows 10 25H2 Hillcom Edition"
-                            style="max-height:30px;" />
+                        <img src="assets/images/Hillcom/Logo.svg" alt="Windows 10 25H2 Hillcom Edition"
+                            style="height:50px; width:auto;" />
                     </a>
                     <span class="text-2 text-light ml-2">Included Software</span>
                     <!-- Logo End -->
@@ -64,8 +64,10 @@
 
                     <div id="header-nav" class="collapse navbar-collapse justify-content-end">
                         <ul class="navbar-nav">
-                            <li><a href="scripts.html" class="btn btn-sm btn-outline-secondary ml-2">System Scripts</a></li>
-                            <li><a href="remove.html" class="btn btn-sm btn-outline-danger ml-2">Remove Documentation</a></li>
+                            <li><a href="pages/scripts.html" class="btn btn-sm btn-outline-secondary ml-2">System
+                                    Scripts</a></li>
+                            <li><a href="pages/remove.html" class="btn btn-sm btn-outline-danger ml-2">Remove
+                                    Documentation</a></li>
                         </ul>
                     </div>
                 </div>
@@ -93,6 +95,7 @@
                         <ul class="nav flex-column">
                             <li class="nav-item"><a class="nav-link" href="#vlc">VLC Media Player</a></li>
                             <li class="nav-item"><a class="nav-link" href="#klite">K-Lite Codec Pack Mega</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#hevc">HEVC Video Extensions</a></li>
                         </ul>
                     </li>
 
@@ -103,6 +106,13 @@
                             <li class="nav-item"><a class="nav-link" href="#everything">Everything</a></li>
                             <li class="nav-item"><a class="nav-link" href="#fileconverter">File Converter</a></li>
                             <li class="nav-item"><a class="nav-link" href="#quicklook">QuickLook</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item"><a class="nav-link" href="#office-productivity">Office &amp; Productivity</a>
+                        <ul class="nav flex-column">
+                            <li class="nav-item"><a class="nav-link" href="#office365">Office 365 ProPlus</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#acrobat">Adobe Acrobat Pro</a></li>
                         </ul>
                     </li>
 
@@ -123,7 +133,7 @@
                         <div class="row">
                             <div class="col-sm-6 col-lg-4">
                                 <ul class="list-unstyled">
-                                    <li><strong>Total Apps:</strong> 9</li>
+                                    <li><strong>Total Apps:</strong> 12</li>
                                     <li><strong>Installation:</strong> Automatic on first boot</li>
                                 </ul>
                             </div>
@@ -443,6 +453,45 @@
 
                     <hr class="divider">
 
+                    <!-- HEVC Video Extensions ============================ -->
+                    <section id="hevc">
+                        <div class="row align-items-center">
+                            <div class="col-md-2 text-center mb-3 mb-md-0">
+                                <img src="assets/images/HEVC%20Video%20Extensions/logo.png" alt="HEVC Video Extensions"
+                                    class="img-fluid" style="max-width:80px;">
+                            </div>
+                            <div class="col-md-10">
+                                <h2><a href="https://apps.microsoft.com/detail/9nmzlz57r3t7" target="_blank"
+                                        rel="noopener">HEVC Video Extensions</a></h2>
+                                <p>The HEVC Video Extensions package adds native H.265/HEVC decoding support to Windows
+                                    10. It enables smooth playback of high-efficiency video files — including 4K and HDR
+                                    content — directly in the Films &amp; TV app and other supported players, without
+                                    requiring third-party codecs.</p>
+                                <h6>Key Features</h6>
+                                <ul>
+                                    <li>Native H.265/HEVC video decode support in Windows 10</li>
+                                    <li>Hardware-accelerated decoding on supported GPUs for reduced CPU load</li>
+                                    <li>4K Ultra HD and HDR10 video playback</li>
+                                    <li>Seamless integration with the Windows Films &amp; TV app</li>
+                                    <li>Reduces file sizes by up to 50% compared to H.264 at the same quality</li>
+                                    <li>Required by many modern cameras, drones, and mobile devices that record in HEVC
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-6 col-md-4 mb-3">
+                                <a href="assets/images/HEVC%20Video%20Extensions/Store_Page.png"
+                                    class="popup-img d-block">
+                                    <img src="assets/images/HEVC%20Video%20Extensions/Store_Page.png"
+                                        alt="HEVC Video Extensions Store page" class="img-fluid rounded">
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+
+                    <hr class="divider">
+
                     <!-- Files & Utilities heading ============================ -->
                     <section id="files-utilities">
                         <h2>Files &amp; Utilities</h2>
@@ -604,16 +653,16 @@
                             <div class="col-md-10">
                                 <h2><a href="https://file-converter.io/" target="_blank" rel="noopener">File
                                         Converter</a></h2>
-                                <p>File Converter is a simple but powerful tool that adds a "Convert to…" option to your
-                                    right-click context menu. Select one or multiple files, choose a target format, and
-                                    the conversion runs in the background — no app window needed.</p>
+                                <p>File Converter is a simple but powerful tool that adds a "File Converter" option to
+                                    your right-click context menu. Select one or more files, choose a target format, and
+                                    the conversion will begin.</p>
                                 <h6>Key Features</h6>
                                 <ul>
                                     <li>Convert audio: MP3, AAC, FLAC, OGG, WAV, and more</li>
                                     <li>Convert video: MP4, MKV, AVI, WebM, GIF, and more</li>
                                     <li>Convert images: JPG, PNG, WebP, ICO, and more</li>
                                     <li>Batch convert multiple files at once</li>
-                                    <li>Powered by FFmpeg — reliable and high quality output</li>
+                                    <li>Powered by <a href="https://ffmpeg.org/" target="_blank" rel="noopener">FFmpeg</a> — reliable and high quality output</li>
                                     <li>Fully integrated into Windows Explorer right-click menu</li>
                                 </ul>
                             </div>
@@ -699,6 +748,274 @@
                                 </a>
                             </div>
                         </div>
+                        <div class="mt-4">
+                            <h6>Pre-installed Plugins</h6>
+                            <p>The following QuickLook plugins come pre-installed on this edition, extending preview
+                                support to additional file types:</p>
+                            <table class="table table-sm table-dark table-bordered" style="border-color:#444;">
+                                <thead>
+                                    <tr>
+                                        <th>Plugin</th>
+                                        <th>Supported Files</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><a href="https://github.com/canheo136/QuickLook.Plugin.ApkViewer"
+                                                target="_blank" rel="noopener">ApkViewer</a></td>
+                                        <td>Android APK packages</td>
+                                        <td>Displays the app icon, name, version, and declared permissions of an APK
+                                            file without installing it.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="https://github.com/zhangkaihua88/QuickLook.Plugin.CorelDrawViewer-Thumbnail"
+                                                target="_blank" rel="noopener">CorelDrawViewer</a></td>
+                                        <td>CorelDRAW (.cdr) files</td>
+                                        <td>Renders a thumbnail preview of CorelDRAW vector files so you can identify
+                                            designs at a glance.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="https://github.com/adyanth/QuickLook.Plugin.FolderViewer"
+                                                target="_blank" rel="noopener">FolderViewer</a></td>
+                                        <td>Folder contents</td>
+                                        <td>Shows a summary of a folder's contents — file names, types, and counts —
+                                            without opening it in Explorer.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="https://github.com/emako/QuickLook.Plugin.MarkmapViewer"
+                                                target="_blank" rel="noopener">MarkmapViewer</a></td>
+                                        <td>Markmap mind-map files</td>
+                                        <td>Renders Markmap mind-map files as interactive visual diagrams directly in
+                                            the preview window.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="https://github.com/emako/QuickLook.Plugin.OfficeViewer"
+                                                target="_blank" rel="noopener">OfficeViewer</a></td>
+                                        <td>Microsoft Office documents</td>
+                                        <td>Previews Word, Excel, and PowerPoint files with faithful rendering — no need
+                                            to open the full Office application.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="https://github.com/emako/QuickLook.Plugin.SumatraPDFReader"
+                                                target="_blank" rel="noopener">SumatraPDFReader</a></td>
+                                        <td>PDF files</td>
+                                        <td>Previews PDF documents using the fast, lightweight SumatraPDF engine with
+                                            support for multi-page scrolling.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="https://github.com/emako/QuickLook.Plugin.TorrentViewer"
+                                                target="_blank" rel="noopener">TorrentViewer</a></td>
+                                        <td>.torrent files</td>
+                                        <td>Displays the file list, individual file sizes, and metadata contained within
+                                            a torrent file.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <hr class="divider">
+
+                    <!-- Office & Productivity heading ============================ -->
+                    <section id="office-productivity">
+                        <h2>Office &amp; Productivity</h2>
+                        <p>A full suite of productivity and document tools pre-installed and ready to use.</p>
+                    </section>
+
+                    <hr class="divider">
+
+                    <!-- Office 365 ProPlus ============================ -->
+                    <section id="office365">
+                        <div class="row align-items-center">
+                            <div class="col-md-2 text-center mb-3 mb-md-0">
+                                <img src="assets/images/Office%20365%20ProPlus/Logo.png" alt="Office 365 ProPlus"
+                                    class="img-fluid" style="max-width:80px;">
+                            </div>
+                            <div class="col-md-10">
+                                <h2><a href="https://www.microsoft.com/en-us/microsoft-365" target="_blank"
+                                        rel="noopener">Office 365 ProPlus</a></h2>
+                                <p>Microsoft Office 365 ProPlus is a comprehensive productivity suite pre-installed on
+                                    this edition. It includes the full range of Microsoft Office applications for word
+                                    processing, spreadsheets, presentations, email, and more — all kept up to date via
+                                    Microsoft's subscription service.</p>
+                                <h6>Included Applications</h6>
+                                <ul>
+                                    <li><img src="assets/images/Office%20365%20ProPlus/imgi_29_Word-Icon-FY26.svg"
+                                            alt=""
+                                            style="width:16px; margin-right:6px; vertical-align:middle;"><strong>Microsoft
+                                            Word</strong> — Word processing and document creation</li>
+                                    <li><img src="assets/images/Office%20365%20ProPlus/imgi_30_Excel-Icon-FY26.svg"
+                                            alt=""
+                                            style="width:16px; margin-right:6px; vertical-align:middle;"><strong>Microsoft
+                                            Excel</strong> — Spreadsheets and data analysis</li>
+                                    <li><img src="assets/images/Office%20365%20ProPlus/imgi_31_PowerPoint-Icon-FY26.svg"
+                                            alt=""
+                                            style="width:16px; margin-right:6px; vertical-align:middle;"><strong>Microsoft
+                                            PowerPoint</strong> — Presentations and slideshows</li>
+                                    <li><img src="assets/images/Office%20365%20ProPlus/imgi_26_456100-icon-outlook-17x17.svg"
+                                            alt=""
+                                            style="width:16px; margin-right:6px; vertical-align:middle;"><strong>Microsoft
+                                            Outlook</strong> — Email, calendar, and contacts</li>
+                                    <li><img src="assets/images/Office%20365%20ProPlus/imgi_32_OneNote-Icon-FY26.svg"
+                                            alt=""
+                                            style="width:16px; margin-right:6px; vertical-align:middle;"><strong>Microsoft
+                                            OneNote</strong> — Digital note-taking and organisation</li>
+                                    <li><img src="assets/images/Office%20365%20ProPlus/microsoft_office_publisher_logo_icon_145717-1066955560.png"
+                                            alt=""
+                                            style="width:16px; margin-right:6px; vertical-align:middle;"><strong>Microsoft
+                                            Publisher</strong> — Desktop publishing and layout design</li>
+                                    <li><img src="assets/images/Office%20365%20ProPlus/Microsoft_Office-05-1024-3214299976.png"
+                                            alt=""
+                                            style="width:16px; margin-right:6px; vertical-align:middle;"><strong>Microsoft
+                                            Access</strong> — Database creation and management</li>
+                                    <li><img src="assets/images/Office%20365%20ProPlus/microsoft-visio-icon-1353460465.png"
+                                            alt=""
+                                            style="width:16px; margin-right:6px; vertical-align:middle;"><strong>Microsoft
+                                            Visio</strong> — Diagrams, flowcharts, and network maps</li>
+                                    <li><img src="assets/images/Office%20365%20ProPlus/Microsoft_Project_logo-3104730789.png"
+                                            alt=""
+                                            style="width:16px; margin-right:6px; vertical-align:middle;"><strong>Microsoft
+                                            Project</strong> — Project planning and task management</li>
+                                    <li><img src="assets/images/Office%20365%20ProPlus/imgi_34_456100-icon-teams-17x17.svg"
+                                            alt=""
+                                            style="width:16px; margin-right:6px; vertical-align:middle;"><strong>Microsoft
+                                            Teams</strong> — Chat, video calls, and collaboration</li>
+                                    <li><img src="assets/images/Office%20365%20ProPlus/imgi_27_456100-icon-onedrive-17x17.svg"
+                                            alt=""
+                                            style="width:16px; margin-right:6px; vertical-align:middle;"><strong>Microsoft
+                                            OneDrive</strong> — Cloud storage and file sync</li>
+                                    <li><strong>Microsoft Office Proofing Tools</strong> — Spelling, grammar, and
+                                        language support</li>
+                                </ul>
+                                <h6>Key Features</h6>
+                                <ul>
+                                    <li>Full offline access — all apps work without an internet connection</li>
+                                    <li>Cloud sync via OneDrive — access files from any device</li>
+                                    <li>Real-time co-authoring and collaboration in Word, Excel, and PowerPoint</li>
+                                    <li>Regular feature updates delivered automatically</li>
+                                    <li>Deep Windows 10 integration for file associations and search</li>
+                                    <li>Support for all major document formats including PDF, DOCX, XLSX, and PPTX</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-6 col-md-4 mb-3">
+                                <a href="assets/images/Office%20365%20ProPlus/imgi_3_787831-vertical-accordian-01-800x513-1.jpeg"
+                                    class="popup-img d-block">
+                                    <img src="assets/images/Office%20365%20ProPlus/imgi_3_787831-vertical-accordian-01-800x513-1.jpeg"
+                                        alt="Office 365 ProPlus screenshot" class="img-fluid rounded">
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-4 mb-3">
+                                <a href="assets/images/Office%20365%20ProPlus/imgi_4_787831-vertical-accordian-02-800x513-1.jpeg"
+                                    class="popup-img d-block">
+                                    <img src="assets/images/Office%20365%20ProPlus/imgi_4_787831-vertical-accordian-02-800x513-1.jpeg"
+                                        alt="Office 365 ProPlus screenshot" class="img-fluid rounded">
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-4 mb-3">
+                                <a href="assets/images/Office%20365%20ProPlus/imgi_5_787831-vertical-accordian-03-800x513.jpeg"
+                                    class="popup-img d-block">
+                                    <img src="assets/images/Office%20365%20ProPlus/imgi_5_787831-vertical-accordian-03-800x513.jpeg"
+                                        alt="Office 365 ProPlus screenshot" class="img-fluid rounded">
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+
+                    <hr class="divider">
+
+                    <!-- Adobe Acrobat Pro ============================ -->
+                    <section id="acrobat">
+                        <div class="row align-items-center">
+                            <div class="col-md-2 text-center mb-3 mb-md-0">
+                                <img src="assets/images/Adobe%20Acrobat%20Pro/Logo.png" alt="Adobe Acrobat Pro"
+                                    class="img-fluid" style="max-width:80px;">
+                            </div>
+                            <div class="col-md-10">
+                                <h2><a href="https://www.adobe.com/acrobat/acrobat-pro.html" target="_blank"
+                                        rel="noopener">Adobe Acrobat Pro</a></h2>
+                                <p>Adobe Acrobat Pro is the industry-standard application for creating, editing,
+                                    signing, and managing PDF documents. Pre-installed on this edition, it provides
+                                    complete control over PDF workflows — from reviewing and annotating to securing and
+                                    distributing documents.</p>
+                                <h6>Key Features</h6>
+                                <ul>
+                                    <li>Create PDFs from any application via the Acrobat PDF printer</li>
+                                    <li>Edit text, images, and layouts directly inside PDF files</li>
+                                    <li>Sign documents electronically and request signatures from others</li>
+                                    <li>OCR (Optical Character Recognition) to make scanned documents searchable</li>
+                                    <li>Export PDFs to Word, Excel, PowerPoint, and other formats</li>
+                                    <li>Redact sensitive information and apply password protection</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-6 col-md-4 mb-3">
+                                <a href="assets/images/Adobe%20Acrobat%20Pro/imgi_42_media_18e94322fefec7877819930b67b7eacdcf8f68701.jpg"
+                                    class="popup-img d-block">
+                                    <img src="assets/images/Adobe%20Acrobat%20Pro/imgi_42_media_18e94322fefec7877819930b67b7eacdcf8f68701.jpg"
+                                        alt="Adobe Acrobat Pro screenshot" class="img-fluid rounded">
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-4 mb-3">
+                                <a href="assets/images/Adobe%20Acrobat%20Pro/imgi_47_media_1d458dbbd4ff0215d0e2c5e5548617c1d2a389b90.jpg"
+                                    class="popup-img d-block">
+                                    <img src="assets/images/Adobe%20Acrobat%20Pro/imgi_47_media_1d458dbbd4ff0215d0e2c5e5548617c1d2a389b90.jpg"
+                                        alt="Adobe Acrobat Pro screenshot" class="img-fluid rounded">
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-4 mb-3">
+                                <a href="assets/images/Adobe%20Acrobat%20Pro/imgi_53_media_1127906ec4b258ff7451bc94aae043e2284317d16.jpg"
+                                    class="popup-img d-block">
+                                    <img src="assets/images/Adobe%20Acrobat%20Pro/imgi_53_media_1127906ec4b258ff7451bc94aae043e2284317d16.jpg"
+                                        alt="Adobe Acrobat Pro screenshot" class="img-fluid rounded">
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-4 mb-3">
+                                <a href="assets/images/Adobe%20Acrobat%20Pro/imgi_57_media_128e44dca7315e923d2766bb0502d5719f6910413.jpg"
+                                    class="popup-img d-block">
+                                    <img src="assets/images/Adobe%20Acrobat%20Pro/imgi_57_media_128e44dca7315e923d2766bb0502d5719f6910413.jpg"
+                                        alt="Adobe Acrobat Pro screenshot" class="img-fluid rounded">
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-4 mb-3">
+                                <a href="assets/images/Adobe%20Acrobat%20Pro/imgi_59_media_104b803ba5675d924216da821d8510be8bace91b0.jpg"
+                                    class="popup-img d-block">
+                                    <img src="assets/images/Adobe%20Acrobat%20Pro/imgi_59_media_104b803ba5675d924216da821d8510be8bace91b0.jpg"
+                                        alt="Adobe Acrobat Pro screenshot" class="img-fluid rounded">
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-4 mb-3">
+                                <a href="assets/images/Adobe%20Acrobat%20Pro/imgi_61_media_19a73fb0d218c0a86333d9251b5d0084ca0274530.jpg"
+                                    class="popup-img d-block">
+                                    <img src="assets/images/Adobe%20Acrobat%20Pro/imgi_61_media_19a73fb0d218c0a86333d9251b5d0084ca0274530.jpg"
+                                        alt="Adobe Acrobat Pro screenshot" class="img-fluid rounded">
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-4 mb-3">
+                                <a href="assets/images/Adobe%20Acrobat%20Pro/imgi_63_media_11a1ef3240afc3ea5d5044a676e7db77ca2538f96.jpg"
+                                    class="popup-img d-block">
+                                    <img src="assets/images/Adobe%20Acrobat%20Pro/imgi_63_media_11a1ef3240afc3ea5d5044a676e7db77ca2538f96.jpg"
+                                        alt="Adobe Acrobat Pro screenshot" class="img-fluid rounded">
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-4 mb-3">
+                                <a href="assets/images/Adobe%20Acrobat%20Pro/adobe-acrobat-professional-543-3-3766710051.jpg"
+                                    class="popup-img d-block">
+                                    <img src="assets/images/Adobe%20Acrobat%20Pro/adobe-acrobat-professional-543-3-3766710051.jpg"
+                                        alt="Adobe Acrobat Pro screenshot" class="img-fluid rounded">
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-4 mb-3">
+                                <a href="assets/images/Adobe%20Acrobat%20Pro/honvdQAfmnHNKNEB5Fh9UB-2047602073.jpg"
+                                    class="popup-img d-block">
+                                    <img src="assets/images/Adobe%20Acrobat%20Pro/honvdQAfmnHNKNEB5Fh9UB-2047602073.jpg"
+                                        alt="Adobe Acrobat Pro screenshot" class="img-fluid rounded">
+                                </a>
+                            </div>
+                        </div>
                     </section>
 
                 </div>
@@ -727,6 +1044,8 @@
                                     d="M141.537 88.988a66.667 66.667 0 0 0-2.518-1.143c-1.482-27.307-16.403-42.94-41.457-43.1h-.34c-14.986 0-27.449 6.396-35.12 18.036l13.779 9.452c5.73-8.695 14.724-10.548 21.348-10.548h.229c8.249.053 14.474 2.452 18.503 7.129 2.932 3.405 4.893 8.111 5.864 14.05-7.314-1.243-15.224-1.626-23.68-1.14-23.82 1.371-39.134 15.264-38.105 34.568.522 9.792 5.4 18.216 13.735 23.719 7.047 4.652 16.124 6.927 25.557 6.412 12.458-.683 22.231-5.436 29.049-14.127 5.178-6.6 8.453-15.153 9.899-25.93 5.937 3.583 10.337 8.298 12.767 13.966 4.132 9.635 4.373 25.468-8.546 38.376-11.319 11.308-24.925 16.2-45.488 16.35-22.809-.169-40.06-7.484-51.275-21.742C35.236 139.966 29.808 120.682 29.605 96c.203-24.682 5.63-43.966 16.133-57.317C56.954 24.425 74.206 17.11 97.015 16.94c22.975.17 40.526 7.52 52.171 21.847 5.71 7.026 10.015 15.86 12.853 26.162l16.147-4.308c-3.44-12.68-8.853-23.606-16.219-32.668C147.036 9.607 125.202.195 97.105 0h-.195C68.78.195 47.219 9.65 32.7 28.08 19.797 44.378 13.038 67.408 12.8 96v.072c.238 28.592 7.001 51.62 19.92 67.919C47.22 182.354 68.78 191.81 96.91 192h.19c24.77-.166 42.249-6.667 56.57-21.016 18.671-18.693 18.111-42.117 11.94-56.478-4.413-10.292-12.638-18.853-23.073-24.518Zm-40.356 40.354c-10.402.569-21.224-4.081-21.797-14.073-.412-7.529 5.35-15.929 22.55-16.929 1.973-.114 3.91-.168 5.81-.168 6.11 0 11.828.59 17.018 1.69-1.935 24.117-13.975 28.924-23.581 29.48Z" />
                             </svg></a></li>
                 </ul>
+                <p class="text-center mb-2">Having trouble with your PC? <strong>Contact us</strong> &mdash; we're happy
+                    to help.</p>
                 <p class="text-center mb-0">Windows 10 25H2 Hillcom Edition &mdash; Included Software Documentation</p>
             </div>
         </footer>
