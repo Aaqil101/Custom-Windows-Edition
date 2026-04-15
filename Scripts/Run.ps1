@@ -4,18 +4,24 @@ if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
     exit
 }
 
-# Set location to script directory
-Set-Location -Path $PSScriptRoot
-
 # Create Folder and Copy Script
-mkdir "C:\ProgramData\Winhance\Scripts" -Force
-Copy-Item -Path $PSScriptRoot\PauseWindowsUpdate.ps1 -Destination "C:\ProgramData\Winhance\Scripts\PauseWindowsUpdate.ps1"
-Copy-Item -Path $PSScriptRoot\PauseWindowsUpdate.xml -Destination "C:\PauseWindowsUpdate.xml"
+mkdir "C:\ProgramData\Winhance\Scripts"
+Copy-Item -Path "$PSScriptRoot\BloatRemoval.ps1" -Destination "C:\ProgramData\Winhance\Scripts\BloatRemoval.ps1"
+Copy-Item -Path "$PSScriptRoot\PauseWindowsUpdate.ps1" -Destination "C:\ProgramData\Winhance\Scripts\PauseWindowsUpdate.ps1"
 Get-ChildItem "C:\ProgramData\Winhance\Scripts"
-Get-ChildItem "C:\PauseWindowsUpdate.xml"
 
 # Create the Task Using Command Prompt (as Administrator)
-schtasks /create /tn "\Winhance\PauseWindowsUpdate" /xml "C:\PauseWindowsUpdate.xml" /f
+schtasks /create /tn "\Winhance\BloatRemoval" /xml "$PSScriptRoot\BloatRemoval.xml" /f
+schtasks /create /tn "\Winhance\PauseWindowsUpdate" /xml "$PSScriptRoot\PauseWindowsUpdate.xml" /f
+
+# Install Applications
+powershell -ExecutionPolicy Bypass -File "$PSScriptRoot\Program_Install.ps1" -InstallersPath "$PSScriptRoot"
+
+# Extract QuickLook Plugins
+powershell -ExecutionPolicy Bypass -File "$PSScriptRoot\Install_QuickLookPlugins.ps1"
+
+# Auto Start QuickLook
+& "$PSScriptRoot\QuickLookStartup.cmd"
 
 # Pause to view results
 Pause
